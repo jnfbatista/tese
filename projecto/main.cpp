@@ -1,190 +1,94 @@
-#include <pcl/io/pcd_io.h>
+#include <pcl/point_cloud.h>
 #include <pcl/point_types.h>
-#include <stdlib.h>
-#include <stdio.h>
-#include <GL/glut.h>
-#include <GL/gl.h>
-#include <GL/glu.h>
-#include <iostream>
-#include <vector>
-#include <pthread.h>
+#include <pcl/io/pcd_io.h>
+#include <pcl/io/openni_grabber.h>
+#include <pcl/common/time.h>
 
-#include "KinectDevice/KinectDevice.cpp"
+#include <pcl/sample_consensus/method_types.h>
+#include <pcl/sample_consensus/model_types.h>
+#include <pcl/segmentation/sac_segmentation.h>
 
-using namespace std;
+#ifdef WIN32
+# define sleep(x) Sleep((x)*1000) 
+#endif
 
-//define OpenGL variables
-GLuint gl_depth_tex;
-GLuint gl_rgb_tex;
-int g_argc;
-char **g_argv;
-int got_frames(0);
-int window(0);
+#include <boost/asio.hpp>
 
-//define libfreenect variables
-Freenect::Freenect freenect;
-KinectDevice* device;
-double freenect_angle(0);
-freenect_video_format requested_format(FREENECT_VIDEO_RGB);
+#include "PCLWorker/PCLWorker.h"
+#include "Message/Message.h"
+#include "MessageServer/MessageServer.h"
 
 
-//define Kinect Device control elements
-//glutKeyboardFunc Handler
-void keyPressed(unsigned char key, int x, int y)
-{
-	if (key == 27) {
-		device->setLed(LED_OFF);
-		freenect_angle = 0;
-		glutDestroyWindow(window);
-	}
-	if (key == '1') {
-		device->setLed(LED_GREEN);
-	}
-	if (key == '2') {
-		device->setLed(LED_RED);
-	}
-	if (key == '3') {
-		device->setLed(LED_YELLOW);
-	}
-	if (key == '4') {
-		device->setLed(LED_BLINK_GREEN);
-	}
-	if (key == '5') {
-		// 5 is the same as 4
-		device->setLed(LED_BLINK_GREEN);
-	}
-	if (key == '6') {
-		device->setLed(LED_BLINK_RED_YELLOW);
-	}
-	if (key == '0') {
-		device->setLed(LED_OFF);
-	}
-	if (key == 'f') {
-		if (requested_format == FREENECT_VIDEO_IR_8BIT) {
-			requested_format = FREENECT_VIDEO_RGB;
-		} else if (requested_format == FREENECT_VIDEO_RGB){
-			requested_format = FREENECT_VIDEO_YUV_RGB;
-		} else {
-			requested_format = FREENECT_VIDEO_IR_8BIT;
+int main ( int argc, char* argv[], char* envp[]) {
+	if (argc > 1) {
+		if(strcmp(argv[1], "-c") == 0) {	
+
+			printf("woot!?!!!");
+			PCLWorker v;
+			v.run ( argv[2], argv[3]);
 		}
-		device->setVideoFormat(requested_format);
-	}
+		else if (strcmp(argv[1], "-m") == 0 ) {
+			Message msg = Message();
 
-	if (key == 'w') {
-		freenect_angle++;
-		if (freenect_angle > 30) {
-			freenect_angle = 30;
+			msg.test_message();
 		}
-	}
-	if (key == 's' || key == 'd') {
-		freenect_angle = 10;
-	}
-	if (key == 'x') {
-		freenect_angle--;
-		if (freenect_angle < -30) {
-			freenect_angle = -30;
+		//@TODO Show a pcl file
+		else if (strcmp(argv[1], "-s") == 0) {
+			if (argc == 3) {
+				// argument char* to string
+				std::string fileName = std::string(argv[2]);
+
+				PCLWorker pcl = PCLWorker();
+
+				pcl.display_point_cloud(fileName);
+
+			}
+		} else if (strcmp(argv[1], "-us") == 0 && argc == 3) {
+			try
+			{
+				printf("UDP - started serving.\n");
+
+				boost::asio::io_service io_service;
+				MessageServer* server = new MessageServer(io_service, atoi(argv[2]));
+				io_service.run();
+				printf("UDP - stopped serving.\n");
+
+			}
+			catch (std::exception& e)
+			{
+				std::cerr << e.what() << std::endl;
+			}
+
+		} else if (strcmp(argv[1], "-uc") == 0) {
+			try {
+
+				Message *msg = new Message();
+
+				vector<string> msg_param;
+				msg_param.push_back("distancia");
+				msg_param.push_back("8,54");
+
+				msg->add_param(msg_param);
+
+
+				msg->send_message(argv[2], "8888");
+
+			}
+			catch (std::exception& e)
+			{
+				std::cerr << e.what() << std::endl;
+			}
+		} else if (strcmp(argv[1], "-bg") == 0) {
+			//PCLWorker p;
+
+			//p.calibrate_background(argv[2], argv[3], argv[4]);
+
 		}
+
+
+	} else {
+		// TODO Add a more detailed rundown of the commands that can be provided
+		printf("No options provided!\n");
 	}
-	if (key == 'e') {
-		freenect_angle = 10;
-	}
-	if (key == 'c') {
-		freenect_angle = -10;
-	}
-	device->setTiltDegrees(freenect_angle);
-}
-//define OpenGL functions
-void DrawGLScene()
-{
-	static std::vector<uint8_t> depth(640*480*4);
-	static std::vector<uint8_t> rgb(640*480*4);
-
-	// using getTiltDegs() in a closed loop is unstable
-	/*if(device->getState().m_code == TILT_STATUS_STOPPED){
-		freenect_angle = device->getState().getTiltDegs();
-	}*/
-	device->updateState();
-	printf("\r demanded tilt angle: %+4.2f device tilt angle: %+4.2f", freenect_angle, device->getState().getTiltDegs());
-	fflush(stdout);
-
-	device->getDepth(depth);
-	device->getRGB(rgb);
-
-	got_frames = 0;
-
-	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-	glLoadIdentity();
-
-	glEnable(GL_TEXTURE_2D);
-
-	glBindTexture(GL_TEXTURE_2D, gl_depth_tex);
-	glTexImage2D(GL_TEXTURE_2D, 0, 4, 640, 480, 0, GL_RGB, GL_UNSIGNED_BYTE, &depth[0]);
-
-	glBegin(GL_TRIANGLE_FAN);
-	glColor4f(255.0f, 255.0f, 255.0f, 255.0f);
-	glTexCoord2f(0, 0); glVertex3f(0,0,0);
-	glTexCoord2f(1, 0); glVertex3f(640,0,0);
-	glTexCoord2f(1, 1); glVertex3f(640,480,0);
-	glTexCoord2f(0, 1); glVertex3f(0,480,0);
-	glEnd();
-	glutSwapBuffers();
-}
-
-void InitGL()
-{
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
-	glClearDepth(1.0);
-	glDepthFunc(GL_LESS);
-	glDisable(GL_DEPTH_TEST);
-	glEnable(GL_BLEND);
-	glBlendFunc (GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-	glShadeModel(GL_SMOOTH);
-	glGenTextures(1, &gl_depth_tex);
-	glBindTexture(GL_TEXTURE_2D, gl_depth_tex);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-	glMatrixMode(GL_PROJECTION);
-	glLoadIdentity();
-	glOrtho (0, 640, 480, 0, 0.0f, 1.0f);
-	glMatrixMode(GL_MODELVIEW);
-}
-
-void displayKinectData(KinectDevice* device){
-	glutInit(&g_argc, g_argv);
-	glutInitDisplayMode(GLUT_RGBA | GLUT_DOUBLE | GLUT_ALPHA | GLUT_DEPTH);
-	glutInitWindowSize(640, 480);
-	glutInitWindowPosition(0, 0);
-	window = glutCreateWindow("c++ wrapper example");
-	glutDisplayFunc(&DrawGLScene);
-	glutIdleFunc(&DrawGLScene);
-	glutKeyboardFunc(&keyPressed);
-	InitGL();
-	glutMainLoop();
-}
-//define main function
-int main(int argc, char **argv) {
-	//Get Kinect Device
-	device = &freenect.createDevice<KinectDevice>(0);
-	//Start Kinect Device
-	device->setTiltDegrees(10);
-	//device->startVideo();
-	device->startDepth();
-	//handle Kinect Device Data
-	device->setLed(LED_RED);
-	displayKinectData(device);
-	//Stop Kinect Device
-	//device->stopVideo();
-	device->stopDepth();
-	device->setLed(LED_OFF);
 	return 0;
 }
-
-//int main(int argc, char * argv[], char * envp[]) {
-//
-//	// The thread which gets the kinect feed will be here
-//	
-//	// the thread to process/recognize it will be here
-//
-//	printf("Hello world!\n");
-//	return 0;
-//}
