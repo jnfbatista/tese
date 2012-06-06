@@ -17,23 +17,34 @@
 #include "PCLWorker/PCLWorker.h"
 #include "Message/Message.h"
 #include "MessageServer/MessageServer.h"
+#include "gui/Gui.h"
+
+void usage() {
+	printf("Usage of the application:\n");
+	printf("-c\tCapture and analyze point clouds in realtime\n");
+	printf("-v\tShow a point cloud\n");
+}
 
 
 int main ( int argc, char* argv[], char* envp[]) {
 	if (argc > 1) {
-		if(strcmp(argv[1], "-c") == 0) {	
-
-			printf("woot!?!!!");
+		if(strcmp(argv[1], "-c") == 0 && argc > 3) {	
 			PCLWorker v;
 			v.run ( argv[2], argv[3]);
-		}
-		else if (strcmp(argv[1], "-m") == 0 ) {
+		} else if (strcmp(argv[1], "-g") == 0) {
+			printf("Hopefully a GUI will appear...\n");
+			Gui gui = Gui(argc, argv);
+		} else if (strcmp(argv[1], "-m") == 0 ) {
 			Message msg = Message();
-
 			msg.test_message();
-		}
-		//@TODO Show a pcl file
-		else if (strcmp(argv[1], "-s") == 0) {
+		} else if (strcmp(argv[1], "-s") == 0 ) {
+			PCLWorker v;
+			v.run_capture(30);
+		} else if (strcmp(argv[1], "-p") == 0) { 
+			printf("Processing a image\n");
+			PCLWorker p;
+			p.analyze_image(argv[2]);
+		} else if (strcmp(argv[1], "-v") == 0) {
 			if (argc == 3) {
 				// argument char* to string
 				std::string fileName = std::string(argv[2]);
@@ -42,6 +53,8 @@ int main ( int argc, char* argv[], char* envp[]) {
 
 				pcl.display_point_cloud(fileName);
 
+			} else {
+				printf("Missing the file path\n");
 			}
 		} else if (strcmp(argv[1], "-us") == 0 && argc == 3) {
 			try
@@ -89,6 +102,7 @@ int main ( int argc, char* argv[], char* envp[]) {
 	} else {
 		// TODO Add a more detailed rundown of the commands that can be provided
 		printf("No options provided!\n");
+
 	}
 	return 0;
 }

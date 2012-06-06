@@ -1,0 +1,167 @@
+InfoKey: Producer
+InfoValue: pdfTeX-1.40.10
+InfoKey: Creator
+InfoValue: LaTeX with hyperref package
+InfoKey: ModDate
+InfoValue: D:20120604162558+01'00'
+InfoKey: PTEX.Fullbanner
+InfoValue: This is pdfTeX, Version 3.1415926-1.40.10-2.2 (TeX Live 2009/Debian) kpathsea version 5.0.0
+InfoKey: CreationDate
+InfoValue: D:20120604162558+01'00'
+PdfID0: 4711fa5df9126cd9fddf51559f01ecc
+PdfID1: 4711fa5df9126cd9fddf51559f01ecc
+NumberOfPages: 34
+BookmarkTitle: P&#225;gina de Rosto
+BookmarkLevel: 1
+BookmarkPageNumber: 1
+BookmarkTitle: 1 Resumo
+BookmarkLevel: 1
+BookmarkPageNumber: 5
+BookmarkTitle: Conte&#250;do
+BookmarkLevel: 1
+BookmarkPageNumber: 7
+BookmarkTitle: Lista de Figuras
+BookmarkLevel: 1
+BookmarkPageNumber: 9
+BookmarkTitle: Lista de Tabelas
+BookmarkLevel: 1
+BookmarkPageNumber: 11
+BookmarkTitle: Abreviaturas e S&#237;mbolos
+BookmarkLevel: 1
+BookmarkPageNumber: 13
+BookmarkTitle: 2 Introdu&#231;&#227;o
+BookmarkLevel: 1
+BookmarkPageNumber: 15
+BookmarkTitle: 2.1 Enquadramento
+BookmarkLevel: 2
+BookmarkPageNumber: 15
+BookmarkTitle: 2.2 Projecto
+BookmarkLevel: 2
+BookmarkPageNumber: 15
+BookmarkTitle: 2.3 Motiva&#231;&#227;o e Objectivos
+BookmarkLevel: 2
+BookmarkPageNumber: 16
+BookmarkTitle: 2.4 Estrutura da Disserta&#231;&#227;o
+BookmarkLevel: 2
+BookmarkPageNumber: 16
+BookmarkTitle: 3 Revis&#227;o Bibliogr&#225;fica
+BookmarkLevel: 1
+BookmarkPageNumber: 17
+BookmarkTitle: 3.1 Introdu&#231;&#227;o
+BookmarkLevel: 2
+BookmarkPageNumber: 17
+BookmarkTitle: 3.2 T&#233;cnicas de detec&#231;&#227;o de Objectos
+BookmarkLevel: 2
+BookmarkPageNumber: 17
+BookmarkTitle: 3.2.1 SIFT
+BookmarkLevel: 3
+BookmarkPageNumber: 17
+BookmarkTitle: 3.2.2 SURF
+BookmarkLevel: 3
+BookmarkPageNumber: 18
+BookmarkTitle: 3.2.3 Geometric Hashing
+BookmarkLevel: 3
+BookmarkPageNumber: 19
+BookmarkTitle: 3.2.4 Point Cloud Library
+BookmarkLevel: 3
+BookmarkPageNumber: 19
+BookmarkTitle: 3.3 Sistemas de percep&#231;&#227;o para reconhecimento de Objetos
+BookmarkLevel: 2
+BookmarkPageNumber: 19
+BookmarkTitle: 3.3.1 Time of Flight Camera
+BookmarkLevel: 3
+BookmarkPageNumber: 19
+BookmarkTitle: 3.3.2 LIDAR
+BookmarkLevel: 3
+BookmarkPageNumber: 20
+BookmarkTitle: 3.3.3 Kinect
+BookmarkLevel: 3
+BookmarkPageNumber: 20
+BookmarkTitle: 3.4 Demonstradores de Rob&#243;tica Aut&#243;noma
+BookmarkLevel: 2
+BookmarkPageNumber: 21
+BookmarkTitle: 3.4.1 DARPA: Grand challenge
+BookmarkLevel: 3
+BookmarkPageNumber: 21
+BookmarkTitle: 3.4.2 Festival Nacional de Rob&#243;tica
+BookmarkLevel: 3
+BookmarkPageNumber: 22
+BookmarkTitle: 3.4.3 MINERVA
+BookmarkLevel: 3
+BookmarkPageNumber: 23
+BookmarkTitle: 3.4.4 CleanRob
+BookmarkLevel: 3
+BookmarkPageNumber: 24
+BookmarkTitle: 3.5 Planeamento
+BookmarkLevel: 2
+BookmarkPageNumber: 25
+BookmarkTitle: 3.6 Resumo
+BookmarkLevel: 2
+BookmarkPageNumber: 26
+BookmarkTitle: 4 Reconhecimento de objectos
+BookmarkLevel: 1
+BookmarkPageNumber: 27
+BookmarkTitle: 4.1 Detec&#231;&#227;o de Objectos
+BookmarkLevel: 2
+BookmarkPageNumber: 27
+BookmarkTitle: 4.1.1 Detec&#231;&#227;o de Objectos Simples
+BookmarkLevel: 3
+BookmarkPageNumber: 28
+BookmarkTitle: 4.1.2 Detec&#231;&#227;o de Objectos Complexos
+BookmarkLevel: 3
+BookmarkPageNumber: 28
+BookmarkTitle: 4.2  Procedimento Experimental
+BookmarkLevel: 2
+BookmarkPageNumber: 30
+BookmarkTitle: 4.3 Resumo e Conclus&#245;es
+BookmarkLevel: 2
+BookmarkPageNumber: 30
+BookmarkTitle: 5 Implementa&#231;&#227;o
+BookmarkLevel: 1
+BookmarkPageNumber: 31
+BookmarkTitle: 5.1 Captura de Imagens 3D para an&#225;lise 
+BookmarkLevel: 2
+BookmarkPageNumber: 31
+BookmarkTitle: 5.2  An&#225;lise selec&#231;&#227;o e Separa&#231;&#227;o de amostra de controlo
+BookmarkLevel: 2
+BookmarkPageNumber: 32
+BookmarkTitle: 5.3 Implementa&#231;&#227;o da Detec&#231;&#227;o
+BookmarkLevel: 2
+BookmarkPageNumber: 32
+BookmarkTitle: 5.4 Resultados Obtidos
+BookmarkLevel: 2
+BookmarkPageNumber: 32
+BookmarkTitle: 5.5 Resumo ou Conclus&#245;es
+BookmarkLevel: 2
+BookmarkPageNumber: 32
+BookmarkTitle: 6 Conclus&#245;es e Trabalho Futuro
+BookmarkLevel: 1
+BookmarkPageNumber: 33
+BookmarkTitle: 6.1 Satisfa&#231;&#227;o dos Objectivos
+BookmarkLevel: 2
+BookmarkPageNumber: 33
+BookmarkTitle: 6.2 Trabalho Futuro
+BookmarkLevel: 2
+BookmarkPageNumber: 34
+PageLabelNewIndex: 1
+PageLabelStart: 1
+PageLabelPrefix: -3
+PageLabelNumStyle: NoNumber
+PageLabelNewIndex: 2
+PageLabelStart: 1
+PageLabelPrefix: -2
+PageLabelNumStyle: NoNumber
+PageLabelNewIndex: 3
+PageLabelStart: 1
+PageLabelPrefix: -1
+PageLabelNumStyle: NoNumber
+PageLabelNewIndex: 4
+PageLabelStart: 1
+PageLabelPrefix: 0
+PageLabelNumStyle: NoNumber
+PageLabelNewIndex: 5
+PageLabelStart: 1
+PageLabelNumStyle: LowercaseRomanNumerals
+PageLabelNewIndex: 15
+PageLabelStart: 1
+PageLabelNumStyle: DecimalArabicNumerals

@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <TApplication>
+    <Form1 ERobotX_Text="2.02584417686989" ERobotY_Text="6.48709354478438"/>
+    <Conde ERobotX_Text="7.90" ERobotY_Text="5.48" EMotorVNom_Text="1"/>
+    <BlackBox ERobotX_Text="8.50" ERobotY_Text="6.65" EMotorVNom_Text="0.7"/>
+  </TApplication>
+</CONFIG>

@@ -91,6 +91,24 @@ transformações que podem ser aplicadas aos objectos.
 
 %\subsection{Conditional Random Fields}
 
+
+\subsection{RANSAC}
+
+RANSAC\cite{Fischler:1981:RSC:358669.358692}, um acrónimo de "RANdom SAmple Consensus",
+é um algoritmo que permite extrair, através de um conjunto de dados, os parâmetros
+do modelo matemático que cria as características aproximadas do objecto. Este algoritmo 
+funciona de forma iterativa e a cada iteração melhora a qualidade dos parâmetros extraídos.
+Este método representa uma evolução significativa dos métodos mínimos quadrados visto ser
+permeável a desvio dos dados sem que estes afectem a qualidade da modelação matemática,
+tal como pode ser visto na figura \ref{fig:ransac}.
+
+\begin{center}
+	\includegraphics[width=0.80\textwidth]{figures/least_squares_shortcomings.png}
+	\captionof{figure}{Exemplo de fraqueza do método de mínimos quadrados}
+	\label{fig:ransac}
+\end{center}
+
+
 \subsection{Point Cloud Library}
 
 \emph{Point Cloud Library} (PCL) é um projecto \emph{opensource} desenvolvido em C++ 
@@ -297,9 +315,9 @@ desta dissertação com sucesso são as seguintes:
 \item Reconhecimento de Objectos:
 \begin{itemize}
 \item Cilindros;
-\item Cones;
 \item Esferas;
 \item Paralelepípedos.
+\item Mesas;
 \end{itemize}
 \item Testes ao Sistema;
 \item Refinamentos;

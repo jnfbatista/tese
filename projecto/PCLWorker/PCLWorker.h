@@ -29,6 +29,12 @@
 #include <pcl/filters/conditional_removal.h>
 
 #include "../Message/Message.h"
+/*
+#include <opencv2/core/core.hpp>
+#include <opencv2/highgui/highgui.hpp>
+#include <opencv2/ml/ml.hpp>
+#include "processfunc.h"
+*/
 
 using std::string;
 
@@ -39,16 +45,47 @@ using std::string;
 class PCLWorker {
 
 	public:
-	
-		void cloud_cb_ (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud);
 
-		void run (string,string); 
-		void run_capture (); 
+		/**
+		 * This funcion is used to capture new pcd files
+		 */
+		void run_capture (int); 
 
-		//displays a point saved point cloud file 
+		/**
+		 * Captures the point cloud to a file
+		 */
+		void cloud_cb_ (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, int);
+		void cloud_cb_v (const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud);
+
+		void pcl_viewer(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr ); 
+
+		// displays a point saved point cloud file 
 		void display_point_cloud(string);
 
-		void calibrate_background(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, string, string);
+		/**
+		 * This function runs the recognition process
+		 */
+		void run (string,string); 
+
+		/**
+		 * Processes a point cloud to find predetermined objects
+		 */
+		void process(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, string, string);
+
+		pcl::PointCloud<pcl::PointXYZ>::Ptr pre_process(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, string, string);
+		void analyze_image(string);
+
+
+		// Returns the found clusters
+		std::vector<pcl::PointCloud<pcl::PointXYZ> > detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);
+
+		/*
+		 * This is where the magic happens
+		 */
+		void find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr, bool); 
+		// line processing sheananigans
+		//void process_rgb(cv::Mat);
+
 
 };
 

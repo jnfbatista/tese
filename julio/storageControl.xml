@@ -1,0 +1,6 @@
+<?xml version="1.0"?>
+<CONFIG>
+  <TApplication>
+    <fControlo EPIDArcKd1Dist_Text="1" EPIDArcKd1Teta_Text="0.1" EPIDArcKi1Dist_Text="0.6" EPIDArcKi1Teta_Text="0.15" EPIDArcKp1Dist_Text="5" EPIDArcKp1Teta_Text="3.3" EPIDLineKd1Dist_Text="1.2" EPIDLineKd1Teta_Text="0.8" EPIDLineKi1Dist_Text="0.1" EPIDLineKi1Teta_Text="0.1" EPIDLineKp1Dist_Text="4.5" EPIDLineKp1Teta_Text="2.7" EPIDAngleKd1Dist_Text="0" EPIDAngleKd1Teta_Text="0.3" EPIDAngleKi1Dist_Text="0" EPIDAngleKi1Teta_Text="0.07" EPIDAngleKp1Dist_Text="0" EPIDAngleKp1Teta_Text="1.1" EPIDPointKd1Dist_Text="0.4" EPIDPointKd1Teta_Text="0.5" EPIDPointKi1Dist_Text="0" EPIDPointKi1Teta_Text="0" EPIDPointKp1Dist_Text="0.8" EPIDPointKp1Teta_Text="1" EPIDCircleKd1Dist_Text="1" EPIDCircleKd1Teta_Text="0" EPIDCircleKi1Dist_Text="0" EPIDCircleKi1Teta_Text="5" EPIDCircleKp1Dist_Text="0.6" EPIDCircleKp1Teta_Text="2"/>
+  </TApplication>
+</CONFIG>

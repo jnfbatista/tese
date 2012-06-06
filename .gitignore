@@ -1,2 +1,7 @@
 projecto/build/
 .*.swp
+*.pcd
+*.pcf
+*.aux
+.*.ini
+*.*~

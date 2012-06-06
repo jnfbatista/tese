@@ -1,0 +1,41 @@
+\select@language {portuges}
+\contentsline {chapter}{\numberline {1}Resumo}{i}{chapter.1}
+\contentsline {chapter}{\numberline {2}Introdu\IeC {\c c}\IeC {\~a}o}{1}{chapter.2}
+\contentsline {section}{\numberline {2.1}Enquadramento}{1}{section.2.1}
+\contentsline {section}{\numberline {2.2}Projecto}{1}{section.2.2}
+\contentsline {section}{\numberline {2.3}Motiva\IeC {\c c}\IeC {\~a}o e Objectivos}{2}{section.2.3}
+\contentsline {section}{\numberline {2.4}Estrutura da Disserta\IeC {\c c}\IeC {\~a}o}{2}{section.2.4}
+\contentsline {chapter}{\numberline {3}Revis\IeC {\~a}o Bibliogr\IeC {\'a}fica}{3}{chapter.3}
+\contentsline {section}{\numberline {3.1}Introdu\IeC {\c c}\IeC {\~a}o}{3}{section.3.1}
+\contentsline {section}{\numberline {3.2}T\IeC {\'e}cnicas de detec\IeC {\c c}\IeC {\~a}o de Objectos}{3}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}SIFT}{3}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}SURF}{4}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}Geometric Hashing}{5}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}RANSAC}{5}{subsection.3.2.4}
+\contentsline {subsection}{\numberline {3.2.5}Point Cloud Library}{5}{subsection.3.2.5}
+\contentsline {section}{\numberline {3.3}Sistemas de percep\IeC {\c c}\IeC {\~a}o para reconhecimento de Objetos}{6}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Time of Flight Camera}{6}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}LIDAR}{6}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Kinect}{6}{subsection.3.3.3}
+\contentsline {section}{\numberline {3.4}Demonstradores de Rob\IeC {\'o}tica Aut\IeC {\'o}noma}{7}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}DARPA: Grand challenge}{7}{subsection.3.4.1}
+\contentsline {subsection}{\numberline {3.4.2}Festival Nacional de Rob\IeC {\'o}tica}{8}{subsection.3.4.2}
+\contentsline {subsection}{\numberline {3.4.3}MINERVA}{10}{subsection.3.4.3}
+\contentsline {subsection}{\numberline {3.4.4}CleanRob}{10}{subsection.3.4.4}
+\contentsline {section}{\numberline {3.5}Planeamento}{11}{section.3.5}
+\contentsline {section}{\numberline {3.6}Resumo}{12}{section.3.6}
+\contentsline {chapter}{\numberline {4}Reconhecimento de objectos}{13}{chapter.4}
+\contentsline {section}{\numberline {4.1}Reconhecimento de Objectos}{13}{section.4.1}
+\contentsline {subsection}{\numberline {4.1.1}Reconhecimento de Objectos Simples}{13}{subsection.4.1.1}
+\contentsline {subsection}{\numberline {4.1.2}Reconhecimento de Objectos Complexos}{14}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2} Procedimento Experimental}{14}{section.4.2}
+\contentsline {section}{\numberline {4.3}Resumo e Conclus\IeC {\~o}es}{14}{section.4.3}
+\contentsline {chapter}{\numberline {5}Implementa\IeC {\c c}\IeC {\~a}o}{15}{chapter.5}
+\contentsline {section}{\numberline {5.1}Captura de Imagens 3D para an\IeC {\'a}lise }{15}{section.5.1}
+\contentsline {section}{\numberline {5.2} An\IeC {\'a}lise selec\IeC {\c c}\IeC {\~a}o e Separa\IeC {\c c}\IeC {\~a}o de amostra de controlo}{16}{section.5.2}
+\contentsline {section}{\numberline {5.3}Implementa\IeC {\c c}\IeC {\~a}o da Detec\IeC {\c c}\IeC {\~a}o}{16}{section.5.3}
+\contentsline {section}{\numberline {5.4}Resultados Obtidos}{16}{section.5.4}
+\contentsline {section}{\numberline {5.5}Resumo ou Conclus\IeC {\~o}es}{16}{section.5.5}
+\contentsline {chapter}{\numberline {6}Conclus\IeC {\~o}es e Trabalho Futuro}{17}{chapter.6}
+\contentsline {section}{\numberline {6.1}Satisfa\IeC {\c c}\IeC {\~a}o dos Objectivos}{17}{section.6.1}
+\contentsline {section}{\numberline {6.2}Trabalho Futuro}{18}{section.6.2}

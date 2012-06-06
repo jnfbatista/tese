@@ -1,1 +1,1 @@
-add_library(PCLWorker PCLWorker.cpp)
+add_library(PCLWorker PCLWorker.cpp )
