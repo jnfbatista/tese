@@ -5,12 +5,15 @@ Nesta secção do documento, são analisadas todas as áreas científicas releva
 para que esta dissertação possa ser realizada com sucesso, tirando partido do
 conhecimento mais avançado do que está a ser feito a nível mundial e até 
 equacionar novas abordagens para melhorar as soluções existentes para o problema
-do reconhecimento de objectos.
+do reconhecimento de objectos. Mais particularmente o que está feito em termos de
+reconhecimento de objectos 3D em termos ciêntíficos e das livrarias existentes
+nesse âmbito.
+
 Faz-se também uma análise ao que existe em termos de demonstradores de robótica autónoma
 para enquadrar o trabalho a ser desenvolvido respeitante à utilização dos objectos,
 que sendo reconhecidos como marcadores influenciam o comportamento do robô.
 
-\section{Técnicas de detecção de Objectos}\label{objdetect}
+\section{Técnicas de Reconhecimento de Objectos}\label{objdetect}
 
 Nesta secção do documento apresenta-se e explora-se as técnicas mais
 promissoras de detecção e reconhecimento de objectos em imagens 2D e
@@ -96,11 +99,10 @@ transformações que podem ser aplicadas aos objectos.
 
 RANSAC\cite{Fischler:1981:RSC:358669.358692}, um acrónimo de "RANdom SAmple Consensus",
 é um algoritmo que permite extrair, através de um conjunto de dados, os parâmetros
-do modelo matemático que cria as características aproximadas do objecto. Este algoritmo 
-funciona de forma iterativa e a cada iteração melhora a qualidade dos parâmetros extraídos.
+do modelo matemático que compõe as características aproximadas do objecto. Este algoritmo 
+funciona de forma iterativa, sendo que a cada iteração melhora a qualidade dos parâmetros extraídos.
 Este método representa uma evolução significativa dos métodos mínimos quadrados visto ser
-permeável a desvio dos dados sem que estes afectem a qualidade da modelação matemática,
-tal como pode ser visto na figura \ref{fig:ransac}.
+permeável a desvio dos dados sem que estes afectem a qualidade da modelação matemática.
 
 \begin{center}
 	\includegraphics[width=0.80\textwidth]{figures/least_squares_shortcomings.png}
@@ -109,7 +111,7 @@ tal como pode ser visto na figura \ref{fig:ransac}.
 \end{center}
 
 
-\subsection{Point Cloud Library}
+\subsection[PCL]{Point Cloud Library}
 
 \emph{Point Cloud Library} (PCL) é um projecto \emph{opensource} desenvolvido em C++ 
 cujo objectivo é disponibilizar uma ferramenta altamente optimizada para 
@@ -336,7 +338,7 @@ diagrama ~\ref{fig:7}.
 \section{Resumo}
 
 No que diz respeito a detecção de objectos, existem vários algoritmos bastante robustos e
-eficazes na detecção de objectos, contudo são muito voltados para reconhecimento em imagens 
+eficazes na detecção de objectos, contudo são muito voltados para reconhecimento em imagens RGB
 e não tanto baseados em conjuntos de dados 3D e além disso exigem uma fase de aprendizagem.
 
 Os demonstradores autónomos que existem no momento já são bastante completos, considere-se
@@ -344,7 +346,6 @@ como exemplo o \emph{Boss} que navega em ambiente bastante próximo do urbano co
 estando cada vez mais próximo de um cenário onde condução autónoma nas cidades poderia ser
 uma realidade e até mesmo uma mais-valia em termos de segurança. É de assinalar também os esforços
 nas competições de robôs em escalas menores pois com menos recursos e menor escala consegue-se
-testar técnicas inovadoras com soluções menos dispendiosas e obtendo-se resultados igualmente
+testar técnicas inovadoras com soluções menos dispendiosas obtendo-se resultados igualmente
 impressionantes.
-
 

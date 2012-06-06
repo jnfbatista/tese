@@ -4,49 +4,52 @@
 
 Esta dissertação de Mestrado surgiu de um acumular de factores importantes que lhe dão 
 contexto e definem o âmbito da mesma.
+
 Um dos factores que levaram a que esta dissertação fosse proposta foram o facto de ter sido
 desenvolvido, no âmbito de uma tese de Mestrado do curso de Mestrado Integrado em
 Engenharia Electrotécnica e Computadores, um demonstrador de robótica autónoma. 
 
 Entretanto também foi disponibilizado no mercado, um sensor de RGBD da \emph{Microsoft} chamado 
 \emph{Kinect} que foi desenvolvido para o sistemas de jogos \emph{X-Box 360} de modo a
-se interagir com jogos totalmente sem comandos, respondendo, desta forma, ao movimentos e gestos
-dos jogadores. Pouco depois da sua saída para o mercado foi desenvolvido um controlador \emph{opensource}
+se interagir com jogos e software totalmente sem comandos, respondendo, desta forma, ao movimentos e gestos
+dos jogadores. Pouco depois da sua saída para o mercado foram desenvolvidos controladores \emph{opensource},
 sendo que ficou aberta a possibilidade de se utilizar o \emph{Kinect} como um sensor em qualquer
 robô com portas USB.
 
 Estes dois factores, aliados ao desejo de se fazer demonstrações portáveis de robótica autónoma 
-tornaram possível esta dissertação, em que se estuda a identificação de objectos em 3D 
+tornaram possível esta dissertação, em que se estuda a identificação de objectos 3D 
 em tempo real recorrendo à informação de profundidade que o \emph{Kinect} fornece.
 
 Uma noção basilar é que o tipo de informação que será processada serão percepções, portanto
 será sempre a informação obtida pelo \emph{Kinect} mas com contexto, sendo essa percepção
-considerada sempre em unidades SI.
+considerada sempre em unidades SI. \footnote{corrigir...}
 
 \section{Projecto} \label{sec:proj}
 
-Resultante desta dissertação, existirá um projecto desenvolvido que permite que o robô,
-que já se encontra desenvolvido, faça demonstrações de robótica autónoma, usando como sensor
+Além deste documento que expõe o conhecimento e as tecnologias utilizadas para resolver
+o problema, e analisa de forma crítica os resultados obtidos, existirá também um projecto
+desenvolvido que permite o reconhecimento de objectos 3D. Este projecto estará também já preparado
+para se integrar num sistema de um robô que já se encontra desenvolvido, que usa como sensor
 principal o \emph{Kinect}. Este software permitirá configurar vários parâmetros, 
-de uma forma intuitiva, para ser possível fazer diferentes demonstrações combinando
-configurações diferentes.
+de uma forma intuitiva, para ser possível fazer o reconhecimento de objectos 3D e que
+seja claro para o utilizador final o que está a acontecer.
 
 \section{Motivação e Objectivos} \label{sec:goals}
 
 
 A motivação principal desta dissertação é fazer o reconhecimento de objectos em tempo 
 real através do sensor de profundidade (utilizando o \emph{Kinect}), e após reconhecidos
-pelo sistema, serem utilizados para fazer demonstrações de robótica autónoma. Essas
-demonstrações serão possíveis através da programação de comportamentos que serão
-sempre relativos a esses objectos.
+pelo sistema, serem utilizados para fazer demonstrações de robótica autónoma. As características
+mais importantes serão: o reconhecimento de objectos 3D em tempo real e a identificação das
+características dos mesmos.
 
-Esta tese pode ser considerada um sucesso se, além do software do demonstrador, se conseguir
-reconhecer vários objectos através do sensor de profundidade, tais como esferas, cones, cilindros
-e paralelepípedos.
+Esta tese pode ser considerada um sucesso se for possível  reconhecer vários objectos simples
+através do sensor de profundidade, tais como planos, cilindros e paralelepípedos e de objectos
+complexos que sejam compostos pelos simples.
 
 
 \section{Estrutura da Dissertação} \label{sec:struct}
 
 Para além da introdução, esta dissertação contém mais um capítulo.
 No capítulo~\ref{chap:sota}, é descrito o estado da arte e são
-apresentados trabalhos relacionados.
+apresentados trabalhos relacionados. \footnote{complementar este capítulo}
