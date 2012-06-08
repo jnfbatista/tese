@@ -5,7 +5,7 @@ project (Thesis)
 #set (CMAKE_C_FLAGS "-m32")
 
 # Defines the folder where not standard cmake files are stored
-# set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
 
 find_package(PCL 1.3  REQUIRED )
@@ -30,6 +30,9 @@ link_directories(${Qt4_LIBRARY_DIRS})
 
 include(${QT_USE_FILE})
 
+find_package(TinyXML)
+link_directories(${TINYXML_LIBRARY_DIRS})
+
 #add_subdirectory(processfunc)
 
 # Add subdirectories
@@ -37,11 +40,14 @@ add_subdirectory(PCLWorker)
 add_subdirectory(Message)
 add_subdirectory(MessageServer)
 add_subdirectory(gui)
+add_subdirectory(ModelDictionary)
+
 
 add_executable(thesis main.cpp)
 
 target_link_libraries(thesis ${PCL_LIBRARIES}
 	${OPENGL_LIBRARIES} ${GLUT_LIBRARIES} 
+	${TINYXML_LIBRARIES}
 	#${OpenCV_LIBS} 
 	PCLWorker 
 	Message	MessageServer
