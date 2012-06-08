@@ -1,135 +1,27 @@
 \chapter{Revisão Bibliográfica} \label{chap:sota}
 
 \section{Introdução}
-Nesta secção do documento, são analisadas todas as áreas científicas relevantes
+
+Neste capítulo são analisadas todas as áreas científicas relevantes
 para que esta dissertação possa ser realizada com sucesso, tirando partido do
 conhecimento mais avançado do que está a ser feito a nível mundial e até 
 equacionar novas abordagens para melhorar as soluções existentes para o problema
-do reconhecimento de objectos.
+do reconhecimento de objectos. Mais particularmente o que está feito em termos de
+reconhecimento de objectos 3D em termos ciêntíficos e das bibliotecas existentes
+nesse âmbito.
+
 Faz-se também uma análise ao que existe em termos de demonstradores de robótica autónoma
 para enquadrar o trabalho a ser desenvolvido respeitante à utilização dos objectos,
 que sendo reconhecidos como marcadores influenciam o comportamento do robô.
 
-\section{Técnicas de detecção de Objectos}\label{objdetect}
-
-Nesta secção do documento apresenta-se e explora-se as técnicas mais
-promissoras de detecção e reconhecimento de objectos em imagens 2D e
-em estruturas de representação em 3D que assumem a maior importância 
-no âmbito do ramo científico da visão por computador.
-
-\subsection[SIFT]{Scale Invariant Feature Transform}
-
-Scale-Invariant Feature Transform (SIFT) \cite{Lowe:1999:ORL:850924.851523} é uma técnica
-para o reconhecimento de objectos, baseada em modelos, ou seja, que requer
-uma base de dados com as características dos objectos, que é bastante 
-popular em computação visual, pois consegue reconhecer objectos em 
-que tenham sido aplicadas escalas, rotações e perspectivas em 3D. A qualidade
-desta técnica está dependente da qualidade das características que extrai,
-e do facto de estas serem invariantes apesar das transformações que se possa aplicar à imagem.
-
-A extracção de características é feita em vários passos. O primeiro é e
-aplicação da função gaussiana na direcção horizontal a todas as linhas de pixeis
- e de seguida na vertical em todas as colunas.
-É utilizada também uma pirâmide de imagens onde se fez uma progressiva interpolação
-bilinear para suavizar a imagem, sendo que  a função gaussiana é aplicada a
-todas as camadas de modo a que cada uma seja comparada às suas adjacentes
-para determinar os máximos e os mínimos.
-
-\[
-g(x) = \frac{1}{\sqrt{2\pi\sigma}}e^{-x^3 / 2 \sigma^2}
-\]
-
-O resultado desta análise é um conjunto de vectores que representam as
-características do objecto. Esta análise resiste a rotações de 60º sobre
-o eixo vertical e 30º na rotação de um objecto 3D, além disso é
-resistente a rotações de planos em 2D e efeitos de escala.
-
-
-\begin{center}
-	\includegraphics[scale=1.00]{figures/sift_img.png}
-	\captionof{figure}{Exemplo de Detecção utilizando SIFT}
-	\label{fig:1}
-\end{center}
-
-\subsection[SURF]{Speeded Up Robust Feature}
-
-Speeded Up Robust Feature (SURF) é uma técnica bastante próxima
-de SIFT, contudo tem maior robustez às transformações que se pode
-fazer às imagens conseguindo, no processo, aumentar a performance
-da detecção e a repitibilidade \cite{citeulike:973069}.
-
-As melhorias enunciadas são conseguidas através da escolha cuidada
-dos pontos característicos de um objecto. Esta escolha é feita
-utilizando o conceito de imagens integrais \cite{10.1109CVPR.2001.990517}
-cujo conceito básico é que cada pixel $x$ na imagem inicial é a
-soma dos valores dos pixeis no rectângulo formado pela origem da
-imagem e as coordenadas do pixel actual:
-
-\[
-I_\sum(x) = \sum_{i \leq x}^{i=0} \sum_{j \leq y}^{j=0} I(i,j)
-\]
-
-
-A vantagem destas imagens integrais é que são necessárias apenas adições
-para calcular a soma das intensidades em qualquer área rectangular vertical.
-
-Os pontos característicos são encontrados onde o determinante de uma matriz
-hessiana é máxima.
-
-
-
-\subsection{Geometric Hashing}
-
-O geometric hashing, tal como os métodos acima representados é uma técnica baseada
-em modelos prévios que visa reconhecer objectos onde são aplicadas rotações,
-translações e escala \cite{1989SPIE.1095..515C}
-
-Esta técnica tem por base também pontos característicos que são obtidos por
-conjuntos de três pontos não colineares segundo os quais os outros são achados. 
-Desta forma os seus pontos característicos não variam de acordo com as 
-transformações que podem ser aplicadas aos objectos.
-
-%\subsection{Conditional Random Fields}
-
-
-\subsection{RANSAC}
-
-RANSAC\cite{Fischler:1981:RSC:358669.358692}, um acrónimo de "RANdom SAmple Consensus",
-é um algoritmo que permite extrair, através de um conjunto de dados, os parâmetros
-do modelo matemático que cria as características aproximadas do objecto. Este algoritmo 
-funciona de forma iterativa e a cada iteração melhora a qualidade dos parâmetros extraídos.
-Este método representa uma evolução significativa dos métodos mínimos quadrados visto ser
-permeável a desvio dos dados sem que estes afectem a qualidade da modelação matemática,
-tal como pode ser visto na figura \ref{fig:ransac}.
-
-\begin{center}
-	\includegraphics[width=0.80\textwidth]{figures/least_squares_shortcomings.png}
-	\captionof{figure}{Exemplo de fraqueza do método de mínimos quadrados}
-	\label{fig:ransac}
-\end{center}
-
-
-\subsection{Point Cloud Library}
-
-\emph{Point Cloud Library} (PCL) é um projecto \emph{opensource} desenvolvido em C++ 
-cujo objectivo é disponibilizar uma ferramenta altamente optimizada para 
-processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores 
-como o \emph{Kinect} devolvem, que não é mais do que uma nuvem de pontos no espaço,
-com a referência no ponto onde o sensor se encontra.
-O projecto Point Cloud Library (PCL) \cite{Rusu_ICRA2011_PCL} permite que
-através da nuvem de pontos se extraia a informação desejada, sendo que
-já tem implementado um conjunto de filtros, técnicas de reconstrução de
-superfícies, métodos de extracção de características 3D (por exemplo
-normais às superfícies), que a tornam uma ferramenta de muito interessante para usar
-a par do \emph{Kinect}.
-
-\section{Sistemas de percepção para reconhecimento de Objetos}
+\section{Sistemas de Percepção para reconhecimento de Objetos}
 
 \subsection{Time of Flight Camera}
+
 Esta câmara tem receptores para obter o tempo de vôo (i.e.: time-of-flight)
 de uma partícula de luz de modo a saber a que distância se encontram os
 obstáculos no campo de visão da câmara. Existem várias implementações desta
-tecnologia, mas a mais corrente é ter um emissor de luz, por norma um laser,
+tecnologia, mas a mais usual é ter um emissor de luz, por norma um laser,
 que envia pulsos de luz que são reflectidos nos obstáculos e são captados por
 um sensor que a cada “pixel” recebe a distância a que o objecto se encontra.
 
@@ -155,7 +47,9 @@ para escolher o melhor comprimento de onda.
 O \emph{Kinect} é um sensor 3D desenvolvido pela \emph{Microsoft}, cujo objectivo principal era
 ser utilizado a par com o sistema X-Box 360, para a interacção com jogos sem recorrer
 a controladores, sendo que através deste sensor os movimentos do jogador controlam o
-jogo.
+jogo. Este foi o primeiro sensor 3D disponível para o utilizador comum e massificou o
+acesso da comunidade ciêntífica a este tipo de sensores, que de outra forma seriam
+demasiado dispendiosos.
 
 As aplicações deste sensor fora do âmbito original para que foi desenvolvido são inúmeras,
 e rapidamente foi desenvolvido um controlador \emph{opensource} para se desenvolver aplicações
@@ -173,6 +67,134 @@ que capta os infra-vermelhos enviados pelo emissor situado à esquerda.
 
 Entretanto foi lançado no \emph{Windows SDK} um controlador e uma framework oficiais para se 
 desenvolver aplicações fazendo uso do \emph{Kinect} na plataforma \emph{Windows}.
+
+
+\section{Técnicas de Reconhecimento de Objectos}\label{objdetect}
+
+Nesta secção do documento apresenta-se e explora-se as técnicas mais
+promissoras de detecção e reconhecimento de objectos em imagens 2D e
+em estruturas de representação em 3D que assumem a maior importância 
+no âmbito do ramo científico da visão por computador.
+
+\subsection[SIFT]{Scale Invariant Feature Transform}\label{sift}
+
+Scale-Invariant Feature Transform (SIFT) \cite{Lowe:1999:ORL:850924.851523} é uma técnica
+para o reconhecimento de objectos bastante popular em computação visual. Para fazer o 
+reconhecimento de objectos, esta técnica necessita de um treino prévio, onde
+são extraídas características que não variam com a escala, rotações nem com projecções em 3D,
+sendo também parcialmente resistente a diferenças em iluminação.
+
+A qualidade desta técnica está dependente da qualidade das características que extrai,
+e do facto de estas serem invariantes apesar das transformações que se possa aplicar à imagem.
+
+A extracção de características é feita em vários passos. O primeiro é e
+aplicação da função gaussiana na direcção horizontal a todas as linhas de pixeis
+ e de seguida na vertical em todas as colunas.
+É utilizada também uma pirâmide de imagens onde se fez uma progressiva interpolação
+bilinear para suavizar a imagem, sendo que  a função gaussiana é aplicada a
+todas as camadas de modo a que cada uma seja comparada às suas adjacentes
+para determinar os máximos e os mínimos.
+
+\[
+g(x) = \frac{1}{\sqrt{2\pi\sigma}}e^{-x^3 / 2 \sigma^2}
+\]
+
+O resultado desta análise é um conjunto de vectores que representam as
+características do objecto. 
+
+
+\begin{center}
+	\includegraphics[scale=1.00]{figures/sift_img.png}
+	\captionof{figure}{Exemplo de Detecção utilizando SIFT}
+	\label{fig:1}
+\end{center}
+
+\subsection[SURF]{Speeded Up Robust Feature}
+
+Speeded Up Robust Feature (SURF) é uma técnica bastante próxima
+de SIFT\ref{sift}, contudo tem a vantagem de ser mais robusta às transformações que se pode
+fazer às imagens conseguindo também, ao mesmo tempo, aumentar a performance
+e a repitibilidade da detecção nas imagens \cite{citeulike:973069}.
+
+As melhorias enunciadas são conseguidas através da escolha cuidadosa
+dos pontos característicos de um objecto. Esta escolha é feita
+utilizando o conceito de imagens integrais \cite{10.1109CVPR.2001.990517}
+cujo conceito básico é que cada pixel $x$ na imagem inicial é a
+soma dos valores dos pixeis no rectângulo formado pela origem da
+imagem e as coordenadas do pixel actual:
+
+\[
+I_\sum(x) = \sum_{i \leq x}^{i=0} \sum_{j \leq y}^{j=0} I(i,j)
+\]
+
+
+A vantagem destas imagens integrais é que são necessárias apenas adições
+para calcular a soma das intensidades em qualquer área rectangular vertical.
+
+Os pontos característicos são encontrados onde o determinante de uma matriz
+hessiana é máxima.
+
+
+\subsection{Geometric Hashing}
+
+O geometric hashing, tal como os métodos acima representados é uma técnica baseada
+em modelos pré-existentes que visa reconhecer objectos onde são aplicadas rotações,
+translações e escala \cite{1989SPIE.1095..515C}
+
+Esta técnica tem por base também pontos característicos que são obtidos por
+conjuntos de três pontos não colineares segundo os quais os outros são achados. 
+Desta forma os seus pontos característicos não variam de acordo com as 
+transformações que possam ser aplicadas aos objectos.
+
+%\subsection{Conditional Random Fields}
+
+
+\subsection{RANSAC}
+
+RANSAC\cite{Fischler:1981:RSC:358669.358692}, um acrónimo de \emph{RANdom SAmple Consensus},
+é um algoritmo que permite extrair, através de um conjunto de dados, os parâmetros
+do modelo matemático que compõe as características aproximadas do objecto. Este algoritmo 
+funciona de forma iterativa, sendo que a cada iteração melhora a qualidade dos parâmetros extraídos.
+
+Este método representa uma evolução significativa dos métodos mínimos quadrados 
+\footnote{devo referir o método dos mínimos quadrados antes?} visto ser
+permeável a desvio dos dados sem que estes afectem a qualidade da modelação matemática.
+Como se pode ver na figura \ref{fig:ransac_vs_lsq} o método \emph{RANSAC} será um método
+melhor para uma situação real onde os dados têm muito ruído.
+
+
+\begin{center}
+	\includegraphics[width=0.80\textwidth]{figures/least_squares_vs_ransac.png}
+	\captionof{figure}{Comparação com o método de mínimos quadrados}
+	\label{fig:ransac_vs_lsq}
+\end{center}
+
+
+
+\begin{center}
+	\includegraphics[width=0.80\textwidth]{figures/least_squares_shortcomings.png}
+	\captionof{figure}{Exemplo de fraqueza do método de mínimos quadrados}
+	\label{fig:ransac}
+\end{center}
+
+
+\subsection[PCL]{Point Cloud Library}
+
+\emph{Point Cloud Library} (PCL) é um projecto \emph{opensource} desenvolvido em C++ 
+cujo objectivo é disponibilizar uma ferramenta altamente optimizada para 
+processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores 
+como o \emph{Kinect} devolvem, que não é mais do que a nuvem dos pontos captados no espaço,
+com a origem no ponto onde o sensor se encontra, também com a informação 
+O projecto Point Cloud Library (PCL) \cite{Rusu_ICRA2011_PCL} permite que
+através da nuvem de pontos se extraia a informação desejada, sendo que
+já tem implementado um conjunto de filtros, técnicas de reconstrução de
+superfícies, métodos de extracção de características 3D (por exemplo
+normais às superfícies), que a tornam uma ferramenta de muito interessante para usar
+a par do \emph{Kinect}.
+
+
+Um exemplo de uma captura de imagem através do PCL encontra-se na imagem...
+
 
 \section{Demonstradores de Robótica Autónoma}
 Esta secção refere-se a demonstradores de robótica autónoma, onde são referidos
@@ -336,7 +358,7 @@ diagrama ~\ref{fig:7}.
 \section{Resumo}
 
 No que diz respeito a detecção de objectos, existem vários algoritmos bastante robustos e
-eficazes na detecção de objectos, contudo são muito voltados para reconhecimento em imagens 
+eficazes na detecção de objectos, contudo são muito voltados para reconhecimento em imagens RGB
 e não tanto baseados em conjuntos de dados 3D e além disso exigem uma fase de aprendizagem.
 
 Os demonstradores autónomos que existem no momento já são bastante completos, considere-se
@@ -344,7 +366,6 @@ como exemplo o \emph{Boss} que navega em ambiente bastante próximo do urbano co
 estando cada vez mais próximo de um cenário onde condução autónoma nas cidades poderia ser
 uma realidade e até mesmo uma mais-valia em termos de segurança. É de assinalar também os esforços
 nas competições de robôs em escalas menores pois com menos recursos e menor escala consegue-se
-testar técnicas inovadoras com soluções menos dispendiosas e obtendo-se resultados igualmente
+testar técnicas inovadoras com soluções menos dispendiosas obtendo-se resultados igualmente
 impressionantes.
-
 

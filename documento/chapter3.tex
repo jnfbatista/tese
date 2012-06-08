@@ -14,48 +14,86 @@ Dependendo do trabalho, pode ser uma descrição mais teórica, mais
 
 \section{Reconhecimento de Objectos}
 
-% Provavelmente transladar isto para o capítulo 1
-Um dos grandes problemas da condução autónoma, e naturalmente dos seus demonstradores, é o
-da localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. A 
-forma mais simples de resolver este problema é permitir que o robô faça o mapeamento do que
-o rodeia de forma a se situar relativamente ao ambiente em que se insere, nomeadamente aos 
-objectos que o compõem.
-Os objectos que compõem o seu ambiente, sejam eles simples ou devidadamente, complexos
-identificados e situados numa representação interna de um mapa permite que o robô interaja de 
-forma mais eficaz com o ambiente.
 
-E é precisamente esse problema que esta tese se propõe a resolver, através do reconhecimento de
-objectos.
+
+O objectivo desta tese é o reconhecimento de objectos através das percepções de um 
+robô, tirando o máximo partido dos sensores 3D que recentemente apareceram no mercado para o
+utilizador comum. Utilizando tecnologia já desenvolvida, como os sensores 3D e bibliotecas
+informáticas \footnote{????}, será desenvolvida uma aplicação onde se faça o reconhecimento de
+estruturas \footnote{ou objectos} simples, nomeadamente planos, paralelipípedos e cilindros, para
+se utilizar no reconhecimento de objectos mais complexos dos quais estes fazem parte.
+
+Visto que o objectivo último é a integração no software de um demonstrador de robótica autónoma,
+um objectivo secundário é que o reconhecimento seja feito num curto espaço de tempo para maximizar
+a performance do demonstrador.
+
+% Provavelmente transladar isto para o capítulo 1
+%Um dos grandes problemas da condução autónoma, e naturalmente dos seus demonstradores, é o
+%da localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. A 
+%forma mais simples de resolver este problema é permitir que o robô faça o mapeamento do que
+%o rodeia de forma a se situar relativamente ao ambiente em que se insere, nomeadamente aos 
+%objectos que o compõem.
+%Os objectos que compõem o seu ambiente, sejam eles simples ou devidadamente, complexos
+%identificados e situados numa representação interna de um mapa permite que o robô interaja de 
+%forma mais eficaz com o ambiente.
+%
+%E é precisamente esse problema que esta tese se propõe a resolver, através do reconhecimento de
+%objectos.
 % fim de parte supérflua
 
-Como o objectivo desta tese é o reconhecimento de objectos através das percepções de um 
-robô decidiu-se fazer inicialmente o reconhecimento de planos no espaço e de objectos 3D
-simples e depois juntar essas capacidades de reconhecimentos para reconhecer objectos 
-complexos que constituam uma composição dos mais simples que já é possível detectar.
+O trabalho desenvolvido também poderá ser utilizado, no demostrador autónomo, para resolver o problema
+de localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. Havendo 
+reconhecimento de objectos permitirá que o robô utilize a posição dos objectos reconhecidos para 
+mais facilmente se localizar no espaço.
+
+
+
+\section{ Solução do Problema}
+
+Para resolver o problema do reconhecimento de objectos em 3D decidiu-se seguir uma estratégia \emph{bottom-up}
+tratando primeiro do reconheciemtno de objectos simples, nomedamentede planos no espaço, cilindros e paralelipípedos,
+e de seguida reconhecer mesas em cuja constituição se encontram esses objectos.
+
+O sensor utilizado para a captura de informação 3D foi o \emph{Kinect} da \emph{Microsoft} que é o mais comum no mercado
+e também foi o que a comunidade \emph{opensource} mais rápidamente adoptou, desenvolvendo controladores e bibliotecas
+que permitem que o desenvolvimento seja multiplataforma
+
 
 \subsection{Reconhecimento de Objectos Simples}
-Os objectos simples aqui referenciados, não são mais do que as formas elementares existentes
-no 3D:
+
+No que diz respeito a objectos simples optou-se pelos seguintes que são os constituíntes mais comuns
+do principal caso de estudo dos objectos complexos:
 \begin{itemize}
-\item Esferas;
 \item Cilindros;
-\item Toróides;
-\item Pirâmides;
-\item Cubos.
+\item Paralelipipedos;
+\item Planos;
 \end{itemize}
 
-Estas primitivas geométricas (no âmbito do 3D) e o seu rápido reconhecimento permitem que o
-demonstrador de robótica autónoma tenha um conhecimento mais profundo do ambiente que o 
-rodeia e com o qual irá interagir.
-
-Para o reconhecimento destes objectos 
+O reconhecimento destes objectos mais simples terá associado um valor de confiança para se poder
+avaliar a qualidade do método.\footnote{pôr palha}
  
 \subsection{Reconhecimento de Objectos Complexos}
 
-\section{ Procedimento Experimental}
+Para focar os esforços de desnevolvimento definiu-se as \emph{mesas} como caso de estudo dos objectos
+complexos. Esta escolha apoia-se no facto destes objectos relativamente simples terem
+propriedades interessantes para o campo da robótica autónoma.
+
+Um desses factores é o facto de ser um objecto bastante comum que pode ser encontrado em qualquer ambiente.
+
+Outro factor é que, sendo as mesas objectos relativamente simples, a sua morfologia pode ser muito diferente de caso para caso.
+Podemos ter mesas com um só apoio central, outras poderão ter três ou quatro apoios, e estes apoios podem
+ter a forma de cilindros, paralelipípedos ou mesmo até formas menos regulares. Os tampos da mesa podem
+também ter formas bastante diferentes: desde tampos rectângulares, circulares, ovais ou mesmo de formas 
+menos regulares à semelhança dos seus apoios.
+
+Existirá também um dicionário de mesas conhecidas, sobre as quais será produzido um factor de confiança de
+as ter detectado que é calculado a partir do factor de confiança de se ter encontrado os seus constituintes.
+
+%falar do facto de a omissão de dados ser muito menos grave do que a obtenção de dados errados.
 
 
 \section{Resumo e Conclusões}
 
-Resumir e apresentar as conclusões que se podem tirar no fim deste
-capítulo.
+Esta dissertação fará então o reconhecimento de mesas, através do reconhecimentos dos seus constituíntes mais
+simples, i.e.: planos horizontais com várias formas e cilindros e paralelipípedos e indicará a certeza que tem
+de que é realmente uma mesa.

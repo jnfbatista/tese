@@ -2,84 +2,55 @@
 
 \section*{}
 
-Este capítulo pode ser dedicado à apresentação de detalhes de nível
-mais baixo relacionados com o enquadramento e implementação das
-soluções preconizadas no capítulo anterior.
-Note-se no entanto que detalhes desnecessários à compreensão do
-trabalho devem ser remetidos para anexos.
+% Este capítulo pode ser dedicado à apresentação de detalhes de nível
+% mais baixo relacionados com o enquadramento e implementação das
+% soluções preconizadas no capítulo anterior.
+% Note-se no entanto que detalhes desnecessários à compreensão do
+% trabalho devem ser remetidos para anexos.
 
-Dependendo do volume, a avaliação do trabalho pode ser incluída neste
-capítulo ou pode constituir um capítulo separado.
+% Dependendo do volume, a avaliação do trabalho pode ser incluída neste
+% capítulo ou pode constituir um capítulo separado.
+
+O programa desenvolvido foi escrito em \emph{C++} recorrendo a algumas biliotecas 
+informáticas, nomeadamente a \emph{Point Cloud Library} para a captura e manipulação
+de nuvens de pontos, \emph{Boost}, \emph{Qt} para o desenvolvimento da interface
+gráfica. De seguida são analisados com mais detalhe 
 
 \section{Captura de Imagens 3D para análise }
 
-Neste capítulo mostra-se apenas o formato da dissertação.
-
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Integer
-hendrerit commodo ante. Pellentesque nibh libero, aliquam at, faucibus
-id, commodo a, velit. Duis eleifend sem eget leo. Morbi in
-est. Suspendisse magna sem, varius nec, hendrerit non, tincidunt quis,
-quam. Aenean congue. Vivamus vel est sit amet sem iaculis
-posuere. Cras mollis, enim vel gravida aliquam, libero nunc
-ullamcorper dui, ullamcorper sodales lectus nulla sed urna. Morbi
-aliquet porta risus. Proin vestibulum ligula a purus. Maecenas a
-nulla. Maecenas mattis est vitae neque auctor tempus. Etiam nulla dui,
-mattis vitae, porttitor sed, aliquet ut, enim. Cras nisl magna,
-aliquet et, laoreet at, gravida ac, neque. Sed id est. Nulla dapibus
-dolor quis ipsum rhoncus cursus. 
-
-Etiam nisi est, dignissim sodales, fermentum id, pulvinar ac,
-eros. Duis id orci. Nam pretium nisl ac augue. Ut adipiscing magna
-eget est. Curabitur varius. Nulla facilisi. Pellentesque sit amet
-neque ac dui accumsan blandit. Donec mauris felis, egestas sit amet,
-convallis ac, dignissim quis, dolor. Maecenas cursus tortor vel
-leo. Quisque tristique. Nunc augue odio, tincidunt in, dapibus sed,
-ultricies sit amet, lorem. In hac habitasse platea dictumst. Praesent
-iaculis, lacus hendrerit tempor sodales, libero tellus aliquet orci,
-ut rhoncus massa lectus quis erat. Pellentesque quis dolor nec tortor
-rhoncus convallis. Aliquam erat volutpat. Fusce placerat, magna eu
-imperdiet lobortis, augue massa blandit turpis, a consectetuer quam
-arcu sit amet risus. 
+A captura de imagens em 3D foi feita utilizando o \emph{Kinect} e a bilbioteca
+\emph{Point Cloud Library}.
 
 \section{ Análise selecção e Separação de amostra de controlo}
 
-Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Quisque
-purus sapien, interdum ut, vestibulum a, accumsan ullamcorper,
-erat. Mauris a magna ut leo porta imperdiet. Donec dui odio, porta in,
-pretium non, semper quis, orci. Quisque erat diam, pharetra vel,
-laoreet ac, hendrerit vel, enim. Donec tristique luctus risus. Fusce
-dolor est, eleifend id, elementum sit amet, varius vitae, neque. Morbi
-at augue. Ut sem ligula, auctor vitae, facilisis id, pharetra non,
-lectus. Nulla lacus augue, aliquam eget, sollicitudin sed, hendrerit
-eu, leo. Suspendisse ac tortor. Mauris at odio. Etiam vehicula. Nam
-lacinia purus at nibh. Aliquam fringilla lorem ac justo. Ut nec
-enim. 
-
-Quisque ullamcorper. Aliquam vel magna. Sed pulvinar dictum
-ligula. Sed ultrices dolor ut turpis. Vivamus sagittis orci malesuada
-arcu venenatis auctor. Proin vehicula pharetra urna. Aliquam egestas
-nunc quis nisl. Donec ullamcorper. Nulla purus. Ut suscipit lacus
-vitae dui. Mauris semper. Ut eget sem. Integer orci. Nam vitae dui
-eget nisi placerat convallis. 
-
-Sed id lorem. Proin gravida bibendum lacus. Sed molestie, urna quis
-euismod laoreet, diam dolor dictum diam, vitae consectetuer leo ipsum
-id ante. Integer eu lectus non mauris pharetra viverra. In feugiat
-libero ut massa. Morbi cursus, lorem sollicitudin blandit semper,
-felis magna pellentesque lacus, ut rhoncus leo neque at tellus. Sed
-mattis, diam eget eleifend tincidunt, ligula eros tincidunt diam,
-vitae auctor turpis est vel nunc. In eu magna. Donec dolor metus,
-egestas sit amet, ultrices in, faucibus sed, lectus. Etiam est enim,
-vehicula pharetra, porta non, viverra vel, nunc. Ut non sem. Etiam nec
-neque. 
+Seleccionou-se e separou-se algumas imagens com mesas para testar a qualidade
+de detecção após o desenvolvimento da tese.
 
 \section {Implementação da Detecção}
 
+Primeiro é feito um pré processamente para remover o chão da imagem e um corte a X
+metros de modo a eliminar algum ruído persistente na imagem e eliminar a zona de
+onde o \emph{Kinect} perde precisão.
+
+Depois é feita uma clusterização \footnote{isot vai ser passado a grupo de pontos}
+usando o algoritmo KdTree para separar a imagem em
+objectos coerentes e separáveis para não acontecer o caso de estarmos a reconhecer
+o que parece uma perna de uma mesa a dois metros de distância do que é reconhecido
+como um tampo.
+
+De seguida cada um dos objectos separáveis passa por um processo onde se tenta 
+detectar constituintes das mesas, como pernas e tampos. Caso sejam encontrados 
+verifica-se se correspondem a alguma das mesas conhecidas que estão guardadas
+na base de dados das mesas conhecidas\footnote{explicar como isto funciona}.
+Com base no que foi detectado, utilizando uma metodologia fuzzy, foram combinados
+os factores de confiança na detecção dos objectoss simples para dar um factor de 
+confiança de ser alguma das mesas já conhecidas.
+
+
 \section {Resultados Obtidos}
 
-\section{Resumo ou Conclusões}
+TBD
 
-Proin vehicula pharetra urna. Aliquam egestas
-nunc quis nisl. Donec ullamcorper. Nulla purus. Ut suscipit lacus
-vitae dui. Mauris semper. Ut eget sem. Integer orci. Nam vitae dui
-eget nisi placerat convallis. 
+\section{Resumo}
+
+
