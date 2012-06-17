@@ -16,6 +16,7 @@
 #include <pcl/filters/voxel_grid.h>
 #include <pcl/features/normal_3d.h>
 #include <pcl/kdtree/kdtree.h>
+#include <pcl/filters/statistical_outlier_removal.h>
 
 #include <boost/lexical_cast.hpp>
 
@@ -29,6 +30,8 @@
 #include <pcl/filters/conditional_removal.h>
 
 #include "../Message/Message.h"
+#include "../ModelDictionary/ModelDictionary.h"
+#include "../Model/Model.h"
 /*
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
@@ -73,16 +76,21 @@ class PCLWorker {
 		void process(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, string, string);
 
 		pcl::PointCloud<pcl::PointXYZ>::Ptr pre_process(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, string, string);
-		void analyze_image(string);
+		void analyze_image(string, ModelDictionary);
 
 
 		// Returns the found clusters
 		std::vector<pcl::PointCloud<pcl::PointXYZ> > detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);
 
+		void paint_clusters(pcl::PointCloud<pcl::PointXYZ>::Ptr, std::vector<pcl::PointCloud<pcl::PointXYZ> >);
+
+		void cluster_morfology(pcl::PointCloud<pcl::PointXYZ>, Eigen::Vector3f, Eigen::Vector3f, Eigen::Vector3f, Eigen::Vector3f );
+
 		/*
 		 * This is where the magic happens
 		 */
-		void find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr, bool); 
+		std::vector<pcl::PointCloud<pcl::PointXYZ> > find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr, bool, ModelDictionary);
+
 		// line processing sheananigans
 		//void process_rgb(cv::Mat);
 

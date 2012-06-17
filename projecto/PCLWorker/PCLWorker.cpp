@@ -1,4 +1,5 @@
 #include "PCLWorker.h"
+
 void PCLWorker::cloud_cb_(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cloud, int frame_gap) {
 
 	static unsigned count = 0;
@@ -160,6 +161,7 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr PCLWorker::pre_process(const pcl::PointCloud
 	//	transform.rotate(aa);
 	//	pcl::transformPointCloud(*cloud, *cloud, transform);
 
+	printf("\n\nPre processing filtering.\n");
 
 	printf("filtering distances... ");
 	// remove after a given distance
@@ -172,6 +174,16 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr PCLWorker::pre_process(const pcl::PointCloud
 
 	printf("done !\n");
 
+
+	printf("\nRemoving outliers.\n");
+	
+	/*pcl::StatisticalOutlierRemoval<pcl::PointXYZ> sor;
+	sor.setInputCloud (cloud);
+	sor.setMeanK (20);
+	sor.setStddevMulThresh (1.0);
+	sor.filter (*cloud);
+*/
+	printf("Done.\n");
 
 	// Remove outliers
 	/*pcl::RadiusOutlierRemoval<pcl::PointXYZRGBA> outrem;
@@ -240,47 +252,47 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr PCLWorker::pre_process(const pcl::PointCloud
 
 	// Diferentiate objects using clusters
 	// Creating the KdTree object for the search method of the extraction
-//	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
-//	tree->setInputCloud (cloud);
-//
-//	std::vector<pcl::PointIndices> cluster_indices;
-//	pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
-//	ec.setClusterTolerance (0.1); // 50cm
-//	ec.setMinClusterSize (100);
-//	ec.setMaxClusterSize (cloud->points.size() );
-//	ec.setSearchMethod (tree);
-//	ec.setInputCloud (cloud);
-//	ec.extract (cluster_indices);
-//
-//
-//	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
-//
-//	int j = 0;
-//	for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
-//	{
-//		pcl::PointCloud<pcl::PointXYZ> cloud_cluster;// (new pcl::PointCloud<pcl::PointXYZRGBA>);
-//		for (std::vector<int>::const_iterator pit = it->indices.begin (); pit != it->indices.end (); pit++)
-//			cloud_cluster.points.push_back (cloud->points[*pit]); //*
-//
-//		cloud_cluster.width = cloud_cluster.points.size ();
-//		cloud_cluster.height = 1;
-//		cloud_cluster.is_dense = true;
-//
-//
-//		// puts it in the vector
-//		clusters.push_back(cloud_cluster);
-//
-//		std::cout << "PointCloud representing the Cluster: " << cloud_cluster.points.size () << " data points." << std::endl;
-//		//std::stringstream ss;
-//		//ss << "cloud_cluster_" << j << ".pcd";
-//		//writer.write<pcl::PointXYZ> (ss.str (), *cloud_cluster, false); //*
-//		j++;
-//	}
-//
-//	if(clusters.size() == 0) {
-//		printf("No cluster found\n");
-//	}
-//
+	//	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
+	//	tree->setInputCloud (cloud);
+	//
+	//	std::vector<pcl::PointIndices> cluster_indices;
+	//	pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
+	//	ec.setClusterTolerance (0.1); // 50cm
+	//	ec.setMinClusterSize (100);
+	//	ec.setMaxClusterSize (cloud->points.size() );
+	//	ec.setSearchMethod (tree);
+	//	ec.setInputCloud (cloud);
+	//	ec.extract (cluster_indices);
+	//
+	//
+	//	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
+	//
+	//	int j = 0;
+	//	for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
+	//	{
+	//		pcl::PointCloud<pcl::PointXYZ> cloud_cluster;// (new pcl::PointCloud<pcl::PointXYZRGBA>);
+	//		for (std::vector<int>::const_iterator pit = it->indices.begin (); pit != it->indices.end (); pit++)
+	//			cloud_cluster.points.push_back (cloud->points[*pit]); //*
+	//
+	//		cloud_cluster.width = cloud_cluster.points.size ();
+	//		cloud_cluster.height = 1;
+	//		cloud_cluster.is_dense = true;
+	//
+	//
+	//		// puts it in the vector
+	//		clusters.push_back(cloud_cluster);
+	//
+	//		std::cout << "PointCloud representing the Cluster: " << cloud_cluster.points.size () << " data points." << std::endl;
+	//		//std::stringstream ss;
+	//		//ss << "cloud_cluster_" << j << ".pcd";
+	//		//writer.write<pcl::PointXYZ> (ss.str (), *cloud_cluster, false); //*
+	//		j++;
+	//	}
+	//
+	//	if(clusters.size() == 0) {
+	//		printf("No cluster found\n");
+	//	}
+	//
 	// calculate the distance to each
 	/*	for (int i = 0; i < clusters.size(); i++) {
 		float x = 0.0, y = 0.0, z = 0.0, radius = 0.0;
@@ -322,7 +334,7 @@ void PCLWorker::pcl_viewer(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr ptr_cl
 
 
 std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud) {
-	
+
 	// Looks for clusters representing the table
 	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
 	tree->setInputCloud (cloud);
@@ -335,7 +347,6 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pc
 	ec.setSearchMethod (tree);
 	ec.setInputCloud (cloud);
 	ec.extract (cluster_indices);
-
 
 	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
 
@@ -368,43 +379,51 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pc
 	return clusters;
 }
 
+void PCLWorker::cluster_morfology(pcl::PointCloud<pcl::PointXYZ> cluster, Eigen::Vector3f min, Eigen::Vector3f max, Eigen::Vector3f center, Eigen::Vector3f edges) {
+		float x = 0, y = 0, z = 0;
 
-void PCLWorker::analyze_image(string file_path) {
+		for(int p = 0; p < cluster.size(); p++) {
+			x += cluster.points[p].x;
+			y += cluster.points[p].y;
+			z += cluster.points[p].z;
+		}
 
-	pcl::PointCloud<pcl::PointXYZRGBA> cloud;
+		x = x / cluster.size();
+		y = y / cluster.size();
+		z = z / cluster.size();
 
-	// load image
-	printf("loading image...\n");
-	pcl::io::loadPCDFile(file_path, cloud);
-	printf("pcd file loaded\n");
+		printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
+		center[0] = x;
+		center[1] = y;
+		center[2] = z;
 
-	// pre processing
-	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_res = pre_process(cloud.makeShared(), "","");
+		// Morfologia do cluster
+		Eigen::Vector4f min_, max_;
+		pcl::getMinMax3D(cluster, min_, max_);
 
-	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters = detect_clusters(cloud_res);
+		min[0] = min_[0]; min[1] = min_[1]; min[2] = min_[2];
+		max[0] = max_[0]; max[1] = max_[1]; max[2] = max_[2];
 
-	for (int i = 0; i < clusters.size(); i++) {
-		// finds a table
-		printf("Analyzing cluster number %d\n", i +1 );
-		find_table(clusters[i].makeShared(), false);
-		pcl_viewer(clusters[i].makeShared());
-		printf("Done.\n");
-	}
+		printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
+		printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
 
-	// finds a table
-	//find_table(cloud_res, true);
+		edges[0] = max_[0] - min_[0];
+		edges[1] = max_[1] - min_[1];
+		edges[2] = max_[2] - min_[2];
+		printf("\tdiff: %f, %f, %f\n\n", edges[0], edges[1], edges[2]);
 
-	//const pcl::PointCloud<pcl::PointXYZ>::ConstPtr ptr_cloud = cloud_res->makeShared();
-
-	//pcl_viewer(ptr_cloud);
 }
 
+std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remove_plane, ModelDictionary m) {
 
-void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remove_plane) {
-
+	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
 	bool has_plane = false;
 
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_points(new pcl::PointCloud<pcl::PointXYZ>());
+	pcl::PointCloud<pcl::PointXYZ> plane;
+
+
+	printf("\n\nEvaluating cluster to find a table.\n");
 
 	pcl::copyPointCloud(*cloud, *cloud_points);
 
@@ -441,7 +460,7 @@ void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remov
 		has_plane = true;
 
 		if (remove_plane) {
-			printf("Starting removal of planar points... ", cloud->size());
+			printf("Starting identification of planar points (table top)... ", cloud->size());
 
 			// Indices extractor object
 			pcl::ExtractIndices<pcl::PointXYZ> extract;
@@ -449,6 +468,11 @@ void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remov
 			// Extract the inliers
 			extract.setInputCloud (cloud);
 			extract.setIndices (inliers);
+			extract.setNegative (false);
+			extract.filter (plane);
+
+			clusters.push_back(plane);
+
 			extract.setNegative (true);
 			extract.filter (*cloud);
 
@@ -459,6 +483,8 @@ void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remov
 		printf("No plane for you dude!\n");
 	}
 
+
+	printf("Looking for supporting structures...\n");
 
 	// Looks for clusters representing the table
 	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
@@ -473,8 +499,7 @@ void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remov
 	ec.setInputCloud (cloud);
 	ec.extract (cluster_indices);
 
-
-	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
+	printf("Done looking for supporting structures.\n");
 
 	int j = 0;
 	for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
@@ -491,27 +516,143 @@ void PCLWorker::find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr cloud, bool remov
 		// puts it in the vector
 		clusters.push_back(cloud_cluster);
 
-		std::cout << "PointCloud representing the Cluster: " << cloud_cluster.points.size () << " data points." << std::endl;
-		//std::stringstream ss;
-		//ss << "cloud_cluster_" << j << ".pcd";
-		//writer.write<pcl::PointXYZ> (ss.str (), *cloud_cluster, false); //*
+		// std::cout << "PointCloud representing the Cluster: " << cloud_cluster.points.size () << " data points." << std::endl;
+		// std::stringstream ss;
+		// ss << "cloud_cluster_" << j << ".pcd";
+		// writer.write<pcl::PointXYZ> (ss.str (), *cloud_cluster, false);
+
 		j++;
 	}
 
 	if(clusters.size() == 0) {
 		printf("No cluster found\n");
 	} else {
-		printf("Number of clusters found: %d.\n", clusters.size());
+		printf("Number of clusters found: %d.\n", (int)clusters.size());
 	}
 
 
-	// Prints the probability of being a table
-	float probability = clusters.size() / 5.0;
 
-	if (has_plane )
-		probability += 0.2;
+	// Do the math
+	if(!has_plane) {
+		printf("Not a table.\n");
+		return  clusters;
+	} else {
+		// verificar morfologia do tampo, encontrar a diagonal maior e a menor (ou unica se
+		// se optar por circular)
+		// calcular o centro
+		Eigen::Vector3f min, max, center, edges;
 
-	printf("Probability of a table: %f\n", probability );
+
+		cluster_morfology(clusters[0], min, max, center, edges);
+
+		for (int k = 0; k < m.models.size(); k++ ){
+
+		}
+
+		/*
+
+			// Tentativa (falhada) de circunscrever o tampo com um circulo
+
+			pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
+			pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ> ());
+
+			pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
+			pcl::PointIndices::Ptr inliers (new pcl::PointIndices);
+
+			// Create the segmentation object
+			pcl::SACSegmentationFromNormals<pcl::PointXYZ, pcl::Normal> seg;
+
+			// Create the normals object
+			pcl::PointCloud<pcl::Normal>::Ptr cloud_normals (new pcl::PointCloud<pcl::Normal>);
+
+			ne.setSearchMethod(tree);
+			ne.setInputCloud(clusters[0].makeShared());
+			ne.setKSearch(50);
+			ne.compute(*cloud_normals);
 
 
+			// Optional
+			seg.setOptimizeCoefficients (true);
+			seg.setModelType (pcl::SACMODEL_CIRCLE2D );
+			seg.setMethodType (pcl::SAC_RANSAC);
+			seg.setDistanceThreshold (0.08); // @TODO Remove magic number
+			seg.setNormalDistanceWeight(0.5);
+			seg.setRadiusLimits(0, 2.0);
+
+			seg.setInputCloud (clusters[0].makeShared ());
+			seg.setInputNormals(cloud_normals);
+			seg.segment (*inliers, *coefficients);
+
+			std::cerr << "Circular Model coefficients: " 
+				<< coefficients->values[0] << " " 
+				<< coefficients->values[1] << " "
+				<< coefficients->values[2] << std::endl;
+
+			std::cerr << "Model inliers: " << inliers->indices.size () << std::endl;
+		*/
+		for (int c = 1; c < clusters.size(); c++) {
+
+			cluster_morfology(clusters[c], min, max, center, edges);		
+			// verificar a prependicluaridade de cada um dos clusters ao tampo
+			// ver o tamanho máximo de cada um
+			// ver os centros dos clusters
+
+		}
+	}
+
+
+
+	return clusters;
+}
+
+/**
+ * Stub
+ */
+void PCLWorker::paint_clusters(pcl::PointCloud<pcl::PointXYZ>::Ptr, std::vector<pcl::PointCloud<pcl::PointXYZ> >) {
+
+}
+
+
+
+
+
+void PCLWorker::analyze_image(string file_path, ModelDictionary m) {
+
+	pcl::PointCloud<pcl::PointXYZRGBA> cloud;
+
+	// load image
+	printf("loading image...\n");
+	pcl::io::loadPCDFile(file_path, cloud);
+	printf("pcd file loaded\n");
+
+	// pre processing
+	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_res = pre_process(cloud.makeShared(), "","");
+
+	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters = detect_clusters(cloud_res);
+
+	for (int i = 0; i < clusters.size(); i++) {
+		// finds a table
+		printf("Analyzing cluster number %d\n...", i +1 );
+
+		// finds table and its parts and returns the found clusters
+		std::vector<pcl::PointCloud<pcl::PointXYZ> > parts = find_table(clusters[i].makeShared(), true, m);
+
+		// paints the clusters
+		pcl::PointCloud<pcl::PointXYZ>temp_cloud; //(new pcl::PointCloud<pcl::PointXYZ>);
+		//pcl::copyPointCloud(*clusters[i].makeShared(), *temp_cloud);
+
+		for (int j = 0; j < parts.size(); j++ ) {
+			temp_cloud += parts.at(j);
+		}
+
+		pcl_viewer(temp_cloud.makeShared());
+		printf("Done.\n");
+	}
+
+	// finds a table
+	//find_table(cloud_res, true);
+
+	//const pcl::PointCloud<pcl::PointXYZ>::ConstPtr ptr_cloud = cloud_res->makeShared();
+
+	//pcl_viewer(ptr_cloud);
 }

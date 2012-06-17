@@ -41,6 +41,7 @@ add_subdirectory(Message)
 add_subdirectory(MessageServer)
 add_subdirectory(gui)
 add_subdirectory(ModelDictionary)
+add_subdirectory(Model)
 
 
 add_executable(thesis main.cpp)
@@ -50,8 +51,7 @@ target_link_libraries(thesis ${PCL_LIBRARIES}
 	${TINYXML_LIBRARIES}
 	#${OpenCV_LIBS} 
 	PCLWorker 
-	Message	MessageServer
-	Gui
+	Message	MessageServer Gui ModelDictionary Model
 	${QT_LIBRARIES}
 	${Boost_FILESYSTEM_LIBRARY}
 	${Boost_SYSTEM_LIBRARY}

@@ -9,7 +9,7 @@
 #include <pcl/segmentation/sac_segmentation.h>
 
 #ifdef WIN32
-# define sleep(x) Sleep((x)*1000) 
+#define sleep(x) Sleep((x)*1000) 
 #endif
 
 #include <boost/asio.hpp>
@@ -17,12 +17,14 @@
 #include "PCLWorker/PCLWorker.h"
 #include "Message/Message.h"
 #include "MessageServer/MessageServer.h"
+#include "ModelDictionary/ModelDictionary.h"
 #include "gui/Gui.h"
 
 void usage() {
 	printf("Usage of the application:\n");
 	printf("-c\tCapture and analyze point clouds in realtime\n");
 	printf("-v\tShow a point cloud\n");
+	printf("-s\tTake consecutive snapshots of a scene\n");
 }
 
 
@@ -40,10 +42,17 @@ int main ( int argc, char* argv[], char* envp[]) {
 		} else if (strcmp(argv[1], "-s") == 0 ) {
 			PCLWorker v;
 			v.run_capture(30);
-		} else if (strcmp(argv[1], "-p") == 0) { 
+		} else if (strcmp(argv[1], "-p") == 0) {
+			printf("Loading dictionary...\n"); 
+
+			ModelDictionary m ("dictionary.xml");
+
 			printf("Processing a image\n");
+
 			PCLWorker p;
-			p.analyze_image(argv[2]);
+
+			p.analyze_image(argv[2], m);
+			
 		} else if (strcmp(argv[1], "-v") == 0) {
 			if (argc == 3) {
 				// argument char* to string
@@ -92,6 +101,8 @@ int main ( int argc, char* argv[], char* envp[]) {
 				std::cerr << e.what() << std::endl;
 			}
 		} else if (strcmp(argv[1], "-bg") == 0) {
+
+			usage();
 			//PCLWorker p;
 
 			//p.calibrate_background(argv[2], argv[3], argv[4]);
@@ -101,7 +112,7 @@ int main ( int argc, char* argv[], char* envp[]) {
 
 	} else {
 		// TODO Add a more detailed rundown of the commands that can be provided
-		printf("No options provided!\n");
+		usage();
 
 	}
 	return 0;

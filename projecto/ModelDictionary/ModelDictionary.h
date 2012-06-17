@@ -3,19 +3,26 @@
 
 #include <tinyxml.h>
 #include <string>
+#include <vector>
+
+#include "../Model/Model.h"
 
 using std::string;
 
-class ModelDictionary
-{
-public:
-	// creates the object and attaches the logic to a file
-	ModelDictionary(string);
-	~ModelDictionary();
+class ModelDictionary {
 
-private:
+	public:
+		std::vector<Model> dictionary;
 
-	TiXmlDocument filepath;
+		// creates the object and attaches the logic to a file
+		ModelDictionary(string);
+		//~ModelDictionary();
+		//
+		vector<Model> models;
+
+	private:
+
+		TiXmlDocument filepath;
 };
 
 #endif

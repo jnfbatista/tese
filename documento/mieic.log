@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  5 JUN 2012 15:55
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  8 JUN 2012 17:11
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/batista/tese/documento/mieic.tex"}
@@ -586,14 +586,7 @@ LaTeX Info: Redefining \] on input line 2667.
 \openout2 = `mymacros.aux'.
 
 (/home/batista/tese/documento/mymacros.tex)
-(/home/batista/tese/documento/mieic.aux
-(/home/batista/tese/documento/abstract.aux)
-(/home/batista/tese/documento/abbrevs.aux)
-(/home/batista/tese/documento/chapter1.aux)
-(/home/batista/tese/documento/chapter2.aux)
-(/home/batista/tese/documento/chapter3.aux)
-(/home/batista/tese/documento/chapter4.aux)
-(/home/batista/tese/documento/chapter5.aux))
+No file mieic.aux.
 \openout1 = `mieic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -611,7 +604,6 @@ LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 69.
-
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -749,78 +741,76 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 ] [2
 
 
-] (/home/batista/tese/documento/mieic.toc
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 4.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 4.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 4.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 4.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 4.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
- [3
-
-])
+]
 \tf@toc=\write4
 \openout4 = `mieic.toc'.
 
- [4]
-(/home/batista/tese/documento/mieic.lof
+ [3
 
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page v undefined o
-n input line 8.
+] [4
 
-)
+]
+
+Package hyperref Warning: old lof file detected, not used; run LaTeX again.
+
 \tf@lof=\write5
 \openout5 = `mieic.lof'.
 
- [5
-
+[5
 
 ] [6
 
-] (/home/batista/tese/documento/mieic.lot)
+]
+
+Package hyperref Warning: old lot file detected, not used; run LaTeX again.
+
 \tf@lot=\write6
 \openout6 = `mieic.lot'.
 
- [7
+[7
 
 ] [8
 
 ]
 \openout2 = `abbrevs.aux'.
 
+ (/home/batista/tese/documento/abbrevs.tex
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 5.
 
-(/home/batista/tese/documento/abbrevs.tex
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 5.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 5.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 5.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 5.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
+
 Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--8
 []  
  []
@@ -836,188 +826,255 @@ Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--8
 
  (/home/batista/tese/documento/chapter1.tex
 Cap\'{\i }tulo 2.
-[1
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [1
 
 
-]) [2]
+]
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 56.
+
+
+LaTeX Warning: Reference `chap:sota' on page 2 undefined on input line 56.
+
+) [2]
 \openout2 = `chapter2.aux'.
 
  (/home/batista/tese/documento/chapter2.tex
 Cap\'{\i }tulo 3.
 
-LaTeX Warning: Citation `Lowe:1999:ORL:850924.851523' on page 3 undefined on in
-put line 22.
-
-[3
+LaTeX Warning: Citation `Keim2010' on page 3 undefined on input line 38.
 
 
+Underfull \vbox (badness 1028) has occurred while \output is active []
 
-] <figures/sift_img.png, id=321, 265.99374pt x 237.88875pt>
-File: figures/sift_img.png Graphic file (type png)
-
-<use figures/sift_img.png>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 50.
-See the caption package documentation for explanation.
+ [3
 
 
-LaTeX Warning: Citation `citeulike:973069' on page 4 undefined on input line 59
-.
 
-
-LaTeX Warning: Citation `10.1109CVPR.2001.990517' on page 4 undefined on input 
-line 63.
-
-[4 </home/batista/tese/documento/figures/sift_img.png (PNG copy)>]
-
-LaTeX Warning: Citation `1989SPIE.1095..515C' on page 5 undefined on input line
- 85.
-
-
-LaTeX Warning: Citation `Fischler:1981:RSC:358669.358692' on page 5 undefined o
-n input line 97.
-
-<figures/least_squares_shortcomings.png, id=332, 1074.0125pt x 584.1825pt>
-File: figures/least_squares_shortcomings.png Graphic file (type png)
-
-<use figures/least_squares_shortcomings.png>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 107.
-See the caption package documentation for explanation.
-
-
-LaTeX Warning: Citation `Rusu_ICRA2011_PCL' on page 5 undefined on input line 1
-19.
-
-[5 </home/batista/tese/documento/figures/least_squares_shortcomings.png (PNG co
-py)>]
-
-LaTeX Warning: Citation `Keim2010' on page 6 undefined on input line 146.
-
-[6] <figures/Kinect.png, id=342, 1053.1847pt x 576.65437pt>
+]
+<figures/Kinect.png, id=268, 1053.1847pt x 576.65437pt>
 File: figures/Kinect.png Graphic file (type png)
 
 <use figures/Kinect.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 166.
+(caption)                particular \caption on input line 60.
 See the caption package documentation for explanation.
 
-[7 </home/batista/tese/documento/figures/Kinect.png (PNG copy)>]
 
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 8 undefined o
-n input line 202.
+LaTeX Warning: Reference `fig:5' on page 4 undefined on input line 64.
 
-<figures/boss_sensors.png, id=348, 444.91219pt x 212.29312pt>
+[4 </home/batista/tese/documento/figures/Kinect.png (PNG copy)>]
+
+LaTeX Warning: Citation `Lowe:1999:ORL:850924.851523' on page 5 undefined on in
+put line 81.
+
+<figures/sift_img.png, id=274, 265.99374pt x 237.88875pt>
+File: figures/sift_img.png Graphic file (type png)
+
+<use figures/sift_img.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 108.
+See the caption package documentation for explanation.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5]
+
+LaTeX Warning: Reference `sift' on page 6 undefined on input line 115.
+
+
+LaTeX Warning: Citation `citeulike:973069' on page 6 undefined on input line 11
+7.
+
+
+LaTeX Warning: Citation `10.1109CVPR.2001.990517' on page 6 undefined on input 
+line 121.
+
+
+LaTeX Warning: Citation `1989SPIE.1095..515C' on page 6 undefined on input line
+ 142.
+
+[6 </home/batista/tese/documento/figures/sift_img.png (PNG copy)>]
+
+LaTeX Warning: Citation `Fischler:1981:RSC:358669.358692' on page 7 undefined o
+n input line 154.
+
+
+LaTeX Warning: Reference `fig:ransac_vs_lsq' on page 7 undefined on input line 
+162.
+
+
+LaTeX Warning: File `figures/least_squares_vs_ransac.png' not found on input li
+ne 167.
+
+
+! Package pdftex.def Error: File `figures/least_squares_vs_ransac.png' not foun
+d.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.167 ...dth]{figures/least_squares_vs_ransac.png}
+                                                  
+Using draft setting for this image.
+Try typing  <return>  to proceed.
+If that doesn't work, type  X <return>  to quit.
+
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 167.
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 168.
+See the caption package documentation for explanation.
+
+<figures/least_squares_shortcomings.png, id=291, 1074.0125pt x 584.1825pt>
+File: figures/least_squares_shortcomings.png Graphic file (type png)
+
+<use figures/least_squares_shortcomings.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 176.
+See the caption package documentation for explanation.
+
+[7]
+
+LaTeX Warning: Citation `Rusu_ICRA2011_PCL' on page 8 undefined on input line 1
+88.
+
+[8 </home/batista/tese/documento/figures/least_squares_shortcomings.png (PNG co
+py)>]
+
+LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
+n input line 224.
+
+<figures/boss_sensors.png, id=303, 444.91219pt x 212.29312pt>
 File: figures/boss_sensors.png Graphic file (type png)
 
 <use figures/boss_sensors.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 207.
+(caption)                particular \caption on input line 229.
 See the caption package documentation for explanation.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 207.
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 229.
 
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 8 undefined o
-n input line 207.
+LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
+n input line 229.
 
 
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 8 undefined o
-n input line 207.
+LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
+n input line 229.
 
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 213.
-[8 </home/batista/tese/documento/figures/boss_sensors.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 244.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
+
+LaTeX Warning: Reference `boss_sensor' on page 9 undefined on input line 252.
+
+[9 </home/batista/tese/documento/figures/boss_sensors.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 266.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 244.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
 
-<figures/ca_pista.png, id=354, 1090.0725pt x 442.65375pt>
+<figures/ca_pista.png, id=310, 1090.0725pt x 442.65375pt>
 File: figures/ca_pista.png Graphic file (type png)
 
 <use figures/ca_pista.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 261.
+(caption)                particular \caption on input line 283.
 See the caption package documentation for explanation.
 
-[9 </home/batista/tese/documento/figures/ca_pista.png>]
-<figures/minerva.png, id=361, 222.8325pt x 388.45125pt>
+[10 </home/batista/tese/documento/figures/ca_pista.png>]
+<figures/minerva.png, id=318, 222.8325pt x 388.45125pt>
 File: figures/minerva.png Graphic file (type png)
 
 <use figures/minerva.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 277.
+(caption)                particular \caption on input line 299.
 See the caption package documentation for explanation.
 
-<figures/clean_rob.jpeg, id=362, 423.5825pt x 433.62pt>
+<figures/clean_rob.jpeg, id=319, 423.5825pt x 433.62pt>
 File: figures/clean_rob.jpeg Graphic file (type jpg)
 
 <use figures/clean_rob.jpeg>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 302.
+(caption)                particular \caption on input line 324.
 See the caption package documentation for explanation.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [10 </home/batista/tese/documento/figures/minerva.png>]
-<figures/diss_timetable.PNG, id=369, 496.85625pt x 295.1025pt>
+ [11 </home/batista/tese/documento/figures/minerva.png>]
+
+LaTeX Warning: Reference `fig:7' on page 12 undefined on input line 350.
+
+<figures/diss_timetable.PNG, id=327, 496.85625pt x 295.1025pt>
 File: figures/diss_timetable.PNG Graphic file (type png)
 
 <use figures/diss_timetable.PNG>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 332.
+(caption)                particular \caption on input line 354.
 See the caption package documentation for explanation.
 
-[11 </home/batista/tese/documento/figures/clean_rob.jpeg>]) [12 </home/batista/
+[12 </home/batista/tese/documento/figures/clean_rob.jpeg>]) [13 </home/batista/
 tese/documento/figures/diss_timetable.PNG>]
 \openout2 = `chapter3.aux'.
 
 
-(/home/batista/tese/documento/chapter3.tex
+(/home/batista/tese/documento/chapter3.tex [14
+
+
+
+]
 Cap\'{\i }tulo 4.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 7.
-[13
 
+Underfull \vbox (badness 1824) has occurred while \output is active []
 
-
-]) [14]
+ [15])
+[16] [17]
 \openout2 = `chapter4.aux'.
 
- (/home/batista/tese/documento/chapter4.tex
+ (/home/batista/tese/documento/chapter4.tex [18
+
+
+
+]
 Cap\'{\i }tulo 5.
-[15
-
-
-
-]) [16]
+[19]) [20]
 \openout2 = `chapter5.aux'.
 
  (/home/batista/tese/documento/chapter5.tex
 Cap\'{\i }tulo 6.
-[17
+) [21
 
 
 
-]) [18]
+] [22
+
+
+]
 No file mieic.bbl.
 (/home/batista/tese/documento/mieic.aux
 (/home/batista/tese/documento/abstract.aux)
@@ -1035,11 +1092,11 @@ LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
  ) 
 Here is how much of TeX's memory you used:
- 7553 strings out of 493848
- 109678 string characters out of 1152824
- 191537 words of memory out of 3000000
- 10467 multiletter control sequences out of 15000+50000
- 80248 words of font info for 114 fonts, out of 3000000 for 9000
+ 7538 strings out of 493848
+ 108860 string characters out of 1152824
+ 185689 words of memory out of 3000000
+ 10457 multiletter control sequences out of 15000+50000
+ 80869 words of font info for 116 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
  46i,12n,45p,303b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
@@ -1050,9 +1107,9 @@ pfb></usr/share/texmf-texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf
 -texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb
 ></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieic.pdf (32 pages, 1481654 bytes).
+Output written on mieic.pdf (36 pages, 1477429 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
- 95 named destinations out of 1000 (max. 500000)
+ 447 PDF objects out of 1000 (max. 8388607)
+ 109 named destinations out of 1000 (max. 500000)
  401 words of extra memory for PDF output out of 10000 (max. 10000000)
 
