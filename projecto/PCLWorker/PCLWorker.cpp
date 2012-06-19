@@ -176,13 +176,13 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr PCLWorker::pre_process(const pcl::PointCloud
 
 
 	printf("\nRemoving outliers.\n");
-	
+
 	/*pcl::StatisticalOutlierRemoval<pcl::PointXYZ> sor;
-	sor.setInputCloud (cloud);
-	sor.setMeanK (20);
-	sor.setStddevMulThresh (1.0);
-	sor.filter (*cloud);
-*/
+	  sor.setInputCloud (cloud);
+	  sor.setMeanK (20);
+	  sor.setStddevMulThresh (1.0);
+	  sor.filter (*cloud);
+	  */
 	printf("Done.\n");
 
 	// Remove outliers
@@ -380,37 +380,37 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pc
 }
 
 void PCLWorker::cluster_morfology(pcl::PointCloud<pcl::PointXYZ> cluster, Eigen::Vector3f min, Eigen::Vector3f max, Eigen::Vector3f center, Eigen::Vector3f edges) {
-		float x = 0, y = 0, z = 0;
+	float x = 0, y = 0, z = 0;
 
-		for(int p = 0; p < cluster.size(); p++) {
-			x += cluster.points[p].x;
-			y += cluster.points[p].y;
-			z += cluster.points[p].z;
-		}
+	for(int p = 0; p < cluster.size(); p++) {
+		x += cluster.points[p].x;
+		y += cluster.points[p].y;
+		z += cluster.points[p].z;
+	}
 
-		x = x / cluster.size();
-		y = y / cluster.size();
-		z = z / cluster.size();
+	x = x / cluster.size();
+	y = y / cluster.size();
+	z = z / cluster.size();
 
-		printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
-		center[0] = x;
-		center[1] = y;
-		center[2] = z;
+	printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
+	center[0] = x;
+	center[1] = y;
+	center[2] = z;
 
-		// Morfologia do cluster
-		Eigen::Vector4f min_, max_;
-		pcl::getMinMax3D(cluster, min_, max_);
+	// Morfologia do cluster
+	Eigen::Vector4f min_, max_;
+	pcl::getMinMax3D(cluster, min_, max_);
 
-		min[0] = min_[0]; min[1] = min_[1]; min[2] = min_[2];
-		max[0] = max_[0]; max[1] = max_[1]; max[2] = max_[2];
+	min[0] = min_[0]; min[1] = min_[1]; min[2] = min_[2];
+	max[0] = max_[0]; max[1] = max_[1]; max[2] = max_[2];
 
-		printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
-		printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
+	printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
+	printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
 
-		edges[0] = max_[0] - min_[0];
-		edges[1] = max_[1] - min_[1];
-		edges[2] = max_[2] - min_[2];
-		printf("\tdiff: %f, %f, %f\n\n", edges[0], edges[1], edges[2]);
+	edges[0] = max_[0] - min_[0];
+	edges[1] = max_[1] - min_[1];
+	edges[2] = max_[2] - min_[2];
+	printf("\tdiff: %f, %f, %f\n\n", edges[0], edges[1], edges[2]);
 
 }
 
@@ -537,6 +537,8 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::find_table(pcl::PointClo
 		printf("Not a table.\n");
 		return  clusters;
 	} else {
+
+
 		// verificar morfologia do tampo, encontrar a diagonal maior e a menor (ou unica se
 		// se optar por circular)
 		// calcular o centro
@@ -545,59 +547,64 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::find_table(pcl::PointClo
 
 		cluster_morfology(clusters[0], min, max, center, edges);
 
-		for (int k = 0; k < m.models.size(); k++ ){
 
-		}
+		for (int k = 0; k < m.models.size(); k++ ) {
 
-		/*
+			float big, small;
 
-			// Tentativa (falhada) de circunscrever o tampo com um circulo
+			// COmo o tampo é horizontal a propagação dos valores é em x e z
+			if (edges[0] > edges[2]) {
+				big = edges[0];
+				small = edges[2];
+			} else {
+				big = edges[2];
+				small = edges[0];
+			}
 
-			pcl::NormalEstimation<pcl::PointXYZ, pcl::Normal> ne;
-			pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ> ());
-
-			pcl::ModelCoefficients::Ptr coefficients (new pcl::ModelCoefficients);
-			pcl::PointIndices::Ptr inliers (new pcl::PointIndices);
-
-			// Create the segmentation object
-			pcl::SACSegmentationFromNormals<pcl::PointXYZ, pcl::Normal> seg;
-
-			// Create the normals object
-			pcl::PointCloud<pcl::Normal>::Ptr cloud_normals (new pcl::PointCloud<pcl::Normal>);
-
-			ne.setSearchMethod(tree);
-			ne.setInputCloud(clusters[0].makeShared());
-			ne.setKSearch(50);
-			ne.compute(*cloud_normals);
+			float large_dimension = atof(m.models[k].params["large_dimension"].c_str());
+			float small_dimension = atof(m.models[k].params["small_dimension"].c_str());
 
 
-			// Optional
-			seg.setOptimizeCoefficients (true);
-			seg.setModelType (pcl::SACMODEL_CIRCLE2D );
-			seg.setMethodType (pcl::SAC_RANSAC);
-			seg.setDistanceThreshold (0.08); // @TODO Remove magic number
-			seg.setNormalDistanceWeight(0.5);
-			seg.setRadiusLimits(0, 2.0);
+			float dev_big =	abs(large_dimension - big);
+			float dev_small = abs(small_dimension - small);
 
-			seg.setInputCloud (clusters[0].makeShared ());
-			seg.setInputNormals(cloud_normals);
-			seg.segment (*inliers, *coefficients);
+			float big_prox, small_prox;
 
-			std::cerr << "Circular Model coefficients: " 
-				<< coefficients->values[0] << " " 
-				<< coefficients->values[1] << " "
-				<< coefficients->values[2] << std::endl;
+			big_prox = dev_big / large_dimension;
+			small_prox = dev_small / small_dimension;
 
-			std::cerr << "Model inliers: " << inliers->indices.size () << std::endl;
-		*/
+			printf("\t- %f %f \n", big_prox, small_prox);
+
+		// support calc
+
+		// check nº of legs
+		int leg_n =  atoi(m.models[k].params["number"].c_str());
+
+		// check size
+		float l_height =  atof(m.models[k].params["height"].c_str());
+		float cal_height;
+
+		// evaluate someway
+
 		for (int c = 1; c < clusters.size(); c++) {
 
-			cluster_morfology(clusters[c], min, max, center, edges);		
+			cluster_morfology(clusters[c], min, max, center, edges);
+
+			cal_height += edges[1];
 			// verificar a prependicluaridade de cada um dos clusters ao tampo
 			// ver o tamanho máximo de cada um
 			// ver os centros dos clusters
+		}
+
+		float med_height = cal_height / (clusters.size() -1);
+
+		float leg_eval = abs(l_height - med_height) / l_height;
+
+		printf("%d %f\n", (int) clusters.size() - 1, leg_eval );
 
 		}
+
+
 	}
 
 

@@ -5,7 +5,6 @@
 #include <pcl/common/time.h>
 #include <pcl/common/transforms.h>
 #include <pcl/visualization/cloud_viewer.h>
-#include <string.h>
 
 // segmentation related includes
 #include <pcl/ModelCoefficients.h>
@@ -28,6 +27,10 @@
 
 #include <pcl/filters/radius_outlier_removal.h>
 #include <pcl/filters/conditional_removal.h>
+
+#include <map>
+#include <cmath>
+#include <string>
 
 #include "../Message/Message.h"
 #include "../ModelDictionary/ModelDictionary.h"

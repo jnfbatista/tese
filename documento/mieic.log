@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  8 JUN 2012 17:11
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  18 JUN 2012 14:42
 entering extended mode
  %&-line parsing enabled.
 **\nonstopmode \input{"/home/batista/tese/documento/mieic.tex"}
@@ -582,11 +582,23 @@ LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
 (/home/batista/tese/documento/mieicpatch.sty)
+\@indexfile=\write3
+\openout3 = `mieic.idx'.
+
+
+Writing index file mieic.idx
 \@input{mymacros.aux}
 \openout2 = `mymacros.aux'.
 
 (/home/batista/tese/documento/mymacros.tex)
-No file mieic.aux.
+(/home/batista/tese/documento/mieic.aux
+(/home/batista/tese/documento/abstract.aux)
+(/home/batista/tese/documento/abbrevs.aux)
+(/home/batista/tese/documento/chapter1.aux)
+(/home/batista/tese/documento/chapter2.aux)
+(/home/batista/tese/documento/chapter3.aux)
+(/home/batista/tese/documento/chapter4.aux)
+(/home/batista/tese/documento/chapter5.aux))
 \openout1 = `mieic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -604,6 +616,7 @@ LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 69.
 LaTeX Font Info:    ... okay on input line 69.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 69.
+
 (/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
@@ -678,8 +691,8 @@ LaTeX Info: Redefining \pageref on input line 69.
 
 (/home/batista/tese/documento/mieic.out)
 (/home/batista/tese/documento/mieic.out)
-\@outlinefile=\write3
-\openout3 = `mieic.out'.
+\@outlinefile=\write4
+\openout4 = `mieic.out'.
 
 \AtBeginShipoutBox=\box31
 \@crestbox=\box32
@@ -688,29 +701,10 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 104.
 
+<figures/feup-logo.png, id=183, 155.58125pt x 200.75pt>
+File: figures/feup-logo.png Graphic file (type png)
 
-LaTeX Warning: File `feup-logo.pdf' not found on input line 104.
-
-
-! Package pdftex.def Error: File `feup-logo.pdf' not found.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.104 
-      
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+pcrs on input line 104.
-
-(/usr/share/texmf-texlive/tex/latex/courier-scaled/t1pcrs.fd
-File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
-)
-LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 10.40245pt on input line 104.
+<use figures/feup-logo.png>
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 104.
  [-3{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
@@ -718,7 +712,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 
 
 
-] [-2
+ </home/batista/tese/documento/figures/feup-logo.png>] [-2
 
 
 
@@ -741,77 +735,79 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 ] [2
 
 
-]
-\tf@toc=\write4
-\openout4 = `mieic.toc'.
+] (/home/batista/tese/documento/mieic.toc
+LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
+LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 4.
 
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 4.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
+File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 4.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
+File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 4.
+
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
+File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
+)
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 4.
+
+(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 4.
  [3
 
-] [4
+])
+\tf@toc=\write5
+\openout5 = `mieic.toc'.
 
-]
+ [4]
+(/home/batista/tese/documento/mieic.lof
 
-Package hyperref Warning: old lof file detected, not used; run LaTeX again.
+LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page v undefined o
+n input line 9.
 
-\tf@lof=\write5
-\openout5 = `mieic.lof'.
+)
+\tf@lof=\write6
+\openout6 = `mieic.lof'.
 
-[5
+ [5
+
 
 ] [6
 
-]
+] (/home/batista/tese/documento/mieic.lot)
+\tf@lot=\write7
+\openout7 = `mieic.lot'.
 
-Package hyperref Warning: old lot file detected, not used; run LaTeX again.
-
-\tf@lot=\write6
-\openout6 = `mieic.lot'.
-
-[7
+ [7
 
 ] [8
 
 ]
 \openout2 = `abbrevs.aux'.
 
- (/home/batista/tese/documento/abbrevs.tex
-LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 5.
 
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
-File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 5.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omlztmcm.fd
-File: omlztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OML/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMS+ztmcm on input line 5.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omsztmcm.fd
-File: omsztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMS/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OMX+ztmcm on input line 5.
-
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/omxztmcm.fd
-File: omxztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OMX/ztmcm.
-)
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 5.
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 5.
-
-Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--8
+(/home/batista/tese/documento/abbrevs.tex
+Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--10
 []  
  []
 
@@ -834,14 +830,8 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [1
 
 
-]
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 56.
-
-
-LaTeX Warning: Reference `chap:sota' on page 2 undefined on input line 56.
-
-) [2]
+])
+[2]
 \openout2 = `chapter2.aux'.
 
  (/home/batista/tese/documento/chapter2.tex
@@ -857,24 +847,21 @@ Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 ]
-<figures/Kinect.png, id=268, 1053.1847pt x 576.65437pt>
-File: figures/Kinect.png Graphic file (type png)
+<./figures/Kinect.png, id=329, 1053.1847pt x 576.65437pt>
+File: ./figures/Kinect.png Graphic file (type png)
 
-<use figures/Kinect.png>
+<use ./figures/Kinect.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 60.
 See the caption package documentation for explanation.
 
-
-LaTeX Warning: Reference `fig:5' on page 4 undefined on input line 64.
-
-[4 </home/batista/tese/documento/figures/Kinect.png (PNG copy)>]
+[4 <./figures/Kinect.png (PNG copy)>]
 
 LaTeX Warning: Citation `Lowe:1999:ORL:850924.851523' on page 5 undefined on in
 put line 81.
 
-<figures/sift_img.png, id=274, 265.99374pt x 237.88875pt>
+<figures/sift_img.png, id=335, 265.99374pt x 237.88875pt>
 File: figures/sift_img.png Graphic file (type png)
 
 <use figures/sift_img.png>
@@ -887,9 +874,6 @@ See the caption package documentation for explanation.
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
-
-LaTeX Warning: Reference `sift' on page 6 undefined on input line 115.
-
 
 LaTeX Warning: Citation `citeulike:973069' on page 6 undefined on input line 11
 7.
@@ -906,10 +890,6 @@ LaTeX Warning: Citation `1989SPIE.1095..515C' on page 6 undefined on input line
 
 LaTeX Warning: Citation `Fischler:1981:RSC:358669.358692' on page 7 undefined o
 n input line 154.
-
-
-LaTeX Warning: Reference `fig:ransac_vs_lsq' on page 7 undefined on input line 
-162.
 
 
 LaTeX Warning: File `figures/least_squares_vs_ransac.png' not found on input li
@@ -929,14 +909,20 @@ Using draft setting for this image.
 Try typing  <return>  to proceed.
 If that doesn't work, type  X <return>  to quit.
 
+LaTeX Font Info:    Try loading font information for T1+pcrs on input line 167.
+
+(/usr/share/texmf-texlive/tex/latex/courier-scaled/t1pcrs.fd
+File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
+)
 LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 167.
+
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 168.
 See the caption package documentation for explanation.
 
-<figures/least_squares_shortcomings.png, id=291, 1074.0125pt x 584.1825pt>
+<figures/least_squares_shortcomings.png, id=353, 1074.0125pt x 584.1825pt>
 File: figures/least_squares_shortcomings.png Graphic file (type png)
 
 <use figures/least_squares_shortcomings.png>
@@ -956,10 +942,10 @@ py)>]
 LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
 n input line 224.
 
-<figures/boss_sensors.png, id=303, 444.91219pt x 212.29312pt>
-File: figures/boss_sensors.png Graphic file (type png)
+<./figures/boss_sensors.png, id=364, 444.91219pt x 212.29312pt>
+File: ./figures/boss_sensors.png Graphic file (type png)
 
-<use figures/boss_sensors.png>
+<use ./figures/boss_sensors.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 229.
@@ -981,10 +967,7 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
-
-LaTeX Warning: Reference `boss_sensor' on page 9 undefined on input line 252.
-
-[9 </home/batista/tese/documento/figures/boss_sensors.png (PNG copy)>]
+[9 <./figures/boss_sensors.png (PNG copy)>]
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 266.
 
 
@@ -994,29 +977,29 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
 
-<figures/ca_pista.png, id=310, 1090.0725pt x 442.65375pt>
-File: figures/ca_pista.png Graphic file (type png)
+<./figures/ca_pista.png, id=370, 1090.0725pt x 442.65375pt>
+File: ./figures/ca_pista.png Graphic file (type png)
 
-<use figures/ca_pista.png>
+<use ./figures/ca_pista.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 283.
 See the caption package documentation for explanation.
 
-[10 </home/batista/tese/documento/figures/ca_pista.png>]
-<figures/minerva.png, id=318, 222.8325pt x 388.45125pt>
-File: figures/minerva.png Graphic file (type png)
+[10 <./figures/ca_pista.png>]
+<./figures/minerva.png, id=376, 222.8325pt x 388.45125pt>
+File: ./figures/minerva.png Graphic file (type png)
 
-<use figures/minerva.png>
+<use ./figures/minerva.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 299.
 See the caption package documentation for explanation.
 
-<figures/clean_rob.jpeg, id=319, 423.5825pt x 433.62pt>
-File: figures/clean_rob.jpeg Graphic file (type jpg)
+<./figures/clean_rob.jpeg, id=377, 423.5825pt x 433.62pt>
+File: ./figures/clean_rob.jpeg Graphic file (type jpg)
 
-<use figures/clean_rob.jpeg>
+<use ./figures/clean_rob.jpeg>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 324.
@@ -1025,21 +1008,17 @@ See the caption package documentation for explanation.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 </home/batista/tese/documento/figures/minerva.png>]
+ [11 <./figures/minerva.png>]
+<./figures/diss_timetable.PNG, id=385, 496.85625pt x 295.1025pt>
+File: ./figures/diss_timetable.PNG Graphic file (type png)
 
-LaTeX Warning: Reference `fig:7' on page 12 undefined on input line 350.
-
-<figures/diss_timetable.PNG, id=327, 496.85625pt x 295.1025pt>
-File: figures/diss_timetable.PNG Graphic file (type png)
-
-<use figures/diss_timetable.PNG>
+<use ./figures/diss_timetable.PNG>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
 (caption)                particular \caption on input line 354.
 See the caption package documentation for explanation.
 
-[12 </home/batista/tese/documento/figures/clean_rob.jpeg>]) [13 </home/batista/
-tese/documento/figures/diss_timetable.PNG>]
+[12 <./figures/clean_rob.jpeg>]) [13 <./figures/diss_timetable.PNG>]
 \openout2 = `chapter3.aux'.
 
 
@@ -1076,6 +1055,7 @@ Cap\'{\i }tulo 6.
 
 ]
 No file mieic.bbl.
+No file mieic.ind.
 (/home/batista/tese/documento/mieic.aux
 (/home/batista/tese/documento/abstract.aux)
 (/home/batista/tese/documento/abbrevs.aux)
@@ -1087,18 +1067,15 @@ No file mieic.bbl.
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
  ) 
 Here is how much of TeX's memory you used:
- 7538 strings out of 493848
- 108860 string characters out of 1152824
- 185689 words of memory out of 3000000
- 10457 multiletter control sequences out of 15000+50000
- 80869 words of font info for 116 fonts, out of 3000000 for 9000
+ 7570 strings out of 493848
+ 109934 string characters out of 1152824
+ 191592 words of memory out of 3000000
+ 10467 multiletter control sequences out of 15000+50000
+ 80248 words of font info for 114 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 46i,12n,45p,303b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 46i,12n,45p,333b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
 pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
@@ -1107,9 +1084,9 @@ pfb></usr/share/texmf-texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf
 -texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/
 urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb
 ></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieic.pdf (36 pages, 1477429 bytes).
+Output written on mieic.pdf (36 pages, 1502009 bytes).
 PDF statistics:
- 447 PDF objects out of 1000 (max. 8388607)
- 109 named destinations out of 1000 (max. 500000)
- 401 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 501 PDF objects out of 1000 (max. 8388607)
+ 108 named destinations out of 1000 (max. 500000)
+ 406 words of extra memory for PDF output out of 10000 (max. 10000000)
 
