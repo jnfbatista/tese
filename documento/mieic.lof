@@ -2,15 +2,34 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Composi\IeC {\c c}\IeC {\~a}o do Kinect\relax }}{4}{figure.3.1}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Composi\IeC {\c c}\IeC {\~a}o do Kinect \cite {wiredkinect}\relax }}{4}{figure.3.1}
 \contentsline {figure}{\numberline {3.2}{\ignorespaces Exemplo de Detec\IeC {\c c}\IeC {\~a}o utilizando SIFT\relax }}{6}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Compara\IeC {\c c}\IeC {\~a}o com o m\IeC {\'e}todo de m\IeC {\'\i }nimos quadrados\relax }}{7}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces Exemplo de fraqueza do m\IeC {\'e}todo de m\IeC {\'\i }nimos quadrados\relax }}{8}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Sensores no Boss \cite {Urmson:2008:ADU:1395073.1395077}.\relax }}{9}{figure.3.5}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Pista de Condu\IeC {\c c}\IeC {\~a}o Aut\IeC {\'o}noma no Festival Nacional de Rob\IeC {\'o}tica\relax }}{10}{figure.3.6}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces MINERVA - Rob\IeC {\^o} guia do museu Smithsonian\relax }}{11}{figure.3.7}
-\contentsline {figure}{\numberline {3.8}{\ignorespaces CleanRob\relax }}{12}{figure.3.8}
-\contentsline {figure}{\numberline {3.9}{\ignorespaces Planeamento de Tarefas\relax }}{13}{figure.3.9}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Exemplo de imagem capturada s\IeC {\'o} com a informa\IeC {\c c}\IeC {\~a}o de profundidade\relax }}{9}{figure.3.5}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Exemplo de imagem capturada com informa\IeC {\c c}\IeC {\~a}o RGBD\relax }}{9}{figure.3.6}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Sensores no Boss \cite {Urmson:2008:ADU:1395073.1395077}.\relax }}{11}{figure.3.7}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Pista de Condu\IeC {\c c}\IeC {\~a}o Aut\IeC {\'o}noma no Festival Nacional de Rob\IeC {\'o}tica\relax }}{12}{figure.3.8}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces MINERVA - Rob\IeC {\^o} guia do museu Smithsonian\relax }}{13}{figure.3.9}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces CleanRob\relax }}{14}{figure.3.10}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplo de imagem capturada com informa\IeC {\c c}\IeC {\~a}o RGBD (duas perspetivas) e a imagem RGB correspondente.\relax }}{18}{figure.5.1}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Foto das posi\IeC {\c c}\IeC {\~o}es da mesa relativas ao Kinect.\relax }}{19}{figure.5.2}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.35 m)\relax }}{20}{figure.caption.9}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.34 m)\relax }}{20}{figure.caption.10}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.00 m)\relax }}{21}{figure.caption.11}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.93 m)\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.30 m)\relax }}{22}{figure.caption.13}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{22}{figure.caption.14}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{23}{figure.caption.15}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (3.00 m)\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Funcionamento do processo global.\relax }}{27}{figure.caption.21}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Exemplo de imagem ap\IeC {\'o}s pr\IeC {\'e} processamento.\relax }}{28}{figure.caption.22}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Primeira mesa a ser identificada.\relax }}{31}{figure.caption.23}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Segunda mesa a ser identificada.\relax }}{32}{figure.caption.24}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Terceira mesa a ser identificada.\relax }}{33}{figure.caption.25}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Clusters representativos da mesa 1.\relax }}{33}{figure.caption.28}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Clusters representativos da mesa 2.\relax }}{34}{figure.caption.30}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Clusters representativos da mesa 3.\relax }}{35}{figure.caption.32}
 \addvspace {10\p@ }

@@ -18,6 +18,8 @@
 #include <pcl/filters/statistical_outlier_removal.h>
 
 #include <boost/lexical_cast.hpp>
+#include <boost/date_time/posix_time/posix_time_types.hpp>
+#include <boost/timer.hpp> 
 
 #include <pcl/ModelCoefficients.h>
 #include <pcl/io/pcd_io.h>
@@ -31,6 +33,8 @@
 #include <map>
 #include <cmath>
 #include <string>
+#include <time.h>
+#include <exception>
 
 #include "../Message/Message.h"
 #include "../ModelDictionary/ModelDictionary.h"
@@ -40,7 +44,11 @@
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/ml/ml.hpp>
 #include "processfunc.h"
+
+
 */
+
+#define PI 3.14159265
 
 using std::string;
 
@@ -96,6 +104,8 @@ class PCLWorker {
 
 		// line processing sheananigans
 		//void process_rgb(cv::Mat);
+
+		time_t seconds;
 
 
 };

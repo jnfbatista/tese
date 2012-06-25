@@ -2,26 +2,29 @@
 
 \section*{}
 
-Deve ser apresentado um resumo do trabalho realizado e apreciada a
-satisfação dos objetivos do trabalho, uma lista de contribuições
-principais do trabalho e as direções para trabalho futuro.
+%Deve ser apresentado um resumo do trabalho realizado e apreciada a satisfação dos objetivos do trabalho, uma lista de contribuições principais do trabalho e as direções para trabalho futuro.
 
-A escrita deste capítulo deve ser orientada para a total compreensão
-do trabalho, tendo em atenção que, depois de ler o Resumo e a
-Introdução, a maioria dos leitores passará à leitura deste capítulo de
-conclusões e recomendações para trabalho futuro.
+% A escrita deste capítulo deve ser orientada para a total compreensão do trabalho, tendo em atenção que, depois de ler o Resumo e a Introdução, a maioria dos leitores passará à leitura deste capítulo de conclusões e recomendações para trabalho futuro.
 
-\section{Satisfação dos Objectivos}
+\section{Satisfação dos Objetivos}
 
- 
+A avaliação da precisão do \emph{Kinect} foi um sucesso porque se conseguiu verificar que é bastante preciso ao posicionar um objeto no espaço, ou seja, a identificar a que distância está e que ângulo faz com o sensor.
+
+O objetivo de reconhecimento de mesas foi cumprido sendo que as mesas são identificadas corretamente. O reconhecimento, apesar de ter margem para melhorar, é rápido e consegue detetar uma mesa com poucas características e produz alguns resultados satisfatórios, contudo existem diferenças demasiado pequenas entre a confiança de modelos diferentes.
+
+Quanto aos apoios a ideia inicial seria detetar a sua forma, contudo essa ideia foi simplificada aquando da implementação, pois a PCL permite já fazer a deteção de algumas dessas primitivas mas principalmente porque o processo de identificação é custoso em termos de tempo de execução, atrasando o reconhecimento e não trazendo vantagens significativas.
+
+Uma das limitações encontradas para esta metodologia foi que quando o tampo se encontra alinhado com o sensor em termos de altura, a mesa não é reconhecida, pois postulou-se que a existência de um plano horizontal é obrigatória, sendo que desta forma nenhum plano é encontrado.
+
+Finalmente também é de salientar que é possível fazer o reconhecimento de várias mesas que estejam presentes numa só imagem RGBD, contudo há que ter atenção aos casos onde uma mesa esteja  parcialmente oculta por outra podendo ter um impacto muito negativo na confiança de ser o modelo que na realidade a descreve no dicionário.
 
 \section{Trabalho Futuro}
 
-No que diz respeito a trabalho futuro, existem várias melhorias que poderiam ser introduzidas, contudo as mais concretas seriam em dois campos muito particulares: rapidez de reconhecimento e a forma como a avaliação é realizada.
+No que diz respeito a trabalho futuro, existem várias melhorias que poderiam ser introduzidas, contudo as mais concretas seriam em dois campos muito particulares: rapidez do pré-processamento e a forma como a avaliação é realizada.
 
-No que diz respeito à rapidez de reconhecimento, tendo em conta que a rapidez de identificação é um requisito muito importante no que diz respeito à robótica autónoma, poder-se-á potenciar a velocidade de reconhecimento usando bibliotecas de paralelização (como a OpenMP) para avaliar os \emph{clusters}, encontrados na imagem, em paralelo. Outra das hipóteses seria usar, por exemplo, algoritmos genéticos para otimizar os fatores envolvidos na deteção de \emph{clusters} pois é a operação mais custosa em termos de tempo no processo global\footnote{fundamentar com dados}.
+No que diz respeito à rapidez da identificação, tendo em conta que a sua rapidez de execução é um requisito muito importante na robótica autónoma, poder-se-á potenciar a velocidade de clusterização usando bibliotecas de paralelização (como a OpenMP) para avaliar os \emph{clusters}, encontrados na imagem, em paralelo. Outra das hipóteses seria usar, por exemplo, algoritmos genéticos para otimizar os fatores envolvidos na deteção de \emph{clusters} pois é a operação mais custosa em termos de tempo no processo global, principalmente o que é feito no pré-processamento.
 
-Quanto à avaliação, 
+Fica também para trabalho futuro a deteção da morfologia das pernas das mesas, principalmente as que são paralelepípedas e cilíndricas, mas certamente contribuiria para melhorar a qualidade da identificação.
 
 
 

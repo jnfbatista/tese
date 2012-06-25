@@ -6,7 +6,7 @@ Neste capítulo são analisadas todas as áreas científicas relevantes para que
 
 Faz-se também uma análise ao que existe em termos de demonstradores de robótica autónoma para enquadrar o trabalho a ser desenvolvido respeitante à utilização dos objetos, que sendo reconhecidos como marcadores influenciam o comportamento do robô.
 
-\section{Sistemas de Perceção}
+\section{Sensores de Profundidade}
 
 \subsection{Time of Flight Camera}
 
@@ -38,7 +38,7 @@ As aplicações deste sensor fora do âmbito original para que foi desenvolvido 
 
 \begin{center}
 	\includegraphics[width=0.80\textwidth]{./figures/Kinect.png}
-	\captionof{figure}{Composição do Kinect}
+	\captionof{figure}{Composição do Kinect \cite{wiredkinect}}
 	\label{fig:5}
 \end{center}
 
@@ -119,7 +119,7 @@ transformações que possam ser aplicadas aos objetos.
 
 RANSAC\cite{Fischler:1981:RSC:358669.358692}, um acrónimo de \emph{RANdom SAmple Consensus}, é um algoritmo que permite extrair, através de um conjunto de dados, os parâmetros do modelo matemático que compõe as características aproximadas do objeto. Este algoritmo funciona de forma iterativa, sendo que a cada iteração melhora a qualidade dos parâmetros extraídos.
 
-Este método representa uma evolução significativa dos métodos mínimos quadrados \footnote{devo referir o método dos mínimos quadrados antes?} visto ser permeável a desvio dos dados sem que estes afetem a qualidade da modelação matemática.
+Este método representa uma evolução significativa dos métodos mínimos quadrados visto ser permeável a desvio dos dados sem que estes afetem a qualidade da modelação matemática.
 Como se pode ver na figura \ref{fig:ransac_vs_lsq} o método \emph{RANSAC} será um método melhor para uma situação real onde os dados têm muito ruído.
 
 
@@ -140,12 +140,8 @@ Como se pode ver na figura \ref{fig:ransac_vs_lsq} o método \emph{RANSAC} será
 
 \subsection[PCL]{Point Cloud Library}
 
-\emph{Point Cloud Library} (PCL) é um projecto \emph{opensource} desenvolvido em C++ cujo objetivo é disponibilizar uma ferramenta altamente otimizada para capturar, manipular, visualizar e processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores como o \emph{Kinect}\ref{kinect} devolvem, que não é mais do que a nuvem dos pontos captados no espaço, com a origem no ponto onde o sensor se encontra, também com a informação das cores dos pontos.
-O projeto PCL \cite{Rusu_ICRA2011_PCL} permite que
-através da nuvem de pontos se extraia a informação desejada, sendo que
-já tem implementado um conjunto de filtros, técnicas de reconstrução de
-superfícies, métodos de extração de características 3D (por exemplo
-normais às superfícies), que a tornam uma ferramenta de muito interessante para usar a par do \emph{Kinect}.
+\emph{Point Cloud Library} (PCL) é um projeto \emph{opensource} desenvolvido em C++ cujo objetivo é disponibilizar uma ferramenta altamente otimizada para capturar, manipular, visualizar e processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores como o \emph{Kinect}\ref{kinect} devolvem, que não é mais do que a nuvem dos pontos captados no espaço, com a origem no ponto onde o sensor se encontra, também com a informação das cores dos pontos.
+O projeto PCL \cite{Rusu_ICRA2011_PCL} permite que através da nuvem de pontos se extraia a informação desejada, sendo que já tem implementado um conjunto de filtros, técnicas de reconstrução de superfícies, métodos de extração de características 3D (por exemplo normais às superfícies), que a tornam uma ferramenta de muito interessante para usar a par do \emph{Kinect}.
 
 A captura de imagens é bastante facilitada com esta ferramenta, que disponibiliza um formato para que toda a informação seja guardada convenientemente: \emph{.pcd}. Estes ficheiros podem ser visualizados facilmente recorrendo a bibliotecas de visualização da PCL onde são apresentados em 3D, sendo que podem conter só informação de profundidade como na figura~\ref{fig:pcl_depth}, mas também com toda a informação capturada pelo \emph{Kinect} como pode ser visto na figura~\ref{fig:pcl_color}.
 
@@ -164,7 +160,7 @@ A captura de imagens é bastante facilitada com esta ferramenta, que disponibili
 \end{center}
 
 
-\section{Algoritmos de Clustering}~\ref{sec:clustering}
+\section{Algoritmos de Clustering}~\label{sec:clustering}
 
 Tendo-se já explorado algoritmos de identificação de objetos e os sensores, é conveniente também uma abordagem aos algoritmos de \emph{clustering}, isto porque numa dada imagem em 3D, o que existe são uma série de pontos distribuídos no espaço com a informação de cor, sendo então necessário distinguir quais pertencem a um dado objeto e não a outro.
 
@@ -172,9 +168,10 @@ As técnicas de \emph{clustering} permite que se distribua os pontos por uma sé
 
 São expostas nesta secção algumas técnicas de \emph{clustering}, nomeadamente as que apresentam mais vantagens e conveniência para esta dissertação.
 
-\subsection{k-d tree}
+\subsection{Clustering por Vizinhança Euclideana}
 
-O algoritmo k-d tree, é um algoritmo de clustering....
+Este algoritmo simples implica que seja fornecido um número mínimo de pontos e uma distância máxima para que seja definida uma vizinhança e daí a pertença ou não a um \emph{cluster}. A simplicidade deste algoritmo permite que seja facilmente implementado, contudo é muito sensível aos parâmetros iniciais.
+Esta técnica aliada a uma pré-organização dos pontos, como, por exemplo, numa árvore binária do tipo k-d tree\cite{Bentley:1975:MBS:361002.361007} é um algoritmo de \emph{clustering} facilita ainda mais o processo de \emph{clusterização}.
 
 
 \section{Demonstradores de Robótica Autónoma}
@@ -184,24 +181,13 @@ robótica autónoma e que representam o estado da arte nesta área.
 
 
 \subsection{DARPA: Grand Challenge}
-A agência norte americana DARPA (\emph{Defense Advanced Research Agency}), cujos projetos de
-investigação se destinam principalmente a aplicações militares, realizou três grandes
-eventos onde foram postos à prova as técnicas de condução autónoma de veículos
-comerciais devidamente equipados e modificados para se poderem mover de uma forma
-completamente autónoma.  
+A agência norte americana DARPA (\emph{Defense Advanced Research Agency}), cujos projetos de investigação se destinam principalmente a aplicações militares, realizou três grandes eventos onde foram postos à prova as técnicas de condução autónoma de veículos comerciais devidamente equipados e modificados para se poderem mover de uma forma completamente autónoma.  
 
-Existiram duas edições do \emph{Grand Challenge} realizadas em 2004 e 2005 que consistia
-numa prova de condução autónoma em que os carros percorriam uma estrada de cerca
-de 242km no deserto do \emph{Mojave}. Em 2004 nenhum dos concorrentes chegou ao final da
-prova, sendo que o o robô que mais distância percorreu ficou pelos 18km, contudo em 2005
+Existiram duas edições do \emph{Grand Challenge} realizadas em 2004 e 2005 que consistia numa prova de condução autónoma em que os carros percorriam uma estrada de cerca de 242km no deserto do \emph{Mojave}. Em 2004 nenhum dos concorrentes chegou ao final da prova, sendo que o robô que mais distância percorreu ficou pelos 18km.
 
-Em 2007 foi realizado um \emph{Urban Challenge} onde se aproximou as provas às condições
-encontradas num ambiente urbano, ou seja, estradas com carros a circular em ambas as
-vias, cruzamentos, sinalização vertical  e semáforos.
+Em 2007 foi realizado um \emph{Urban Challenge} onde se aproximou as provas às condições encontradas num ambiente urbano, ou seja, estradas com carros a circular em ambas as vias, cruzamentos, sinalização vertical  e semáforos.
 
-Na edição de 2007 os veículos autónomos estão equipados com um conjunto de sensores
- entre os quais se destacam LIDAR, Radares, sonares e infravermelhos. O projeto
-vencedor desenvolvido pela Universidade de \emph{Carnegie Mellon} e apelidado de
+Na edição de 2007 os veículos autónomos estão equipados com um conjunto de sensores entre os quais se destacam LIDAR, Radares, sonares e infravermelhos. O projeto vencedor desenvolvido pela Universidade de \emph{Carnegie Mellon} e apelidado de
  \emph{Boss} \cite{Urmson:2008:ADU:1395073.1395077} tem
 18 sensores dispostos como apresentado no diagrama abaixo:
 
@@ -233,6 +219,11 @@ vencedor desenvolvido pela Universidade de \emph{Carnegie Mellon} e apelidado de
 Sendo que os códigos dos sensores correspondem ao indicado na tabela ~\ref{boss_sensor}
 pode-se concluir, que os sensores LIDAR são um excelente sensor para ajudar no reconhecimento
 de objectos no mundo, tal como para mapear o ambiente do robô para se poder orientar de uma eficaz.
+
+
+\subsection{Micro Rato}
+
+O  Micro Rato é uma competição criada pela Universidade de Aveiro, onde pequenos robôs de tamanho máximo 300x300x400mm têm de navegar num labirinto. A competição é dividida em duas partes, sendo que o objetivo da primeira é que os robôs encontrem um caminho para uma zona onde existe um farol que emite infravermelhos, e na segunda parte fazerem o caminho de volta para a zona de partida utilizando a informação coletada durante a primeira parte da competição.
 
 
 \subsection{Festival Nacional de Robótica}
@@ -272,8 +263,7 @@ e evitar os obstáculos que sinalizam obras no percurso.
 
 \subsection{MINERVA}
 O minerva é um robô autónomo desenvolvido na universidade Carnegie Mellon, para
-fazer de robô guia no museu Smithsonian para a exposição de história natural que
-esteve em exibição no período de 25 de Agosto a 5 de Setembro de 1998.
+fazer de robô guia no museu Smithsonian para a exposição de história natural que esteve em exibição no período de 25 de Agosto a 5 de Setembro de 1998.
 
 \begin{center}
 	\includegraphics[width=0.20\textwidth]{./figures/minerva.png}
@@ -283,22 +273,14 @@ esteve em exibição no período de 25 de Agosto a 5 de Setembro de 1998.
 
 Este robô era totalmente autónomo a partir do momento em que fazia uma volta de
 aprendizagem, em que era guiado pelo percurso que lhe estava destinado. Estando
-a aprendizagem concluída, o robô orientava-se pelo resultado da sua aprendizagem,
-e por alguns sensores, nomeadamente para se desviar dos visitantes e de obstáculos,
-uma câmara para detetar marcadores no teto do museu para se conseguir localizar.
-Além de guiar os visitantes pelo percurso este robô também interagia com os mesmos,
-respondendo a perguntas e apresentando a exposição.
+a aprendizagem concluída, o robô orientava-se pelo resultado da sua aprendizagem, e por alguns sensores, nomeadamente para se desviar dos visitantes e de obstáculos, uma câmara para detetar marcadores no teto do museu para se conseguir localizar.
+Além de guiar os visitantes pelo percurso este robô também interagia com os mesmos, respondendo a perguntas e apresentando a exposição.
 
 \subsection{CleanRob}
 
-O CleanRob é um projeto que começou a ser desenvolvido na Faculdade de Engenharia da 
-Universidade do Porto em 2004, no no contexto do Departamento de Engenharia
-Eletrotécnica e de Computadores. Este robô foi desenvolvido por alunos de modo a
-envolver alunos no desenvolvimento de projetos académicos com maior aplicação prática
-tirando partido de técnicas que representam o estado da arte na robótica.
+O CleanRob é um projeto que começou a ser desenvolvido na Faculdade de Engenharia da Universidade do Porto em 2004, no no contexto do Departamento de Engenharia Eletrotécnica e de Computadores. Este robô foi desenvolvido por alunos de modo a envolver alunos no desenvolvimento de projetos académicos com maior aplicação prática tirando partido de técnicas que representam o estado da arte na robótica.
 
-Este robô utiliza um conjunto de câmaras e sonares PSD para fazer a sua localização,
-de modo a limpar corredores do departamento de Engenharia Eletrotécnica.
+Este robô utiliza um conjunto de câmaras e sonares PSD para fazer a sua localização, de modo a limpar corredores do departamento de Engenharia Eletrotécnica.
 
 \begin{center}
 	\includegraphics[width=0.40\textwidth]{./figures/clean_rob.jpg}
@@ -309,12 +291,9 @@ de modo a limpar corredores do departamento de Engenharia Eletrotécnica.
 
 \section{Resumo}
 
-No que diz respeito a deteção de objetos, existem vários algoritmos bastante robustos e
-eficazes, contudo são muito voltados para reconhecimento em imagens RGB
-e não tanto baseados em conjuntos de dados 3D e além disso exigem uma fase de aprendizagem.
+No que diz respeito a deteção de objetos, existem vários algoritmos bastante robustos e eficazes, contudo são muito voltados para reconhecimento em imagens RGB e não tanto baseados em conjuntos de dados 3D e além disso exigem uma fase de aprendizagem.
 
-Os demonstradores autónomos que existem no momento já são bastante completos, considere-se
-como exemplo o \emph{Boss} que navega em ambiente bastante próximo do urbano com proeza,
+Os demonstradores autónomos que existem no momento já são bastante completos, considere-se como exemplo o \emph{Boss} que navega em ambiente bastante próximo do urbano com proeza,
 estando cada vez mais próximo de um cenário onde condução autónoma nas cidades poderia ser
 uma realidade e até mesmo uma mais-valia em termos de segurança. É de assinalar também os esforços
 nas competições de robôs em escalas menores pois com menos recursos e menor escala consegue-se

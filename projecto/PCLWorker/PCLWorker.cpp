@@ -14,7 +14,7 @@ void PCLWorker::cloud_cb_(const pcl::PointCloud<pcl::PointXYZRGBA>::ConstPtr &cl
 
 		// Saves the PCF file
 		pcl::io::savePCDFileASCII (boost::lexical_cast<std::string>(now) + ".pcd" , *cloud);
-		std::cerr << "Saved " << cloud->points.size () << " data points to test_pcd.pcd." << std::endl;
+		std::cout << "Saved " << cloud->points.size () << " data points to test_pcd.pcd." << std::endl;
 	}
 
 }
@@ -219,12 +219,12 @@ pcl::PointCloud<pcl::PointXYZ>::Ptr PCLWorker::pre_process(const pcl::PointCloud
 
 	if (inliers->indices.size () != 0)
 	{
-		std::cerr << "Model coefficients: " << coefficients->values[0] << " " 
+		std::cout << "Model coefficients: " << coefficients->values[0] << " " 
 			<< coefficients->values[1] << " "
 			<< coefficients->values[2] << " " 
 			<< coefficients->values[3] << std::endl;
 
-		std::cerr << "Model inliers: " << inliers->indices.size () << std::endl;
+		std::cout << "Model inliers: " << inliers->indices.size () << std::endl;
 
 		printf("Starting removal of planar points... ", cloud->size());
 
@@ -335,12 +335,15 @@ void PCLWorker::pcl_viewer(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr ptr_cl
 
 std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud) {
 
+	printf("Detecting clusters...\n");
+
 	// Looks for clusters representing the table
 	pcl::search::KdTree<pcl::PointXYZ>::Ptr tree (new pcl::search::KdTree<pcl::PointXYZ>);
 	tree->setInputCloud (cloud);
 
 	std::vector<pcl::PointIndices> cluster_indices;
 	pcl::EuclideanClusterExtraction<pcl::PointXYZ> ec;
+
 	ec.setClusterTolerance (0.5); // 50cm
 	ec.setMinClusterSize (100);
 	ec.setMaxClusterSize (cloud->points.size() );
@@ -349,6 +352,8 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::detect_clusters(const pc
 	ec.extract (cluster_indices);
 
 	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters;
+
+	printf("Seperating the clusters..\n");
 
 	int j = 0;
 	for (std::vector<pcl::PointIndices>::const_iterator it = cluster_indices.begin (); it != cluster_indices.end (); ++it)
@@ -392,7 +397,7 @@ void PCLWorker::cluster_morfology(pcl::PointCloud<pcl::PointXYZ> cluster, Eigen:
 	y = y / cluster.size();
 	z = z / cluster.size();
 
-	printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
+	//printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
 	center[0] = x;
 	center[1] = y;
 	center[2] = z;
@@ -404,13 +409,13 @@ void PCLWorker::cluster_morfology(pcl::PointCloud<pcl::PointXYZ> cluster, Eigen:
 	min[0] = min_[0]; min[1] = min_[1]; min[2] = min_[2];
 	max[0] = max_[0]; max[1] = max_[1]; max[2] = max_[2];
 
-	printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
-	printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
+	//printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
+	//printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
 
 	edges[0] = max_[0] - min_[0];
 	edges[1] = max_[1] - min_[1];
 	edges[2] = max_[2] - min_[2];
-	printf("\tdiff: %f, %f, %f\n\n", edges[0], edges[1], edges[2]);
+	//printf("\tdiff: %f, %f, %f\n\n", edges[0], edges[1], edges[2]);
 
 }
 
@@ -450,12 +455,12 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::find_table(pcl::PointClo
 
 	if (inliers->indices.size () != 0)
 	{
-		std::cerr << "Model coefficients: " << coefficients->values[0] << " " 
+		std::cout << "Model coefficients: " << coefficients->values[0] << " " 
 			<< coefficients->values[1] << " "
 			<< coefficients->values[2] << " " 
 			<< coefficients->values[3] << std::endl;
 
-		std::cerr << "Model inliers: " << inliers->indices.size () << std::endl;
+		std::cout << "Model inliers: " << inliers->indices.size () << std::endl;
 
 		has_plane = true;
 
@@ -542,65 +547,117 @@ std::vector<pcl::PointCloud<pcl::PointXYZ> > PCLWorker::find_table(pcl::PointClo
 		// verificar morfologia do tampo, encontrar a diagonal maior e a menor (ou unica se
 		// se optar por circular)
 		// calcular o centro
+		Eigen::Vector3f t_min, t_max, t_center, t_edges;
 		Eigen::Vector3f min, max, center, edges;
+		double big, small, large_dimension, small_dimension;
+		double big_prox, small_prox;
 
+		//cluster_morfology(clusters[0], t_min, t_max, t_center, t_edges);
+		double x = 0.0, y = 0.0, z = 0.0;
+		for(int p = 0; p < clusters[0].size(); p++) {
+			x += clusters[0].points[p].x;
+			y += clusters[0].points[p].y;
+			z += clusters[0].points[p].z;
+		}
 
-		cluster_morfology(clusters[0], min, max, center, edges);
+		x = x / clusters[0].size();
+		y = y / clusters[0].size();
+		z = z / clusters[0].size();
 
+		//printf("\tcenter (x,y,z) = (%f,%f,%f)\n",x,y,z);
+		t_center[0] = x;
+		t_center[1] = y;
+		t_center[2] = z;
+
+		// Morfologia do cluster
+		Eigen::Vector4f min_, max_;
+		pcl::getMinMax3D(clusters[0], min_, max_);
+
+		t_min[0] = min_[0]; t_min[1] = min_[1]; t_min[2] = min_[2];
+		t_max[0] = max_[0]; t_max[1] = max_[1]; t_max[2] = max_[2];
+
+		//printf("\tmin: %f,%f,%f \n", min_[0], min_[1],min_[2]);
+		//printf("\tmax: %f,%f,%f \n", max_[0], max_[1],max_[2]);
+
+		t_edges[0] = max_[0] - min_[0];
+		t_edges[1] = max_[1] - min_[1];
+		t_edges[2] = max_[2] - min_[2];
+
+		printf("Modelo\tC1\tC2\tCn\tCh\tC\n");
 
 		for (int k = 0; k < m.models.size(); k++ ) {
 
-			float big, small;
+			printf("%s &\t", m.models[k].name.c_str());
 
 			// COmo o tampo é horizontal a propagação dos valores é em x e z
-			if (edges[0] > edges[2]) {
-				big = edges[0];
-				small = edges[2];
+			if (t_edges[0] > t_edges[2]) {
+				big = t_edges[0];
+				small = t_edges[2];
 			} else {
-				big = edges[2];
-				small = edges[0];
+				big = t_edges[2];
+				small = t_edges[0];
 			}
 
-			float large_dimension = atof(m.models[k].params["large_dimension"].c_str());
-			float small_dimension = atof(m.models[k].params["small_dimension"].c_str());
+			//printf("big: %f small: %f \n",big,small );
 
+			large_dimension = atof(m.models[k].params["large_dimension"].c_str());
+			small_dimension = atof(m.models[k].params["small_dimension"].c_str());
 
-			float dev_big =	abs(large_dimension - big);
-			float dev_small = abs(small_dimension - small);
+			//printf("big: %f small: %f \n", large_dimension, small_dimension );
 
-			float big_prox, small_prox;
+			float dev_big =	fabs(large_dimension - big);
+			float dev_small = fabs(small_dimension - small);
 
-			big_prox = dev_big / large_dimension;
-			small_prox = dev_small / small_dimension;
+			//printf("big: %f small: %f \n", dev_big, dev_small );
+			
 
-			printf("\t- %f %f \n", big_prox, small_prox);
+			big_prox = 1.0 - ( dev_big / large_dimension );
+			small_prox = 1.0 - ( dev_small / small_dimension );
+
+			printf(" %f &\t%f & ", big_prox, small_prox);
 
 		// support calc
 
 		// check nº of legs
 		int leg_n =  atoi(m.models[k].params["number"].c_str());
 
+		float c_n = 1.0 - fabs((float)leg_n - (float)((int) clusters.size() - 1)) / (float)leg_n;
+
 		// check size
 		float l_height =  atof(m.models[k].params["height"].c_str());
-		float cal_height;
+		
 
 		// evaluate someway
-
+		float cal_height =0.0;
 		for (int c = 1; c < clusters.size(); c++) {
 
-			cluster_morfology(clusters[c], min, max, center, edges);
+			//cluster_morfology(clusters[c], min, max, center, edges);
+			Eigen::Vector4f min_, max_;
+			Eigen::Vector3f edges;
+			pcl::getMinMax3D(clusters[c], min_, max_);
+				
+			edges[0] = max_[0] - min_[0];
+			edges[1] = max_[1] - min_[1];
+			edges[2] = max_[2] - min_[2];
 
+			//printf("edges Y %f\n", edges[1] );
 			cal_height += edges[1];
 			// verificar a prependicluaridade de cada um dos clusters ao tampo
 			// ver o tamanho máximo de cada um
 			// ver os centros dos clusters
 		}
 
-		float med_height = cal_height / (clusters.size() -1);
+		float med_height = cal_height / (float)(clusters.size() - 1);
 
-		float leg_eval = abs(l_height - med_height) / l_height;
+		//printf("med_height: %f l_height: %f\n", med_height, l_height );
 
-		printf("%d %f\n", (int) clusters.size() - 1, leg_eval );
+		float c_h = 1.0 - (fabs(l_height  - med_height) / l_height);
+
+		printf("%f & %f", c_n, c_h );
+ 
+		float c = 0.5*(0.5*big_prox + 0.5 * small_prox) + 0.5 * (0.4* c_n + 0.6 * c_h);
+
+		printf(" & %f \\\\\n", c );
 
 		}
 
@@ -633,24 +690,70 @@ void PCLWorker::analyze_image(string file_path, ModelDictionary m) {
 	printf("pcd file loaded\n");
 
 	// pre processing
+	//time_t pre_time = time(NULL);
+//	boost::posix_time::ptime time = boost::posix_time::microsec_clock::local_time();
+	boost::timer t;
+    
+
+
 	pcl::PointCloud<pcl::PointXYZ>::Ptr cloud_res = pre_process(cloud.makeShared(), "","");
 
+	Eigen::Vector4f min_, max_;
+	pcl::getMinMax3D(*cloud_res, min_, max_);
+
+	// get cluster distance 
+	float distance = sqrt(pow(min_[0],2) + pow(min_[1],2 )+ pow(min_[2], 2));
+	float angle = atan(min_[0]/min_[2]) * 180 / PI;
+	printf("ponto minimo %f %f %f\n",min_[0], min_[1], min_[2] );
+	printf("Distância da mesa: %f m\n", distance);
+	printf("Angulo da mesa: %f\n", angle);
+
+	//pcl_viewer(cloud_res);
+
 	std::vector<pcl::PointCloud<pcl::PointXYZ> > clusters = detect_clusters(cloud_res);
+
+	//pre_time = time(NULL) - pre_time;
+	//boost::posix_time::time_duration duration( time.time_of_day() );
+
+	printf("Pre-processig time: %f\n", t.elapsed() );
+	//std::cout << duration.total_milliseconds() << std::endl;
+
 
 	for (int i = 0; i < clusters.size(); i++) {
 		// finds a table
 		printf("Analyzing cluster number %d\n...", i +1 );
-
+		//time_t c_proc_time = time(NULL);
+		//time = boost::posix_time::microsec_clock::local_time();
 		// finds table and its parts and returns the found clusters
+		boost::timer t;
+
+		Eigen::Vector4f min_, max_;
+		pcl::getMinMax3D(clusters[i], min_, max_);
+
+		// get cluster distance 
+		float distance = sqrt(pow(min_[0],2) + pow(min_[1],2 )+ pow(min_[2], 2));
+		float angle = atan(min_[0]/min_[2]) * 180 / PI;
+		printf("ponto minimo %f %f %f\n",min_[0], min_[1], min_[2] );
+		printf("Distância da mesa: %f m\n", distance);
+		printf("Angulo da mesa: %f\n", angle);
+
+
 		std::vector<pcl::PointCloud<pcl::PointXYZ> > parts = find_table(clusters[i].makeShared(), true, m);
 
 		// paints the clusters
 		pcl::PointCloud<pcl::PointXYZ>temp_cloud; //(new pcl::PointCloud<pcl::PointXYZ>);
 		//pcl::copyPointCloud(*clusters[i].makeShared(), *temp_cloud);
 
+		//c_proc_time = time(NULL) - c_proc_time;
+		//boost::posix_time::time_duration duration( time.time_of_day() );
+		printf("Processig time: %f\n",t.elapsed()  );
+
 		for (int j = 0; j < parts.size(); j++ ) {
 			temp_cloud += parts.at(j);
 		}
+
+		//std::cout << duration.total_milliseconds() << std::endl;
+
 
 		pcl_viewer(temp_cloud.makeShared());
 		printf("Done.\n");

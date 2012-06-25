@@ -1,0 +1,83 @@
+\newcommand{\etalchar}[1]{$^{#1}$}
+\begin{thebibliography}{UAB{\etalchar{+}}08}
+
+\bibitem[Ben75]{Bentley:1975:MBS:361002.361007}
+Jon~Louis Bentley.
+\newblock Multidimensional binary search trees used for associative searching.
+\newblock {\em Commun. ACM}, 18(9):509--517, September 1975.
+
+\bibitem[BTGL06]{citeulike:973069}
+Herbert Bay, Tinne Tuytelaars, Van Gool e L.
+\newblock {SURF: Speeded Up Robust Features}.
+\newblock In {\em 9th European Conference on Computer Vision}, Graz Austria,
+  May 2006.
+
+\bibitem[CHPS89]{1989SPIE.1095..515C}
+M.~S. {Costa}, R.~M. {Haralick}, T.~I. {Phillips} e L.~G. {Shapiro}.
+\newblock {Optimal affine-invariant point matching}.
+\newblock In {J.~E.~Laird}, editor, {\em Society of Photo-Optical
+  Instrumentation Engineers (SPIE) Conference Series}, volume 1095 of {\em
+  Society of Photo-Optical Instrumentation Engineers (SPIE) Conference Series},
+  pages 515--+, March 1989.
+
+\bibitem[FB81]{Fischler:1981:RSC:358669.358692}
+Martin~A. Fischler e Robert~C. Bolles.
+\newblock Random sample consensus: a paradigm for model fitting with
+  applications to image analysis and automated cartography.
+\newblock {\em Commun. ACM}, 24(6):381--395, June 1981.
+
+\bibitem[KE12]{s120201437}
+Kourosh Khoshelham e Sander~Oude Elberink.
+\newblock Accuracy and resolution of kinect depth data for indoor mapping
+  applications.
+\newblock {\em Sensors}, 12(2):1437--1454, 2012.
+
+\bibitem[Kei10]{Keim2010}
+Mobasser S. Kuang D. Cheng Y. Ivanov T. Johnson A.E. Goldberg H.R. Khanoyan G.
+  Natzic~D.B. Keim, J.A.
+\newblock Field test implementation to evaluate a flash lidar as a primary
+  sensor for safe lunar landing.
+\newblock Big Sky, MT, 2010.
+\newblock cited By (since 1996) 0; Conference of 2010 IEEE Aerospace
+  Conference; Conference Date: 6 March 2010 through 13 March 2010; Conference
+  Code: 80381.
+
+\bibitem[Low99]{Lowe:1999:ORL:850924.851523}
+David~G. Lowe.
+\newblock Object recognition from local scale-invariant features.
+\newblock In {\em Proceedings of the International Conference on Computer
+  Vision-Volume 2 - Volume 2}, ICCV '99, pages 1150--, Washington, DC, USA,
+  1999. IEEE Computer Society.
+
+\bibitem[RC]{Rusu_ICRA2011_PCL}
+Radu~Bogdan Rusu e Steve Cousins.
+\newblock {3D is here: Point Cloud Library (PCL)}.
+\newblock In {\em {IEEE International Conference on Robotics and Automation
+  (ICRA)}}.
+
+\bibitem[Tan11]{wiredkinect}
+Jason Tanz.
+\newblock A thousand points of infrared light. wired magazine.
+\newblock 19.07:117--118, July 2011.
+
+\bibitem[UAB{\etalchar{+}}08]{Urmson:2008:ADU:1395073.1395077}
+Chris Urmson, Joshua Anhalt, Drew Bagnell, Christopher Baker, Robert Bittner,
+  M.~N. Clark, John Dolan, Dave Duggins, Tugrul Galatali, Chris Geyer, Michele
+  Gittleman, Sam Harbaugh, Martial Hebert, Thomas~M. Howard, Sascha Kolski,
+  Alonzo Kelly, Maxim Likhachev, Matt McNaughton, Nick Miller, Kevin Peterson,
+  Brian Pilnick, Raj Rajkumar, Paul Rybski, Bryan Salesky, Young-Woo Seo,
+  Sanjiv Singh, Jarrod Snider, Anthony Stentz, William~``Red'' Whittaker, Ziv
+  Wolkowicki, Jason Ziglar, Hong Bae, Thomas Brown, Daniel Demitrish, Bakhtiar
+  Litkouhi, Jim Nickolaou, Varsha Sadekar, Wende Zhang, Joshua Struble, Michael
+  Taylor, Michael Darms e Dave Ferguson.
+\newblock Autonomous driving in urban environments: Boss and the urban
+  challenge.
+\newblock {\em J. Field Robot.}, 25:425--466, August 2008.
+
+\bibitem[VJ01]{10.1109CVPR.2001.990517}
+Paul Viola e Michael Jones.
+\newblock Rapid object detection using a boosted cascade of simple features.
+\newblock {\em Computer Vision and Pattern Recognition, IEEE Computer Society
+  Conference on}, 1:511, 2001.
+
+\end{thebibliography}

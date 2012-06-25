@@ -1,8 +1,17 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  18 JUN 2012 14:42
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.6.4)  25 JUN 2012 19:42
 entering extended mode
  %&-line parsing enabled.
-**\nonstopmode \input{"/home/batista/tese/documento/mieic.tex"}
-(/home/batista/tese/documento/mieic.tex
+**mieic.tex mieic.pdf
+(./mieic.tex
+LaTeX2e <2009/09/24>
+Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
+yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
+ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
+9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
+skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
+orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
+, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
+rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
 (/usr/share/texmf-texlive/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
 (/usr/share/texmf-texlive/tex/latex/base/size11.clo
@@ -250,8 +259,7 @@ File: babel.def 2008/07/06 v3.8l Babel common definitions
 \U@D=\dimen103
 )
 Package babel Info: Making " an active character on input line 145.
-))
-(/home/batista/tese/documento/feupteses.sty
+)) (./feupteses.sty
 Package: feupteses 2009/09/04 0.9f 
 
 Document Style `FEUP Teses' 0.9f <2009/09/04>
@@ -580,8 +588,7 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \mathdisplay@stack=\toks23
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
-)
-(/home/batista/tese/documento/mieicpatch.sty)
+) (./mieicpatch.sty)
 \@indexfile=\write3
 \openout3 = `mieic.idx'.
 
@@ -590,15 +597,8 @@ Writing index file mieic.idx
 \@input{mymacros.aux}
 \openout2 = `mymacros.aux'.
 
-(/home/batista/tese/documento/mymacros.tex)
-(/home/batista/tese/documento/mieic.aux
-(/home/batista/tese/documento/abstract.aux)
-(/home/batista/tese/documento/abbrevs.aux)
-(/home/batista/tese/documento/chapter1.aux)
-(/home/batista/tese/documento/chapter2.aux)
-(/home/batista/tese/documento/chapter3.aux)
-(/home/batista/tese/documento/chapter4.aux)
-(/home/batista/tese/documento/chapter5.aux))
+(./mymacros.tex) (./mieic.aux (./abstract.aux) (./abbrevs.aux) (./chapter1.aux)
+(./chapter2.aux) (./chapter3.aux) (./chapter4.aux) (./chapter5.aux))
 \openout1 = `mieic.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 69.
@@ -688,9 +688,8 @@ Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
 )
 LaTeX Info: Redefining \ref on input line 69.
 LaTeX Info: Redefining \pageref on input line 69.
-
-(/home/batista/tese/documento/mieic.out)
-(/home/batista/tese/documento/mieic.out)
+ (./mieic.out)
+(./mieic.out)
 \@outlinefile=\write4
 \openout4 = `mieic.out'.
 
@@ -700,8 +699,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 104.
 LaTeX Font Info:    Font shape `T1/ptm/bx/sc' in size <14.4> not available
 (Font)              Font shape `T1/ptm/b/sc' tried instead on input line 104.
-
-<figures/feup-logo.png, id=183, 155.58125pt x 200.75pt>
+ <figures/feup-logo.png, id=207, 155.58125pt x 200.75pt>
 File: figures/feup-logo.png Graphic file (type png)
 
 <use figures/feup-logo.png>
@@ -712,7 +710,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <24.88> not available
 
 
 
- </home/batista/tese/documento/figures/feup-logo.png>] [-2
+ <./figures/feup-logo.png>] [-2
 
 
 
@@ -724,8 +722,7 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <17.28> not available
 ]
 \openout2 = `abstract.aux'.
 
-
-(/home/batista/tese/documento/abstract.tex
+ (./abstract.tex
 Cap\'{\i }tulo 1.
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 1.
@@ -735,13 +732,12 @@ LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <20.74> not available
 ] [2
 
 
-] (/home/batista/tese/documento/mieic.toc
+] (./mieic.toc
 LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `T1/ptm/b/n' tried instead on input line 2.
 LaTeX Font Info:    Try loading font information for OT1+ztmcm on input line 4.
 
-
-(/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
+ (/usr/share/texmf-texlive/tex/latex/psnfss/ot1ztmcm.fd
 File: ot1ztmcm.fd 2000/01/03 Fontinst v1.801 font definitions for OT1/ztmcm.
 )
 LaTeX Font Info:    Try loading font information for OML+ztmcm on input line 4.
@@ -779,22 +775,17 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
 \tf@toc=\write5
 \openout5 = `mieic.toc'.
 
- [4]
-(/home/batista/tese/documento/mieic.lof
-
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page v undefined o
-n input line 9.
-
-)
+ [4] (./mieic.lof)
 \tf@lof=\write6
 \openout6 = `mieic.lof'.
 
- [5
+
+[5
 
 
 ] [6
 
-] (/home/batista/tese/documento/mieic.lot)
+] (./mieic.lot)
 \tf@lot=\write7
 \openout7 = `mieic.lot'.
 
@@ -805,8 +796,7 @@ n input line 9.
 ]
 \openout2 = `abbrevs.aux'.
 
-
-(/home/batista/tese/documento/abbrevs.tex
+ (./abbrevs.tex
 Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--10
 []  
  []
@@ -820,25 +810,16 @@ Overfull \hbox (7.64244pt too wide) in paragraph at lines 5--10
 ]
 \openout2 = `chapter1.aux'.
 
- (/home/batista/tese/documento/chapter1.tex
+ (./chapter1.tex
 Cap\'{\i }tulo 2.
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 12.
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1
+[1
 
 
-])
-[2]
+]) [2]
 \openout2 = `chapter2.aux'.
 
- (/home/batista/tese/documento/chapter2.tex
+ (./chapter2.tex
 Cap\'{\i }tulo 3.
-
-LaTeX Warning: Citation `Keim2010' on page 3 undefined on input line 38.
-
 
 Underfull \vbox (badness 1028) has occurred while \output is active []
 
@@ -847,246 +828,403 @@ Underfull \vbox (badness 1028) has occurred while \output is active []
 
 
 ]
-<./figures/Kinect.png, id=329, 1053.1847pt x 576.65437pt>
+<./figures/Kinect.png, id=424, 1053.1847pt x 576.65437pt>
 File: ./figures/Kinect.png Graphic file (type png)
 
 <use ./figures/Kinect.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 60.
+(caption)                particular \caption on input line 41.
 See the caption package documentation for explanation.
 
 [4 <./figures/Kinect.png (PNG copy)>]
-
-LaTeX Warning: Citation `Lowe:1999:ORL:850924.851523' on page 5 undefined on in
-put line 81.
-
-<figures/sift_img.png, id=335, 265.99374pt x 237.88875pt>
+<figures/sift_img.png, id=434, 265.99374pt x 237.88875pt>
 File: figures/sift_img.png Graphic file (type png)
 
 <use figures/sift_img.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 108.
+(caption)                particular \caption on input line 82.
 See the caption package documentation for explanation.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5]
+[6 <./figures/sift_img.png (PNG copy)>]
+<figures/least_squares_vs_ransac.png, id=458, 371.13657pt x 414.79968pt>
+File: figures/least_squares_vs_ransac.png Graphic file (type png)
 
-LaTeX Warning: Citation `citeulike:973069' on page 6 undefined on input line 11
-7.
-
-
-LaTeX Warning: Citation `10.1109CVPR.2001.990517' on page 6 undefined on input 
-line 121.
-
-
-LaTeX Warning: Citation `1989SPIE.1095..515C' on page 6 undefined on input line
- 142.
-
-[6 </home/batista/tese/documento/figures/sift_img.png (PNG copy)>]
-
-LaTeX Warning: Citation `Fischler:1981:RSC:358669.358692' on page 7 undefined o
-n input line 154.
-
-
-LaTeX Warning: File `figures/least_squares_vs_ransac.png' not found on input li
-ne 167.
-
-
-! Package pdftex.def Error: File `figures/least_squares_vs_ransac.png' not foun
-d.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.167 ...dth]{figures/least_squares_vs_ransac.png}
-                                                  
-Using draft setting for this image.
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-LaTeX Font Info:    Try loading font information for T1+pcrs on input line 167.
-
-(/usr/share/texmf-texlive/tex/latex/courier-scaled/t1pcrs.fd
-File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
-)
-LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 167.
-
+<use figures/least_squares_vs_ransac.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 168.
+(caption)                particular \caption on input line 128.
 See the caption package documentation for explanation.
 
-<figures/least_squares_shortcomings.png, id=353, 1074.0125pt x 584.1825pt>
+<figures/least_squares_shortcomings.png, id=459, 1074.0125pt x 584.1825pt>
 File: figures/least_squares_shortcomings.png Graphic file (type png)
 
 <use figures/least_squares_shortcomings.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 176.
+(caption)                particular \caption on input line 136.
 See the caption package documentation for explanation.
 
-[7]
+[7 <./figures/least_squares_vs_ransac.png>]
+<figures/pcl_openni.png, id=470, 715.67375pt x 412.54124pt>
+File: figures/pcl_openni.png Graphic file (type png)
 
-LaTeX Warning: Citation `Rusu_ICRA2011_PCL' on page 8 undefined on input line 1
-88.
+<use figures/pcl_openni.png>
 
-[8 </home/batista/tese/documento/figures/least_squares_shortcomings.png (PNG co
-py)>]
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 150.
+See the caption package documentation for explanation.
 
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
-n input line 224.
 
-<./figures/boss_sensors.png, id=364, 444.91219pt x 212.29312pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [8 <./figures/least_squares_shortcomings.png (PNG copy)>]
+<figures/pcl_color.png, id=476, 687.56876pt x 470.75874pt>
+File: figures/pcl_color.png Graphic file (type png)
+
+<use figures/pcl_color.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 157.
+See the caption package documentation for explanation.
+
+[9 <./figures/pcl_openni.png> <./figures/pcl_color.png>]
+<./figures/boss_sensors.png, id=485, 444.91219pt x 212.29312pt>
 File: ./figures/boss_sensors.png Graphic file (type png)
 
 <use ./figures/boss_sensors.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 229.
+(caption)                particular \caption on input line 196.
 See the caption package documentation for explanation.
 
-LaTeX Font Info:    Font shape `T1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/ptm/b/n' tried instead on input line 229.
-
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
-n input line 229.
-
-
-LaTeX Warning: Citation `Urmson:2008:ADU:1395073.1395077' on page 9 undefined o
-n input line 229.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10.95> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 196.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 196.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 235.
-[9 <./figures/boss_sensors.png (PNG copy)>]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 266.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 196.
+[10] [11 <./figures/boss_sensors.png (PNG copy)>]
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 238.
 
 
 (/usr/share/texmf-texlive/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 266.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 238.
 
-<./figures/ca_pista.png, id=370, 1090.0725pt x 442.65375pt>
+<./figures/ca_pista.png, id=499, 1090.0725pt x 442.65375pt>
 File: ./figures/ca_pista.png Graphic file (type png)
 
 <use ./figures/ca_pista.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 283.
+(caption)                particular \caption on input line 255.
 See the caption package documentation for explanation.
 
-[10 <./figures/ca_pista.png>]
-<./figures/minerva.png, id=376, 222.8325pt x 388.45125pt>
+[12 <./figures/ca_pista.png>]
+<./figures/minerva.png, id=505, 222.8325pt x 388.45125pt>
 File: ./figures/minerva.png Graphic file (type png)
 
 <use ./figures/minerva.png>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 299.
+(caption)                particular \caption on input line 270.
 See the caption package documentation for explanation.
 
-<./figures/clean_rob.jpeg, id=377, 423.5825pt x 433.62pt>
-File: ./figures/clean_rob.jpeg Graphic file (type jpg)
+<./figures/clean_rob.jpg, id=506, 423.5825pt x 433.62pt>
+File: ./figures/clean_rob.jpg Graphic file (type jpg)
 
-<use ./figures/clean_rob.jpeg>
+<use ./figures/clean_rob.jpg>
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 324.
+(caption)                particular \caption on input line 287.
 See the caption package documentation for explanation.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [11 <./figures/minerva.png>]
-<./figures/diss_timetable.PNG, id=385, 496.85625pt x 295.1025pt>
-File: ./figures/diss_timetable.PNG Graphic file (type png)
-
-<use ./figures/diss_timetable.PNG>
-
-Package caption Warning: The option `hypcap=true' will be ignored for this
-(caption)                particular \caption on input line 354.
-See the caption package documentation for explanation.
-
-[12 <./figures/clean_rob.jpeg>]) [13 <./figures/diss_timetable.PNG>]
+ [13 <./figures/minerva.png>]) [14 <./figures/clean_rob.jpg>]
 \openout2 = `chapter3.aux'.
 
-
-(/home/batista/tese/documento/chapter3.tex [14
-
-
-
-]
+ (./chapter3.tex
 Cap\'{\i }tulo 4.
+[15
 
-Underfull \vbox (badness 1824) has occurred while \output is active []
 
- [15])
-[16] [17]
+
+]) [16]
 \openout2 = `chapter4.aux'.
 
- (/home/batista/tese/documento/chapter4.tex [18
+ (./chapter4.tex
+Cap\'{\i }tulo 5.
+<figures/experiencia/exp4.png, id=525, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp4.png Graphic file (type png)
+
+<use figures/experiencia/exp4.png>
+<figures/exemplo_captura_perspectiva1.png, id=526, 925.4575pt x 613.29124pt>
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [17
 
 
 
 ]
-Cap\'{\i }tulo 5.
-[19]) [20]
+File: figures/exemplo_captura_perspectiva1.png Graphic file (type png)
+
+<use figures/exemplo_captura_perspectiva1.png>
+<figures/exemplo_captura_perspectiva2.png, id=532, 925.4575pt x 613.29124pt>
+File: figures/exemplo_captura_perspectiva2.png Graphic file (type png)
+
+<use figures/exemplo_captura_perspectiva2.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 26.
+See the caption package documentation for explanation.
+
+[18 <./figures/experiencia/exp4.png> <./figures/exemplo_captura_perspectiva1.pn
+g> <./figures/exemplo_captura_perspectiva2.png>]
+<figures/experiencia/exp1.png, id=542, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp1.png Graphic file (type png)
+
+<use figures/experiencia/exp1.png>
+<figures/experiencia/exp2.png, id=543, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp2.png Graphic file (type png)
+
+<use figures/experiencia/exp2.png>
+<figures/experiencia/exp3.png, id=544, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp3.png Graphic file (type png)
+
+<use figures/experiencia/exp3.png>
+File: figures/experiencia/exp4.png Graphic file (type png)
+ <use figures/experiencia/exp4.png>
+<figures/experiencia/exp5.png, id=545, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp5.png Graphic file (type png)
+
+<use figures/experiencia/exp5.png>
+<figures/experiencia/exp6.png, id=546, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp6.png Graphic file (type png)
+
+<use figures/experiencia/exp6.png>
+<figures/experiencia/exp7.png, id=547, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp7.png Graphic file (type png)
+
+<use figures/experiencia/exp7.png>
+<figures/experiencia/exp8.png, id=548, 644.4075pt x 508.90125pt>
+File: figures/experiencia/exp8.png Graphic file (type png)
+
+<use figures/experiencia/exp8.png>
+
+Package caption Warning: The option `hypcap=true' will be ignored for this
+(caption)                particular \caption on input line 74.
+See the caption package documentation for explanation.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/experiencia/chart_1.png, id=550, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_1.png Graphic file (type png)
+
+<use figures/experiencia/chart_1.png>
+<figures/experiencia/chart_2.png, id=551, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_2.png Graphic file (type png)
+
+<use figures/experiencia/chart_2.png>
+<figures/experiencia/chart_3.png, id=552, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_3.png Graphic file (type png)
+
+<use figures/experiencia/chart_3.png>
+<figures/experiencia/chart_4.png, id=553, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_4.png Graphic file (type png)
+
+<use figures/experiencia/chart_4.png>
+<figures/experiencia/chart_5.png, id=554, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_5.png Graphic file (type png)
+
+<use figures/experiencia/chart_5.png>
+<figures/experiencia/chart_6.png, id=555, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_6.png Graphic file (type png)
+
+<use figures/experiencia/chart_6.png>
+<figures/experiencia/chart_7.png, id=556, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_7.png Graphic file (type png)
+
+<use figures/experiencia/chart_7.png>
+<figures/experiencia/chart_8.png, id=557, 602.25pt x 372.39125pt>
+File: figures/experiencia/chart_8.png Graphic file (type png)
+
+<use figures/experiencia/chart_8.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (37.83951pt too wide) in paragraph at lines 220--242
+ [] 
+ []
+
+[19 <./figures/experiencia/exp1.png> <./figures/experiencia/exp2.png> <./figure
+s/experiencia/exp3.png> <./figures/experiencia/exp5.png> <./figures/experiencia
+/exp6.png> <./figures/experiencia/exp7.png> <./figures/experiencia/exp8.png>]
+[20 <./figures/experiencia/chart_1.png (PNG copy)> <./figures/experiencia/chart
+_2.png (PNG copy)>] [21 <./figures/experiencia/chart_3.png (PNG copy)> <./figur
+es/experiencia/chart_4.png (PNG copy)>] [22 <./figures/experiencia/chart_5.png 
+(PNG copy)> <./figures/experiencia/chart_6.png (PNG copy)>] [23 <./figures/expe
+riencia/chart_7.png (PNG copy)> <./figures/experiencia/chart_8.png (PNG copy)>]
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [24]
+[25] <figures/processo_identificacao.png, id=598, 967.615pt x 1628.0825pt>
+File: figures/processo_identificacao.png Graphic file (type png)
+
+<use figures/processo_identificacao.png>
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[26] [27 <./figures/processo_identificacao.png>]
+<figures/mesa1_1.png, id=610, 536.0025pt x 435.6275pt>
+File: figures/mesa1_1.png Graphic file (type png)
+
+<use figures/mesa1_1.png> [28 <./figures/mesa1_1.png>]
+LaTeX Font Info:    Try loading font information for T1+pcrs on input line 400.
+
+
+(/usr/share/texmf-texlive/tex/latex/courier-scaled/t1pcrs.fd
+File: t1pcrs.fd 2004/07/09 scalable font definitions for T1/pcrs.
+)
+LaTeX Font Info:    Font shape `T1/pcrs/m/n' will be
+(Font)              scaled to size 11.39996pt on input line 400.
+
+Overfull \hbox (24.6474pt too wide) in paragraph at lines 429--429
+[]\T1/pcrs/m/n/12 <top shape="round" large_dimension="0.89" small_dimension="0.
+89"/>[] 
+ []
+
+[29]
+Overfull \hbox (24.6474pt too wide) in paragraph at lines 429--429
+[]\T1/pcrs/m/n/12 <top shape="squared" large_dimension="1.0" small_dimension="1
+.0"/>[] 
+ []
+
+
+Overfull \hbox (24.6474pt too wide) in paragraph at lines 429--429
+[]\T1/pcrs/m/n/12 <top shape="squared" large_dimension="1.0" small_dimension="1
+.0"/>[] 
+ []
+
+
+Overfull \hbox (24.6474pt too wide) in paragraph at lines 429--429
+[]\T1/pcrs/m/n/12 <top shape="squared" large_dimension="2.0" small_dimension="1
+.5"/>[] 
+ []
+
+
+Overfull \hbox (10.96744pt too wide) in paragraph at lines 429--429
+[]\T1/pcrs/m/n/12 <top shape="round" large_dimension="1.5" small_dimension="1.5
+"/>[] 
+ []
+
+<figures/exemplo_captura.png, id=628, 621.32124pt x 486.81876pt>
+File: figures/exemplo_captura.png Graphic file (type png)
+
+<use figures/exemplo_captura.png>
+<figures/mesa2.png, id=629, 631.35875pt x 498.86375pt>
+File: figures/mesa2.png Graphic file (type png)
+ <use figures/mesa2.png>
+<figures/mesa3.png, id=630, 687.56876pt x 412.54124pt>
+File: figures/mesa3.png Graphic file (type png)
+ <use figures/mesa3.png>
+[30] [31 <./figures/exemplo_captura.png>]
+File: figures/mesa1_1.png Graphic file (type png)
+ <use figures/mesa1_1.png>
+<figures/mesa1_2.png, id=641, 468.75125pt x 421.575pt>
+File: figures/mesa1_2.png Graphic file (type png)
+
+<use figures/mesa1_2.png>
+<figures/mesa1_3.png, id=642, 427.5975pt x 418.56375pt>
+File: figures/mesa1_3.png Graphic file (type png)
+
+<use figures/mesa1_3.png>
+<figures/mesa2_1.png, id=643, 420.57124pt x 422.57875pt>
+File: figures/mesa2_1.png Graphic file (type png)
+
+<use figures/mesa2_1.png> <figures/mesa2_2.png, id=644, 501.875pt x 421.575pt>
+File: figures/mesa2_2.png Graphic file (type png)
+
+<use figures/mesa2_2.png>
+<figures/mesa2_3.png, id=645, 478.78876pt x 431.6125pt>
+File: figures/mesa2_3.png Graphic file (type png)
+
+<use figures/mesa2_3.png>
+<figures/mesa3_1.png, id=647, 440.64626pt x 408.52625pt>
+File: figures/mesa3_1.png Graphic file (type png)
+
+<use figures/mesa3_1.png>
+<figures/mesa3_2.png, id=648, 440.64626pt x 410.53375pt>
+File: figures/mesa3_2.png Graphic file (type png)
+
+<use figures/mesa3_2.png> <figures/mesa3_3.png, id=649, 433.62pt x 417.56pt>
+File: figures/mesa3_3.png Graphic file (type png)
+
+<use figures/mesa3_3.png>
+Underfull \vbox (badness 4181) has occurred while \output is active []
+
+ [32 <./figures/mesa2.png>]) [33 <./figures/mesa3.png> <./figures/mesa1_2.png> 
+<./figures/mesa1_3.png>] [34 <./figures/mesa2_1.png> <./figures/mesa2_2.png> <.
+/figures/mesa2_3.png>] [35 <./figures/mesa3_1.png> <./figures/mesa3_2.png> <./f
+igures/mesa3_3.png>] [36]
 \openout2 = `chapter5.aux'.
 
- (/home/batista/tese/documento/chapter5.tex
+ (./chapter5.tex
 Cap\'{\i }tulo 6.
-) [21
+
+Underfull \vbox (badness 6893) has occurred while \output is active []
+
+ [37
 
 
 
-] [22
+])
+[38] (./mieic.bbl [39
 
 
-]
-No file mieic.bbl.
+
+]) [40]
 No file mieic.ind.
-(/home/batista/tese/documento/mieic.aux
-(/home/batista/tese/documento/abstract.aux)
-(/home/batista/tese/documento/abbrevs.aux)
-(/home/batista/tese/documento/chapter1.aux)
-(/home/batista/tese/documento/chapter2.aux)
-(/home/batista/tese/documento/chapter3.aux)
-(/home/batista/tese/documento/chapter4.aux)
-(/home/batista/tese/documento/chapter5.aux))
-
-LaTeX Warning: There were undefined references.
-
- ) 
+(./mieic.aux (./abstract.aux) (./abbrevs.aux) (./chapter1.aux) (./chapter2.aux)
+(./chapter3.aux) (./chapter4.aux) (./chapter5.aux)) ) 
 Here is how much of TeX's memory you used:
- 7570 strings out of 493848
- 109934 string characters out of 1152824
- 191592 words of memory out of 3000000
- 10467 multiletter control sequences out of 15000+50000
- 80248 words of font info for 114 fonts, out of 3000000 for 9000
+ 7845 strings out of 493848
+ 114329 string characters out of 1152824
+ 209958 words of memory out of 3000000
+ 10640 multiletter control sequences out of 15000+50000
+ 80679 words of font info for 115 fonts, out of 3000000 for 9000
  714 hyphenation exceptions out of 8191
- 46i,12n,45p,333b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-texlive/fonts/type1/public/a
-msfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.
-pfb></usr/share/texmf-texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf
--texlive/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/
-urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb
-></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on mieic.pdf (36 pages, 1502009 bytes).
+ 45i,12n,46p,670b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+{/usr/share/texmf-texlive/
+fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/
+share/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texliv
+e/fonts/type1/urw/symbol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/sym
+bol/usyr.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb></usr/s
+hare/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/f
+onts/type1/urw/times/utmri8a.pfb>
+Output written on mieic.pdf (54 pages, 8935443 bytes).
 PDF statistics:
- 501 PDF objects out of 1000 (max. 8388607)
- 108 named destinations out of 1000 (max. 500000)
- 406 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 769 PDF objects out of 1000 (max. 8388607)
+ 170 named destinations out of 1000 (max. 500000)
+ 619 words of extra memory for PDF output out of 10000 (max. 10000000)
 

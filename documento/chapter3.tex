@@ -1,99 +1,53 @@
-\chapter{Reconhecimento de objectos}\label{chap:chap3}
+\chapter{Descrição do Problema}\label{chap:chap3}
 
 \section*{}
 
-Este capítulo deve começar por fazer uma apresentação detalhada do
-problema a resolver\footnote{Na introdução a apresentação do
-  problema foi breve.} podendo mesmo, caso se justifique,
-constituir-se um capítulo com essa finalidade.
+%Este capítulo deve começar por fazer uma apresentação detalhada do problema a resolver\footnote{Na introdução a apresentação do   problema foi breve.} podendo mesmo, caso se justifique, constituir-se um capítulo com essa finalidade.
 
-Deve depois dedicar-se à apresentação da solução sem detalhes de
-implementação. 
-Dependendo do trabalho, pode ser uma descrição mais teórica, mais
-'arquitectural', etc.
+% Deve depois dedicar-se à apresentação da solução sem detalhes de implementação. Dependendo do trabalho, pode ser uma descrição mais teórica, mais 'arquitectural', etc.
 
-\section{Reconhecimento de Objectos}
+\section{Reconhecimento de Objetos}
 
 
+O objetivo desta tese é o reconhecimento de objetos através das perceções de um robô, tirando o máximo partido dos sensores 3D que recentemente apareceram no mercado. Utilizando tecnologia já desenvolvida, como os sensores 3D e bibliotecas informáticas, será desenvolvida uma aplicação onde se faça o reconhecimento de objetos simples, nomeadamente planos, paralelepípedo e cilindros, para se utilizar no reconhecimento de objetos mais complexos dos quais estes fazem parte.
 
-O objectivo desta tese é o reconhecimento de objectos através das percepções de um 
-robô, tirando o máximo partido dos sensores 3D que recentemente apareceram no mercado para o
-utilizador comum. Utilizando tecnologia já desenvolvida, como os sensores 3D e bibliotecas
-informáticas \footnote{????}, será desenvolvida uma aplicação onde se faça o reconhecimento de
-estruturas \footnote{ou objectos} simples, nomeadamente planos, paralelipípedos e cilindros, para
-se utilizar no reconhecimento de objectos mais complexos dos quais estes fazem parte.
+Visto que o objetivo último é a integração no software de um demonstrador de robótica autónoma, um objetivo secundário é que o reconhecimento seja feito num curto espaço de tempo para maximizar a performance do demonstrador.
 
-Visto que o objectivo último é a integração no software de um demonstrador de robótica autónoma,
-um objectivo secundário é que o reconhecimento seja feito num curto espaço de tempo para maximizar
-a performance do demonstrador.
+O trabalho desenvolvido também poderá ser utilizado, no demonstrador autónomo, para resolver o problema de localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. Havendo reconhecimento de objetos permitirá que o robô utilize a posição dos objetos reconhecidos para mais facilmente se localizar no espaço.
 
-% Provavelmente transladar isto para o capítulo 1
-%Um dos grandes problemas da condução autónoma, e naturalmente dos seus demonstradores, é o
-%da localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. A 
-%forma mais simples de resolver este problema é permitir que o robô faça o mapeamento do que
-%o rodeia de forma a se situar relativamente ao ambiente em que se insere, nomeadamente aos 
-%objectos que o compõem.
-%Os objectos que compõem o seu ambiente, sejam eles simples ou devidadamente, complexos
-%identificados e situados numa representação interna de um mapa permite que o robô interaja de 
-%forma mais eficaz com o ambiente.
-%
-%E é precisamente esse problema que esta tese se propõe a resolver, através do reconhecimento de
-%objectos.
-% fim de parte supérflua
+%\section{ Solução do Problema}
 
-O trabalho desenvolvido também poderá ser utilizado, no demostrador autónomo, para resolver o problema
-de localização, isto é: como é que um robô autónomo sabe a sua localização no espaço. Havendo 
-reconhecimento de objectos permitirá que o robô utilize a posição dos objectos reconhecidos para 
-mais facilmente se localizar no espaço.
+Para resolver o problema do reconhecimento de objetos em 3D decidiu-se seguir uma estratégia \emph{bottom-up} tratando primeiro do reconhecimento de objetos simples, nomeadamente planos no espaço, cilindros e paralelepípedo, e de seguida reconhecer mesas em cuja constituição se encontram esses objetos. A metodologia será de seguir por uma fusão sensorial de modo a combinar toda a informação disponível para culminar numa avaliação precisa dos objetos nas imagens RGBD.
+
+O sensor utilizado para a captura de informação 3D foi o \emph{Kinect} da \emph{Microsoft} que é o mais comum no mercado e também foi o que a comunidade \emph{opensource} mais rapidamente adotou, desenvolvendo controladores e bibliotecas que permitem que o desenvolvimento seja multi-plataforma.
 
 
+\subsection{Reconhecimento de Objetos Simples}
 
-\section{ Solução do Problema}
-
-Para resolver o problema do reconhecimento de objectos em 3D decidiu-se seguir uma estratégia \emph{bottom-up}
-tratando primeiro do reconheciemtno de objectos simples, nomedamentede planos no espaço, cilindros e paralelipípedos,
-e de seguida reconhecer mesas em cuja constituição se encontram esses objectos.
-
-O sensor utilizado para a captura de informação 3D foi o \emph{Kinect} da \emph{Microsoft} que é o mais comum no mercado
-e também foi o que a comunidade \emph{opensource} mais rápidamente adoptou, desenvolvendo controladores e bibliotecas
-que permitem que o desenvolvimento seja multiplataforma
-
-
-\subsection{Reconhecimento de Objectos Simples}
-
-No que diz respeito a objectos simples optou-se pelos seguintes que são os constituíntes mais comuns
-do principal caso de estudo dos objectos complexos:
+No que diz respeito a objetos simples optou-se pelos seguintes que são os constituintes mais comuns
+do principal caso de estudo dos objetos complexos:
 \begin{itemize}
 \item Cilindros;
-\item Paralelipipedos;
+\item Paralelepípedos;
 \item Planos;
 \end{itemize}
 
-O reconhecimento destes objectos mais simples terá associado um valor de confiança para se poder
-avaliar a qualidade do método.\footnote{pôr palha}
+O reconhecimento destes objetos mais simples terá associado um valor de confiança para se poder avaliar a qualidade do método, contudo é preciso ter em atenção o custo em termos de tempo de processamento e comparar as vantagens que estes reconhecimentos intermédios trazem.
  
-\subsection{Reconhecimento de Objectos Complexos}
+\subsection{Reconhecimento de Objetos Complexos}
 
-Para focar os esforços de desnevolvimento definiu-se as \emph{mesas} como caso de estudo dos objectos
-complexos. Esta escolha apoia-se no facto destes objectos relativamente simples terem
-propriedades interessantes para o campo da robótica autónoma.
+Para focar os esforços de desenvolvimento definiu-se as \emph{mesas} como prova de conceito para os objetos complexos. Esta escolha apoia-se no facto destes objetos relativamente simples terem propriedades interessantes para o campo da robótica autónoma.
 
-Um desses factores é o facto de ser um objecto bastante comum que pode ser encontrado em qualquer ambiente.
+Um desses fatores é o facto de ser um objeto bastante comum que pode ser encontrado em qualquer ambiente.
 
-Outro factor é que, sendo as mesas objectos relativamente simples, a sua morfologia pode ser muito diferente de caso para caso.
-Podemos ter mesas com um só apoio central, outras poderão ter três ou quatro apoios, e estes apoios podem
-ter a forma de cilindros, paralelipípedos ou mesmo até formas menos regulares. Os tampos da mesa podem
-também ter formas bastante diferentes: desde tampos rectângulares, circulares, ovais ou mesmo de formas 
-menos regulares à semelhança dos seus apoios.
+Outro facto é que, sendo as mesas objetos relativamente simples, a sua morfologia pode ser muito diferente de caso para caso. Podemos ter mesas com um só apoio central, outras poderão ter três ou quatro apoios, e estes apoios podem ter a forma de cilindros, paralelepípedos ou mesmo até formas menos regulares. Os tampos da mesa podem também ter formas bastante diferentes: desde tampos retangulares, circulares, ovais ou mesmo de formas menos regulares à semelhança dos seus apoios.
 
-Existirá também um dicionário de mesas conhecidas, sobre as quais será produzido um factor de confiança de
-as ter detectado que é calculado a partir do factor de confiança de se ter encontrado os seus constituintes.
+Existirá também um dicionário de mesas conhecidas, sobre as quais será produzido um fator de confiança de as ter detetado que é calculado a partir do fator de confiança de se ter encontrado os seus constituintes.
 
 %falar do facto de a omissão de dados ser muito menos grave do que a obtenção de dados errados.
 
 
 \section{Resumo e Conclusões}
 
-Esta dissertação fará então o reconhecimento de mesas, através do reconhecimentos dos seus constituíntes mais
-simples, i.e.: planos horizontais com várias formas e cilindros e paralelipípedos e indicará a certeza que tem
+Esta dissertação fará então o reconhecimento de mesas, através do reconhecimentos dos seus constituintes mais simples, i.e.: planos horizontais com várias formas e cilindros e paralelepípedos e indicará a certeza que tem
 de que é realmente uma mesa.
