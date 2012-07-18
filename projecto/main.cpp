@@ -39,6 +39,9 @@ int main ( int argc, char* argv[], char* envp[]) {
 		} else if (strcmp(argv[1], "-m") == 0 ) {
 			Message msg = Message();
 			msg.test_message();
+		} else if (strcmp(argv[1], "-cat") == 0 ) {
+			PCLWorker v;
+			v.concat_clouds(argv[2],argv[3]);
 		} else if (strcmp(argv[1], "-s") == 0 ) {
 			PCLWorker v;
 			v.run_capture(30);

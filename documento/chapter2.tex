@@ -2,9 +2,9 @@
 
 \section{Introdução}
 
-Neste capítulo são analisadas todas as áreas científicas relevantes para que esta dissertação possa ser realizada com sucesso, tirando partido do conhecimento mais avançado do que está a ser feito a nível mundial e até equacionar novas abordagens para melhorar as soluções existentes para o problema do reconhecimento de objetos. Mais particularmente o que está feito em termos de reconhecimento de objetos 3D em termos científicos e das bibliotecas existentes nesse âmbito.
+Neste capítulo são analisadas todas as áreas científicas relevantes para que esta dissertação possa ser realizada com sucesso, tirando partido do conhecimento mais avançado do que está a ser feito a nível mundial e até equacionar novas abordagens para melhorar as soluções existentes para o problema do reconhecimento de objetos. Mais particularmente será analisado o que está feito em termos de reconhecimento de objetos 3D tanto na vertente científica como das bibliotecas informáticas existentes nesse âmbito.
 
-Faz-se também uma análise ao que existe em termos de demonstradores de robótica autónoma para enquadrar o trabalho a ser desenvolvido respeitante à utilização dos objetos, que sendo reconhecidos como marcadores influenciam o comportamento do robô.
+Faz-se também uma análise ao que existe em termos de demonstradores de robótica autónoma para enquadrar o trabalho a ser desenvolvido respeitante à identificação dos objetos, que sendo reconhecidos, influenciam o comportamento do robô.
 
 \section{Sensores de Profundidade}
 
@@ -21,7 +21,7 @@ um sensor que a cada “pixel” recebe a distância a que o objeto se encontra.
 
 \subsection[LIDAR]{Light Detection and Ranging}
 
-Os sistemas LIDAR utilizam um feixe de luz rotativo para fazer mapeamento 3D
+Os sistemas LIDAR (\emph{Light Detection and Ranging}) utilizam um feixe de luz rotativo para fazer mapeamento 3D
 do ambiente que o circunda. A vantagem destes sistemas é que, com feixes de
 luz muito estreitos conseguem obter uma resolução muito grande, sendo o ideal
 para aplicações críticas, tais como o alunar de sondas no caso da NASA \cite{Keim2010}.
@@ -32,7 +32,7 @@ precisa de distância (além de algumas características do alvo), sendo necess�
 
 \subsection{Kinect}\label{kinect}
 
-O \emph{Kinect} é um sensor 3D desenvolvido pela \emph{Microsoft}, cujo objetivo principal era ser utilizado a par com o sistema X-Box 360, para a interação com jogos sem recorrer a controladores, sendo que através deste sensor os movimentos do jogador controlam o jogo. Este foi o primeiro sensor 3D disponível para o utilizador comum e permitiu a massificação do acesso da comunidade cientifica a este tipo de sensores, que de outra forma seriam demasiado dispendiosos.
+O \emph{Kinect} é um sensor 3D desenvolvido pela \emph{Microsoft}, cujo objetivo principal era ser utilizado a par com o sistema \emph{X-Box 360}, para a interação com jogos sem recorrer a controladores, sendo que através deste sensor os movimentos do jogador controlam o jogo. Este foi o primeiro sensor 3D disponível para o utilizador comum e permitiu a massificação do acesso da comunidade cientifica a este tipo de sensores, que de outra forma seriam demasiado dispendiosos.
 
 As aplicações deste sensor fora do âmbito original para que foi desenvolvido são inúmeras, e rapidamente foi desenvolvido um controlador \emph{opensource} para se desenvolver aplicações em qualquer sistema operativo.
 
@@ -43,7 +43,7 @@ As aplicações deste sensor fora do âmbito original para que foi desenvolvido 
 \end{center}
 
 O \emph{Kinect} tem, como se pode ver na figura~\ref{fig:5}, uma câmara normal RGB 
-contudo os sensores que extraem a perceção de profundidade é a câmara de infra-vermelhos à direita
+contudo o sensor que extrai a perceção de profundidade é a câmara de infra-vermelhos à direita
 que capta os infra-vermelhos enviados pelo emissor situado à esquerda.
 
 Entretanto foi lançado no \emph{Windows SDK} um controlador e uma \emph{framework} oficiais para se desenvolver aplicações fazendo uso do \emph{Kinect} na plataforma \emph{Windows}.
@@ -103,9 +103,7 @@ hessiana é máxima.
 
 \subsection{Geometric Hashing}
 
-O \emph{geometric hashing}, tal como os métodos acima representados é uma técnica baseada
-em modelos pré-existentes que visa reconhecer objetos onde são aplicadas rotações,
-translações e escala \cite{1989SPIE.1095..515C}
+O \emph{geometric hashing}, tal como os métodos acima representados é uma técnica baseada em modelos pré-existentes que visa reconhecer objetos onde são aplicadas rotações, translações e escala \cite{1989SPIE.1095..515C}
 
 Esta técnica tem por base também pontos característicos que são obtidos por
 conjuntos de três pontos não colineares segundo os quais os outros são achados. 
@@ -187,9 +185,7 @@ Existiram duas edições do \emph{Grand Challenge} realizadas em 2004 e 2005 que
 
 Em 2007 foi realizado um \emph{Urban Challenge} onde se aproximou as provas às condições encontradas num ambiente urbano, ou seja, estradas com carros a circular em ambas as vias, cruzamentos, sinalização vertical  e semáforos.
 
-Na edição de 2007 os veículos autónomos estão equipados com um conjunto de sensores entre os quais se destacam LIDAR, Radares, sonares e infravermelhos. O projeto vencedor desenvolvido pela Universidade de \emph{Carnegie Mellon} e apelidado de
- \emph{Boss} \cite{Urmson:2008:ADU:1395073.1395077} tem
-18 sensores dispostos como apresentado no diagrama abaixo:
+Na edição de 2007 os veículos autónomos já se encontravam equipados com um conjunto de sensores, entre os quais se destacam LIDAR, Radares, sonares e infravermelhos. O projeto vencedor desenvolvido pela Universidade de \emph{Carnegie Mellon} e apelidado de \emph{Boss} \cite{Urmson:2008:ADU:1395073.1395077} possuía 18 sensores dispostos como apresentado no diagrama abaixo:
 
 \begin{center}
 	\includegraphics[width=0.80\textwidth]{./figures/boss_sensors.png}
@@ -216,9 +212,7 @@ Na edição de 2007 os veículos autónomos estão equipados com um conjunto de 
 \end{center}
 \end{table}
 
-Sendo que os códigos dos sensores correspondem ao indicado na tabela ~\ref{boss_sensor}
-pode-se concluir, que os sensores LIDAR são um excelente sensor para ajudar no reconhecimento
-de objectos no mundo, tal como para mapear o ambiente do robô para se poder orientar de uma eficaz.
+Sendo que os códigos dos sensores correspondem ao indicado na tabela ~\ref{boss_sensor} pode-se concluir, que os sensores LIDAR são um excelente sensor para ajudar no reconhecimento de objetos no mundo, tal como para mapear o ambiente do robô para se poder orientar de uma forma eficaz.
 
 
 \subsection{Micro Rato}
@@ -271,9 +265,7 @@ fazer de robô guia no museu Smithsonian para a exposição de história natural
 	\label{fig:4}
 \end{center}
 
-Este robô era totalmente autónomo a partir do momento em que fazia uma volta de
-aprendizagem, em que era guiado pelo percurso que lhe estava destinado. Estando
-a aprendizagem concluída, o robô orientava-se pelo resultado da sua aprendizagem, e por alguns sensores, nomeadamente para se desviar dos visitantes e de obstáculos, uma câmara para detetar marcadores no teto do museu para se conseguir localizar.
+Este robô tornava-se totalmente autónomo a partir do momento em que fazia uma volta de aprendizagem, em que era guiado pelo percurso que lhe estava destinado. Estando a aprendizagem concluída, o robô orientava-se pelo resultado da sua aprendizagem, e por alguns sensores, nomeadamente para se desviar dos visitantes e de obstáculos, uma câmara para detetar marcadores no teto do museu para se conseguir localizar.
 Além de guiar os visitantes pelo percurso este robô também interagia com os mesmos, respondendo a perguntas e apresentando a exposição.
 
 \subsection{CleanRob}

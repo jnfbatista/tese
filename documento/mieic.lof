@@ -17,19 +17,27 @@
 \contentsline {figure}{\numberline {5.1}{\ignorespaces Exemplo de imagem capturada com informa\IeC {\c c}\IeC {\~a}o RGBD (duas perspetivas) e a imagem RGB correspondente.\relax }}{18}{figure.5.1}
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Foto das posi\IeC {\c c}\IeC {\~o}es da mesa relativas ao Kinect.\relax }}{19}{figure.5.2}
 \contentsline {figure}{\numberline {5.3}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.35 m)\relax }}{20}{figure.caption.9}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.34 m)\relax }}{20}{figure.caption.10}
-\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.00 m)\relax }}{21}{figure.caption.11}
-\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (1.93 m)\relax }}{21}{figure.caption.12}
-\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.30 m)\relax }}{22}{figure.caption.13}
-\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{22}{figure.caption.14}
-\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{23}{figure.caption.15}
-\contentsline {figure}{\numberline {5.10}{\ignorespaces Diagrama temporal para a primeira posi\IeC {\c c}\IeC {\~a}o (3.00 m)\relax }}{23}{figure.caption.16}
-\contentsline {figure}{\numberline {5.11}{\ignorespaces Funcionamento do processo global.\relax }}{27}{figure.caption.21}
-\contentsline {figure}{\numberline {5.12}{\ignorespaces Exemplo de imagem ap\IeC {\'o}s pr\IeC {\'e} processamento.\relax }}{28}{figure.caption.22}
-\contentsline {figure}{\numberline {5.13}{\ignorespaces Primeira mesa a ser identificada.\relax }}{31}{figure.caption.23}
-\contentsline {figure}{\numberline {5.14}{\ignorespaces Segunda mesa a ser identificada.\relax }}{32}{figure.caption.24}
-\contentsline {figure}{\numberline {5.15}{\ignorespaces Terceira mesa a ser identificada.\relax }}{33}{figure.caption.25}
-\contentsline {figure}{\numberline {5.16}{\ignorespaces Clusters representativos da mesa 1.\relax }}{33}{figure.caption.28}
-\contentsline {figure}{\numberline {5.17}{\ignorespaces Clusters representativos da mesa 2.\relax }}{34}{figure.caption.30}
-\contentsline {figure}{\numberline {5.18}{\ignorespaces Clusters representativos da mesa 3.\relax }}{35}{figure.caption.32}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Diagrama temporal para a segunda posi\IeC {\c c}\IeC {\~a}o (1.34 m)\relax }}{20}{figure.caption.10}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Diagrama temporal para a terceira posi\IeC {\c c}\IeC {\~a}o (2.00 m)\relax }}{21}{figure.caption.11}
+\contentsline {figure}{\numberline {5.6}{\ignorespaces Diagrama temporal para a quarta posi\IeC {\c c}\IeC {\~a}o (1.93 m)\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {5.7}{\ignorespaces Diagrama temporal para a quinta posi\IeC {\c c}\IeC {\~a}o (2.30 m)\relax }}{22}{figure.caption.13}
+\contentsline {figure}{\numberline {5.8}{\ignorespaces Diagrama temporal para a sexta posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{22}{figure.caption.14}
+\contentsline {figure}{\numberline {5.9}{\ignorespaces Diagrama temporal para a s\IeC {\'e}tima posi\IeC {\c c}\IeC {\~a}o (2.75 m)\relax }}{23}{figure.caption.15}
+\contentsline {figure}{\numberline {5.10}{\ignorespaces Diagrama temporal para a oitava posi\IeC {\c c}\IeC {\~a}o (3.00 m)\relax }}{23}{figure.caption.16}
+\contentsline {figure}{\numberline {5.11}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 1 (1.35 m)\relax }}{25}{figure.caption.21}
+\contentsline {figure}{\numberline {5.12}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 2 (1.34 m)\relax }}{25}{figure.caption.22}
+\contentsline {figure}{\numberline {5.13}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 3 (2.00 m)\relax }}{26}{figure.caption.23}
+\contentsline {figure}{\numberline {5.14}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 4 (1.93 m)\relax }}{26}{figure.caption.24}
+\contentsline {figure}{\numberline {5.15}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 5 (2.30 m)\relax }}{27}{figure.caption.25}
+\contentsline {figure}{\numberline {5.16}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 6 (2.75 m)\relax }}{27}{figure.caption.26}
+\contentsline {figure}{\numberline {5.17}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 7 (2.75 m)\relax }}{28}{figure.caption.27}
+\contentsline {figure}{\numberline {5.18}{\ignorespaces Posi\IeC {\c c}\IeC {\~a}o real e posi\IeC {\c c}\IeC {\~o}es registadas pelo Kinect para a posi\IeC {\c c}\IeC {\~a}o 8 (3.00 m)\relax }}{28}{figure.caption.28}
+\contentsline {figure}{\numberline {5.19}{\ignorespaces Exemplo de imagem ap\IeC {\'o}s pr\IeC {\'e} processamento.\relax }}{31}{figure.caption.29}
+\contentsline {figure}{\numberline {5.20}{\ignorespaces Funcionamento do processo global.\relax }}{33}{figure.caption.30}
+\contentsline {figure}{\numberline {5.21}{\ignorespaces Primeira mesa a ser identificada.\relax }}{35}{figure.caption.31}
+\contentsline {figure}{\numberline {5.22}{\ignorespaces Segunda mesa a ser identificada.\relax }}{36}{figure.caption.32}
+\contentsline {figure}{\numberline {5.23}{\ignorespaces Terceira mesa a ser identificada.\relax }}{37}{figure.caption.33}
+\contentsline {figure}{\numberline {5.24}{\ignorespaces Clusters representativos da mesa 1.\relax }}{37}{figure.caption.36}
+\contentsline {figure}{\numberline {5.25}{\ignorespaces Clusters representativos da mesa 2.\relax }}{38}{figure.caption.38}
+\contentsline {figure}{\numberline {5.26}{\ignorespaces Clusters representativos da mesa 3.\relax }}{39}{figure.caption.40}
 \addvspace {10\p@ }

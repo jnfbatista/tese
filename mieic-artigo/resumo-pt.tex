@@ -1,0 +1,102 @@
+%-----------------------------------------------
+% Template para criação de resumos de projectos/dissertação
+% jlopes AT fe.up.pt,   Fri Jul  3 11:08:59 2009
+%-----------------------------------------------
+
+\documentclass[9pt,a4paper]{extarticle}
+
+%% English version: comment first, uncomment second
+\usepackage[portuguese]{babel}  % Portuguese
+%\usepackage[english]{babel}     % English
+\usepackage{graphicx}           % images .png or .pdf w/ pdflatex OR .eps w/ latex
+\usepackage{times}              % use Times type-1 fonts
+\usepackage[utf8]{inputenc}     % 8 bits using UTF-8
+\usepackage{url}                % URLs
+\usepackage{multicol}           % twocolumn, etc
+\usepackage{float}              % improve figures & tables floating
+\usepackage[tableposition=top]{caption} % captions
+%% English version: comment first (maybe)
+\usepackage{indentfirst}        % portuguese standard for paragraphs
+%\usepackage{parskip}
+
+%% page layout
+\usepackage[a4paper,margin=30mm,noheadfoot]{geometry}
+
+%% space between columns
+\columnsep 12mm
+
+%% headers & footers
+\pagestyle{empty}
+
+%% figure & table caption
+\captionsetup{figurename=Fig.,tablename=Tab.,labelsep=endash,font=bf,skip=.5\baselineskip}
+
+%% heading
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{%
+  \csname the#1\endcsname.\quad
+}
+\makeatother
+
+%% avoid widows and orphans
+\clubpenalty=300
+\widowpenalty=300
+
+\begin{document}
+
+\title{\vspace*{-8mm}\textbf{\textsc{Sistema de Reconhecimento de Objetos\\
+para Demonstrador de Condução Robótica Autónoma}}}
+\author{\emph{João Nuno Ferreira Batista}\\[2mm]
+\small{Projecto/Dissertação realizado sob a orientação do \emph{Prof.\ Armando Jorge Sousa}}}
+\date{}
+\maketitle
+%no page number 
+\thispagestyle{empty}
+
+\vspace*{-4mm}\noindent\rule{\textwidth}{0.4pt}\vspace*{4mm}
+
+\begin{multicols}{2}
+
+\section{Motivação}\label{sec:motiva}
+
+A motivação principal desta dissertação é fazer o reconhecimento de objetos em tempo real através do sensor do Kinect, e após reconhecidos pelo sistema, serem utilizados para fazer demonstrações de robótica autónoma. As características mais importantes serão: o reconhecimento de objetos 3D em tempo real e a identificação das características dos mesmos.
+
+\section{Objectivos}\label{sec:goals}
+
+O objetivo desta tese é o reconhecimento de objetos através das perceções de um robô, tirando o máximo partido dos sensores 3D, como o Kinect. Utilizando tecnologia já desenvolvida, como os sensores 3D e bibliotecas informáticas, será desenvolvida uma aplicação onde se faça o reconhecimento de objetos simples, para se utilizar no reconhecimento de objetos mais complexos dos quais estes fazem parte.
+
+Decidiu-se pelas mesas como o objeto complexo para caso de estudo por causa suas características morfológicas.
+
+Em suma, pretende-se:
+\begin{itemize}
+\item Separar objetos diferentes numa imagem RGBD; 
+\item Em cada objeto identificar se é uma mesa;
+\item Comparar a sua morfologia com mesas existentes num dicionário;
+\item Fornecer um valor da confiança de ser cada uma das mesas do dicionário.
+\end{itemize}
+
+\section{Descrição do Trabalho}\label{sec:work}
+
+O trabalho consiste em utilizar as ferramentas fornecidas pela biblioteca informática \emph{Point Cloud Library} para fazer um \emph{software} que consiga identificar mesas pré existentes num dicionário numa imagem RGBD.
+
+O dicionário não é mais do que um ficheiro XML onde se descreve a morfologia das mesas.
+
+O processo, de uma forma resumida, é o seguinte: remove-se de uma imagem RGBD tudo que não é de interesse analisar, de seguida separam-se os objetos restantes e, para cada um deles, extrai-se a sua morfologia e finalmente compara-se com os modelos guardados no dicionário.
+
+No final o resultado obtido é se um desses objetos é uma mesa e qual o valor da confiança de ser cada uma das mesas do dicionário.
+
+
+\section{Conclusões}\label{sec:conclui}
+
+Nesta dissertação conclui-se com com algoritmos simples e rápidos é possível fazer o reconhecimento de mesas em imagens RGBD, contudo a separação de objetos na imagem é um processo demorado e com larga margem para melhoria. Expõem-se algumas fragilidades desta metodologia,  como não conseguir reconhecer mesas de perfil.
+
+Além destas conclusões, foi possível verificar que a precisão do \emph{Kinect} é bastante aceitável considerando-se as medidas por ele fornecidos.
+
+%%English version: comment first, uncomment second
+%\bibliographystyle{unsrt-pt}  % numeric, unsorted refs
+%\bibliographystyle{unsrt}  % numeric, unsorted refs
+%\bibliography{refs}
+
+\end{multicols}
+
+\end{document}

@@ -752,6 +752,8 @@ void PCLWorker::analyze_image(string file_path, ModelDictionary m) {
 			temp_cloud += parts.at(j);
 		}
 
+		pcl::io::savePCDFileASCII("mesa.pcd", temp_cloud);
+
 		//std::cout << duration.total_milliseconds() << std::endl;
 
 
@@ -766,3 +768,25 @@ void PCLWorker::analyze_image(string file_path, ModelDictionary m) {
 
 	//pcl_viewer(ptr_cloud);
 }
+
+void PCLWorker::concat_clouds(string c1,string c2) {
+	pcl::PointCloud<pcl::PointXYZRGBA> cloud, cloud2;
+
+	// load image
+	printf("loading image...\n");
+	pcl::io::loadPCDFile(c1, cloud);
+	printf("pcd file loaded\n");
+
+printf("loading image...\n");
+	pcl::io::loadPCDFile(c2, cloud2);
+	printf("pcd file loaded\n");
+
+
+	cloud += cloud2;
+	
+	pcl::io::savePCDFileASCII("duas_mesas.pcd", cloud);
+
+
+
+}
+

@@ -1,0 +1,89 @@
+%-----------------------------------------------
+% Template para criação de resumos de projectos/dissertação
+% jlopes AT fe.up.pt,   Fri Jul  3 11:08:59 2009
+%-----------------------------------------------
+
+\documentclass[9pt,a4paper]{extarticle}
+
+%% English version: comment first, uncomment second
+\usepackage[portuguese]{babel}  % Portuguese
+%\usepackage[english]{babel}     % English
+\usepackage{graphicx}           % images .png or .pdf w/ pdflatex OR .eps w/ latex
+\usepackage{times}              % use Times type-1 fonts
+\usepackage[utf8]{inputenc}     % 8 bits using UTF-8
+\usepackage{url}                % URLs
+\usepackage{multicol}           % twocolumn, etc
+\usepackage{float}              % improve figures & tables floating
+\usepackage[tableposition=top]{caption} % captions
+%% English version: comment first (maybe)
+\usepackage{indentfirst}        % portuguese standard for paragraphs
+%\usepackage{parskip}
+
+%% page layout
+\usepackage[a4paper,margin=30mm,noheadfoot]{geometry}
+
+%% space between columns
+\columnsep 12mm
+
+%% headers & footers
+\pagestyle{empty}
+
+%% figure & table caption
+\captionsetup{figurename=Fig.,tablename=Tab.,labelsep=endash,font=bf,skip=.5\baselineskip}
+
+%% heading
+\makeatletter
+\renewcommand*{\@seccntformat}[1]{%
+  \csname the#1\endcsname.\quad
+}
+\makeatother
+
+%% avoid widows and orphans
+\clubpenalty=300
+\widowpenalty=300
+
+\begin{document}
+
+\title{\vspace*{-8mm}\textbf{\textsc{Sistema de Reconhecimento de Objectos\\para Demonstrador de Condução Robótica Autónoma}}}
+\author{\emph{João Nuno Ferreira Batista}\\[2mm]
+\small{Dissertação realizado sob a orientação do \emph{Prof.\ Armando Jorge Sousa}}}\\
+\date{}
+\maketitle
+%no page number 
+\thispagestyle{empty}
+
+\vspace*{-4mm}\noindent\rule{\textwidth}{0.4pt}\vspace*{4mm}
+
+
+
+\section{Resumo}\label{sec:motiva}
+
+O aparecimento de dispositivos RGBD, ou seja, sensores que além de captarem imagens RGB,
+(como qualquer câmara) também captam informação de profundidade, disponíveis para o utilizador
+comum mudaram a pois tornou acessível um sensor que de outra forma seria demasiado caro
+para ser considerado a qualquer investigador. Desta forma, pode-se equipar um robô de demonstrações de
+robótica autónoma com um \emph{Kinect} e usufruir de um sensor de profundidade.
+
+Fazendo o robô reagir a objectos simples, tal como perseguir uma esfera ou
+fugir de um cilindro e mesmo a combinação de ambos os comportamentos, permite 
+criar demonstrações interactivas e apelativas para sensibilizar a assistência 
+ao mundo da robótica e do que através dela se pode criar. Para concretizar estes objectivos,
+tirando partido da disponibilidade deste tipo de sensor, torna-se necessário desenvolver 
+software de reconhecimento em tempo real de objectos simples (esferas, cones
+e cilindros) para poderem ser utilizados nas demonstrações de robótica
+autónoma. 
+
+Todo este trabalho implica uma pesquisa científica cuidada dos métodos e técnicas
+que existem para o reconhecimento dos ditos objectos e também dos de diferentes tipos
+de demonstradores que existem que servem diferentes propósitos mas que demonstram
+um exemplo de robótica autónoma.
+
+
+%%English version: comment first, uncomment second
+\bibliographystyle{unsrt-pt}  % numeric, unsorted refs
+%\bibliographystyle{unsrt}  % numeric, unsorted refs
+\bibliography{refs}
+
+
+
+\end{document}

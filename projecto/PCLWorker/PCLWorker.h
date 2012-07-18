@@ -102,6 +102,8 @@ class PCLWorker {
 		 */
 		std::vector<pcl::PointCloud<pcl::PointXYZ> > find_table(pcl::PointCloud<pcl::PointXYZ>::Ptr, bool, ModelDictionary);
 
+		void concat_clouds(string,string);
+
 		// line processing sheananigans
 		//void process_rgb(cv::Mat);
 
