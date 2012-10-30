@@ -22,9 +22,7 @@ um sensor que a cada “pixel” recebe a distância a que o objeto se encontra.
 \subsection[LIDAR]{Light Detection and Ranging}
 
 Os sistemas LIDAR (\emph{Light Detection and Ranging}) utilizam um feixe de luz rotativo para fazer mapeamento 3D
-do ambiente que o circunda. A vantagem destes sistemas é que, com feixes de
-luz muito estreitos conseguem obter uma resolução muito grande, sendo o ideal
-para aplicações críticas, tais como o alunar de sondas no caso da NASA \cite{Keim2010}.
+do ambiente que o circunda. A vantagem destes sistemas é que, com feixes de luz muito estreitos conseguem obter uma resolução muito grande, sendo o ideal para aplicações críticas, tais como o alunar de sondas no caso da NASA \cite{Keim2010}.
 
 Os LIDAR utilizam técnicas de \emph{backscattering} para conseguir uma medição
 precisa de distância (além de algumas características do alvo), sendo necessário fazer algumas considerações prévias sobre o meio em que se vai propagar o laser para escolher o melhor comprimento de onda.
@@ -51,10 +49,8 @@ Entretanto foi lançado no \emph{Windows SDK} um controlador e uma \emph{framewo
 
 \section{Técnicas de Reconhecimento de Objetos}\label{objdetect}
 
-Nesta secção do documento apresenta-se e explora-se as técnicas mais
-promissoras de deteção e reconhecimento de objetos em imagens 2D e
-em estruturas de representação em 3D que assumem a maior importância 
-no âmbito do ramo científico da visão por computador.
+Nesta secção do documento apresenta-se e explora-se as técnicas mais promissoras de deteção e reconhecimento de objetos em imagens 2D e
+em estruturas de representação em 3D que assumem a maior importância no âmbito do ramo científico da visão por computador.
 
 \subsection[SIFT]{Scale Invariant Feature Transform}\label{sift}
 
@@ -62,25 +58,20 @@ no âmbito do ramo científico da visão por computador.
 
 A qualidade desta técnica está dependente da qualidade das características que extrai, e do facto de estas serem invariantes apesar das transformações que se possa aplicar à imagem.
 
-A extração de características é feita em vários passos. O primeiro é e
-aplicação da função gaussiana na direção horizontal a todas as linhas de pixeis
- e de seguida na vertical em todas as colunas.
-É utilizada também uma pirâmide de imagens onde se fez uma progressiva interpolação bilinear para suavizar a imagem, sendo que  a função gaussiana é aplicada a
-todas as camadas de modo a que cada uma seja comparada às suas adjacentes
-para determinar os máximos e os mínimos.
+A extração de características é feita em vários passos. O primeiro é a aplicação da função gaussiana na direção horizontal a todas as linhas de pixeis e de seguida na vertical em todas as colunas.
+É utilizada também uma pirâmide de imagens onde se fez uma progressiva interpolação bilinear para suavizar a imagem, sendo que  a função gaussiana é aplicada a todas as camadas de modo a que cada uma seja comparada às suas adjacentes para determinar os máximos e os mínimos.
 
-\[
+\begin{equation}
 g(x) = \frac{1}{\sqrt{2\pi\sigma}}e^{-x^3 / 2 \sigma^2}
-\]
+\end{equation}
 
-O resultado desta análise é um conjunto de vetores que representam as
-características do objeto. 
+O resultado desta análise é um conjunto de vetores que representam as características do objeto.
 
 
 \begin{center}
 	\includegraphics[scale=1.00]{figures/sift_img.png}
-	\captionof{figure}{Exemplo de Detecção utilizando SIFT}
-	\label{fig:1}
+	\captionof{figure}{Exemplo de Deteção utilizando SIFT \cite{Lowe:1999:ORL:850924.851523}}
+	\label{fig:sift}
 \end{center}
 
 \subsection[SURF]{Speeded Up Robust Feature}
@@ -89,29 +80,24 @@ Speeded Up Robust Feature (SURF) é uma técnica bastante próxima de SIFT\ref{s
 
 As melhorias enunciadas são conseguidas através da escolha cuidadosa dos pontos característicos de um objeto. Esta escolha é feita utilizando o conceito de imagens integrais \cite{10.1109CVPR.2001.990517} cujo conceito básico é que cada pixel $x$ na imagem inicial é a soma dos valores dos pixeis no retângulo formado pela origem da imagem e as coordenadas do pixel atual:
 
-\[
+\begin{equation}
 I_\sum(x) = \sum_{i \leq x}^{i=0} \sum_{j \leq y}^{j=0} I(i,j)
-\]
+\end{equation}
 
 
-A vantagem destas imagens integrais é que são necessárias apenas adições
-para calcular a soma das intensidades em qualquer área retangular vertical.
+A vantagem destas imagens integrais é que são necessárias apenas adições para calcular a soma das intensidades em qualquer área retangular vertical.
 
-Os pontos característicos são encontrados onde o determinante de uma matriz
-hessiana é máxima.
+Os pontos característicos são encontrados onde o determinante de uma matriz hessiana é máxima.
 
 
 \subsection{Geometric Hashing}
 
-O \emph{geometric hashing}, tal como os métodos acima representados é uma técnica baseada em modelos pré-existentes que visa reconhecer objetos onde são aplicadas rotações, translações e escala \cite{1989SPIE.1095..515C}
+O \emph{geometric hashing}, tal como os métodos acima representados é uma técnica baseada em modelos pré-existentes que visa reconhecer objetos onde são aplicadas rotações, translações e escala \cite{1989SPIE.1095..515C}.
 
-Esta técnica tem por base também pontos característicos que são obtidos por
-conjuntos de três pontos não colineares segundo os quais os outros são achados. 
-Desta forma os seus pontos característicos não variam de acordo com as 
-transformações que possam ser aplicadas aos objetos.
+Esta técnica tem por base também pontos característicos que são obtidos por conjuntos de três pontos não colineares segundo os quais os outros são achados. 
+Desta forma os seus pontos característicos não variam de acordo com as transformações que possam ser aplicadas aos objetos.
 
 %\subsection{Conditional Random Fields}
-
 
 \subsection{RANSAC}
 
@@ -123,7 +109,7 @@ Como se pode ver na figura \ref{fig:ransac_vs_lsq} o método \emph{RANSAC} será
 
 \begin{center}
 	\includegraphics[width=0.80\textwidth]{figures/least_squares_vs_ransac.png}
-	\captionof{figure}{Comparação com o método de mínimos quadrados}
+	\captionof{figure}{Comparação com o método de mínimos quadrados \cite{Fischler:1981:RSC:358669.358692}}
 	\label{fig:ransac_vs_lsq}
 \end{center}
 
@@ -131,14 +117,14 @@ Como se pode ver na figura \ref{fig:ransac_vs_lsq} o método \emph{RANSAC} será
 
 \begin{center}
 	\includegraphics[width=0.80\textwidth]{figures/least_squares_shortcomings.png}
-	\captionof{figure}{Exemplo de fraqueza do método de mínimos quadrados}
+	\captionof{figure}{Exemplo de fraqueza do método de mínimos quadrados \cite{Fischler:1981:RSC:358669.358692}}
 	\label{fig:ransac}
 \end{center}
 
 
 \subsection[PCL]{Point Cloud Library}
 
-\emph{Point Cloud Library} (PCL) é um projeto \emph{opensource} desenvolvido em C++ cujo objetivo é disponibilizar uma ferramenta altamente otimizada para capturar, manipular, visualizar e processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores como o \emph{Kinect}\ref{kinect} devolvem, que não é mais do que a nuvem dos pontos captados no espaço, com a origem no ponto onde o sensor se encontra, também com a informação das cores dos pontos.
+\emph{Point Cloud Library} (PCL) é um projeto \emph{opensource} desenvolvido em C++ cujo objetivo é disponibilizar uma ferramenta altamente otimizada para capturar, manipular, visualizar e processar nuvens de pontos. Nuvens de pontos são a informação 3D que sensores como o \emph{Kinect} (\ref{kinect}) devolvem, que não é mais do que a nuvem dos pontos captados no espaço, com a origem no ponto onde o sensor se encontra, também com a informação das cores dos pontos.
 O projeto PCL \cite{Rusu_ICRA2011_PCL} permite que através da nuvem de pontos se extraia a informação desejada, sendo que já tem implementado um conjunto de filtros, técnicas de reconstrução de superfícies, métodos de extração de características 3D (por exemplo normais às superfícies), que a tornam uma ferramenta de muito interessante para usar a par do \emph{Kinect}.
 
 A captura de imagens é bastante facilitada com esta ferramenta, que disponibiliza um formato para que toda a informação seja guardada convenientemente: \emph{.pcd}. Estes ficheiros podem ser visualizados facilmente recorrendo a bibliotecas de visualização da PCL onde são apresentados em 3D, sendo que podem conter só informação de profundidade como na figura~\ref{fig:pcl_depth}, mas também com toda a informação capturada pelo \emph{Kinect} como pode ser visto na figura~\ref{fig:pcl_color}.

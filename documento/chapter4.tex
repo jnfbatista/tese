@@ -395,18 +395,17 @@ No final deste pré processamento o resultado será um conjunto de nuvens de pon
 
 \subsection{Deteção de Mesas}
 
-De seguida cada um dos objetos separados passa por um processo onde se tenta 
-detetar constituintes das mesas, como pernas e tampos. Caso sejam encontrados 
-verifica-se se correspondem a alguma das mesas conhecidas que estão guardadas
-no dicionário das mesas conhecidas, retornando um valor de de confiança \(C\) que se encontra sempre entre 0 e 1.
+De seguida cada um dos objetos separados passa por um processo onde se tenta detetar constituintes das mesas, como pernas e tampos. Caso sejam encontrados verifica-se se correspondem a alguma das mesas conhecidas que estão guardadas no dicionário das mesas conhecidas, retornando um valor de de confiança \(C\) que se encontra sempre entre 0 e 1.
 
-Esta deteção é feita nos seguintes passos: primeiro faz-se a deteção do tampo, que é obrigatoriamente uma superfície planar, e caso não tenha um plano é logo atribuída uma confiança de 0, considerando-se que não é uma mesa.
+Esta deteção é feita nos seguintes passos: primeiro faz-se a deteção do tampo, que é obrigatoriamente uma superfície planar, e caso não tenha um plano é logo atribuída uma confiança de 0, considerando-se que não é uma mesa, pois considera-se que caso exista um plano então existirá um tampo. A deteção do plano é feito recorrendo a um conjunto de métodos da PCL que devolvem o conjunto de pontos que pertencem ao plano e as suas características matemáticas.  
 
-Caso exista um plano, então existe um tampo e as suas dimensões são avaliadas e comparadas com cada um dos modelos. Para avaliar a confiança (\(C_t\)) de o tampo da mesa ser o do modelo que está no dicionário, é seguida a seguinte formulação para cada uma das características (\(C_i\)):
+ Para avaliar a confiança (\(C_t\)) de o tampo da mesa ser o do modelo que está no dicionário, é seguida a seguinte formulação para cada uma das características (\(C_i\)):
 
 \begin{equation}\label{eq:ci}
 C_i = 1 - \frac{|valor\_modelo - valor\_observado|}{valor\_modelo}
 \end{equation}
+
+Chegou-se a esta formulação por se considerar, através da experimentação, que seria a que melhor consideraria todas as características para uma melhor qualidade na identificação.
 
 Sendo que se avalia tanto a dimensão maior \(C_1\) como a mais pequena  \(C_2\) e são ambas igualmente relevantes para a avaliação do ajuste da mesa observada vão ter ambas um peso de 0.5 na avaliação do tampo, portanto o valor da confiança \(C_t\) é calculado através da seguinte fórmula:
 
@@ -414,12 +413,13 @@ Sendo que se avalia tanto a dimensão maior \(C_1\) como a mais pequena  \(C_2\)
 C_t = 0.5C_1 + 0.5C_2
 \end{equation}
 
-De seguida é feita uma análise aos apoios, cuja confiança é representada por \(C_a\) sendo que tem em consideração o número de apoios observados, e a altura dos mesmos. Cada um destes fatores, respetivamente \(C_n\) e \(C_h\), são computados seguindo a formulação~\ref{eq:ci}. Os valores obtidos são pesados onde a \(C_n\) é aplicado um fator de 0.4 pois facilmente um dos apoios é oculto nas imagens em 3D portanto tem de ter um peso menor, enquanto que a altura \(C_h\) dos apoios tem um peso de 0.6 na avaliação de os apoios corresponderem aos do modelo no dicionário. Em termos de fórmula:
+As dimensões do plano encontrado são avaliadas e comparadas com cada um dos modelos, sendo que a metodologia utilizada para a sua obtenção foi utilizar métodos da PCL para extrair os pontos máximos e mínimos do \emph{cluster} por ele formado e depois utilizá-los para calcular as ditas dimensões.
+
+De seguida é feita uma análise aos apoios. Estes apoios são obtidos através da remoção dos pontos que fazem parte do tampo, restando apenas os pontos que lhes pertencem, sendo de seguida separados utilizando um algoritmo de \emph{clustering}. A confiança dos apoios é representada por \(C_a\) sendo que tem em consideração o número de apoios observados, e a altura dos mesmos. Cada um destes fatores, respetivamente \(C_n\) e \(C_h\), são calculados seguindo a formulação~\ref{eq:ci}. Os valores obtidos são pesados onde a \(C_n\) é aplicado um fator de 0.4 pois facilmente um dos apoios é oculto nas imagens em 3D portanto tem de ter um peso menor, enquanto que a altura \(C_h\) dos apoios tem um peso de 0.6 na avaliação de os apoios corresponderem aos do modelo no dicionário. Em termos de fórmula:
 
 \begin{equation}\label{eq:ca}
 C_a = 0.4C_n + 0.6C_h
 \end{equation}
-
 
 Com base no que foi detetado o valor de confiança global é calculado, distribuindo a confiança igualmente pelo que foi calculado quanto ao tampo \(C_t\) e e quanto aos apoios \(C_a\) sendo que a formulação final fica:
 
@@ -509,7 +509,7 @@ A terceira mesa (figura ~\ref{fig:mesa3}) é mais baixa com cerca de 60 centíme
 \end{center}
 \end{figure}
 
-As mesas 3 e 4 não correspondem a mesas testadas, contudo servem para analisar como é que esta metodologia de reconhecimentos avalia morfologias diferentes.
+As mesas 4 e 5 não correspondem a mesas testadas, contudo servem para analisar como é que esta metodologia de reconhecimentos avalia morfologias diferentes.
 
 
 \begin{table}[htb]
@@ -587,7 +587,6 @@ De seguida seguem-se os resultados das experiências feitas, sendo que de uma s�
 \end{table}
 
 A análise de uma imagem RGBD da Mesa 1 apresenta resultados bastante satisfatórios, onde o modelo do dicionário com um valor de confiança mais alto é o que na realidade a representa nas três experiências. Verificou-se também que existe pouca diferença entre o valor de confiança do modelo da Mesa 1 e o da Mesa 2, contudo poderá ser explicável pelo facto de as duas mesas com morfologias muito aproximadas.
-
 
 
 Adicionalmente os \emph{clusters} representativas das mesas encontram-se na figura~\ref{fig:mesa1_ensaios}.

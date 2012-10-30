@@ -1,0 +1,8 @@
+To install run the following commands:
+
+    mkdir build
+    cd build
+    cmake ..
+    make
+
+   Usage instructions are provided by the application
