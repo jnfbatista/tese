@@ -20,6 +20,7 @@
 #include <boost/lexical_cast.hpp>
 #include <boost/date_time/posix_time/posix_time_types.hpp>
 #include <boost/timer.hpp> 
+#include <boost/thread.hpp>
 
 #include <pcl/ModelCoefficients.h>
 #include <pcl/io/pcd_io.h>
@@ -91,7 +92,7 @@ class PCLWorker {
 
 
 		// Returns the found clusters
-		std::vector<pcl::PointCloud<pcl::PointXYZ> > detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud);
+		void detect_clusters(const pcl::PointCloud<pcl::PointXYZ>::ConstPtr cloud, string address, string port);
 
 		void paint_clusters(pcl::PointCloud<pcl::PointXYZ>::Ptr, std::vector<pcl::PointCloud<pcl::PointXYZ> >);
 
