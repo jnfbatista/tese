@@ -30,7 +30,7 @@ bool Message::send_message(string address, string port) {
 
 		udp::resolver resolver(io_service);
 		printf("UDP Send - query the server\n");
-		udp::resolver::query query(udp::v4(), address, port);
+		udp::resolver::query query(address, port, boost::asio::ip::resolver_query_base::numeric_service);
 		printf("UDP Send - resolve the server\n");
 		udp::endpoint receiver_endpoint = *resolver.resolve(query);
 
